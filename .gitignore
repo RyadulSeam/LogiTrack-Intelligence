@@ -1,0 +1,94 @@
+# ============================================================
+# LogiTrack Intelligence - .gitignore
+# ============================================================
+
+# -------------------- Python --------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+*.whl
+pip-log.txt
+pip-delete-this-directory.txt
+
+# -------------------- Virtual Environment --------------------
+.venv/
+venv/
+ENV/
+env/
+
+# -------------------- Environment Variables --------------------
+.env
+.env.local
+.env.production
+!.env.example
+
+# -------------------- IDE --------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# -------------------- OS --------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# -------------------- Jupyter Notebooks --------------------
+.ipynb_checkpoints/
+*.ipynb_metadata
+
+# -------------------- Data (large files) --------------------
+data/synthetic/
+data/processed/
+data/quarantine/
+data/lake/
+*.parquet
+*.duckdb
+*.duckdb.wal
+
+# -------------------- ML Models --------------------
+models/artifacts/
+models/*.pkl
+models/*.joblib
+models/*.h5
+*.onnx
+
+# -------------------- Logs --------------------
+logs/
+*.log
+
+# -------------------- Docker --------------------
+docker-compose.override.yml
+
+# -------------------- dbt --------------------
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+
+# -------------------- Mosquitto --------------------
+deployment/mosquitto/data/
+deployment/mosquitto/log/
+
+# -------------------- Grafana --------------------
+deployment/monitoring/grafana-data/
+
+# -------------------- Test & Coverage --------------------
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# -------------------- Misc --------------------
+*.bak
+*.tmp
+*.temp
