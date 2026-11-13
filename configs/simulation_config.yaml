@@ -1,0 +1,101 @@
+# Simulation Configuration
+# LogiTrack Intelligence — Realistic Synthetic Generation
+
+seed: 42
+generation_version: "1.0"
+data_origin: "source: synthetic"
+
+# Target scales for synthetic historical baseline
+scales:
+  orders: 15000
+  drivers: 120
+  vehicles: 75
+  maintenance_records: 500
+  telemetry_pings_sample: 25000
+
+# Texas Logistics Hubs with real geospatial coordinates
+hubs:
+  - id: 1
+    name: "Dallas Main Hub"
+    city: "Dallas"
+    state: "TX"
+    latitude: 32.7767
+    longitude: -96.7970
+    capacity: 350
+  - id: 2
+    name: "Houston Hub"
+    city: "Houston"
+    state: "TX"
+    latitude: 29.7604
+    longitude: -95.3698
+    capacity: 450
+  - id: 3
+    name: "Austin Hub"
+    city: "Austin"
+    state: "TX"
+    latitude: 30.2672
+    longitude: -97.7431
+    capacity: 300
+  - id: 4
+    name: "San Antonio Hub"
+    city: "San Antonio"
+    state: "TX"
+    latitude: 29.4241
+    longitude: -98.4936
+    capacity: 280
+  - id: 5
+    name: "Fort Worth Hub"
+    city: "Fort Worth"
+    state: "TX"
+    latitude: 32.7555
+    longitude: -97.3308
+    capacity: 250
+  - id: 6
+    name: "El Paso Hub"
+    city: "El Paso"
+    state: "TX"
+    latitude: 31.7619
+    longitude: -106.4850
+    capacity: 200
+
+# Vehicle Models & Specification
+vehicle_classes:
+  - model: "Mercedes Sprinter"
+    type: "Van"
+    capacity_kg: 1500
+    avg_speed_kmh: 70
+    fuel_capacity_liters: 85
+  - model: "Ford Transit"
+    type: "Van"
+    capacity_kg: 1600
+    avg_speed_kmh: 75
+    fuel_capacity_liters: 90
+  - model: "Freightliner M2"
+    type: "Truck"
+    capacity_kg: 8000
+    avg_speed_kmh: 60
+    fuel_capacity_liters: 250
+  - model: "Isuzu NPR"
+    type: "Box Truck"
+    capacity_kg: 5000
+    avg_speed_kmh: 65
+    fuel_capacity_liters: 140
+  - model: "Chevrolet Silverado"
+    type: "Pickup"
+    capacity_kg: 1200
+    avg_speed_kmh: 80
+    fuel_capacity_liters: 95
+
+# Order Delivery Priorities
+priorities:
+  Standard: 0.65
+  Express: 0.25
+  Same-Day: 0.10
+
+# Order Status Distribution for Simulation
+status_distribution:
+  Delivered: 0.88
+  In Transit: 0.05
+  Out for Delivery: 0.03
+  Processing: 0.02
+  Cancelled: 0.02
