@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: stg_hubs
+    description: "Staged regional Texas distribution hubs"
+    columns:
+      - name: hub_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: hub_name
+        description: "Distribution hub name"
+        tests:
+          - not_null
+
+  - name: stg_drivers
+    description: "Staged driver profiles"
+    columns:
+      - name: driver_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_vehicles
+    description: "Staged fleet vehicles"
+    columns:
+      - name: vehicle_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: vehicle_code
+        description: "Natural key"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: "Staged historical orders"
+    columns:
+      - name: order_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: order_status
+        description: "Order status (Delivered, Cancelled)"
+        tests:
+          - not_null
