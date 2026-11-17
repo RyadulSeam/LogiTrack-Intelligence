@@ -1,0 +1,95 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: "Date dimension covering 2023-2026 calendar years"
+    columns:
+      - name: date_key
+        description: "Primary key in YYYYMMDD format"
+        tests:
+          - unique
+          - not_null
+      - name: full_date
+        description: "Standard calendar date"
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_hub
+    description: "Regional distribution hub dimension with Texas coordinates"
+    columns:
+      - name: hub_key
+        description: "Surrogate primary key"
+        tests:
+          - unique
+          - not_null
+      - name: hub_name
+        description: "Hub official name"
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_driver
+    description: "Driver personnel dimension"
+    columns:
+      - name: driver_key
+        description: "Surrogate primary key"
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_vehicle
+    description: "Fleet vehicles dimension with asset classification"
+    columns:
+      - name: vehicle_key
+        description: "Surrogate primary key"
+        tests:
+          - unique
+          - not_null
+      - name: vehicle_code
+        description: "Vehicle call-sign"
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_route
+    description: "Inter-hub Texas highway freight route corridors"
+    columns:
+      - name: route_key
+        description: "Surrogate primary key"
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_orders
+    description: "Central delivery shipment fact table"
+    columns:
+      - name: order_id
+        description: "Unique shipment identifier"
+        tests:
+          - unique
+          - not_null
+      - name: hub_key
+        description: "Foreign key to dim_hub"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_hub')
+                field: hub_key
+      - name: driver_key
+        description: "Foreign key to dim_driver"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_driver')
+                field: driver_key
+      - name: vehicle_key
+        description: "Foreign key to dim_vehicle"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_vehicle')
+                field: vehicle_key
