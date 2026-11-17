@@ -1,0 +1,61 @@
+/*
+============================================================
+LogiTrack Intelligence — Official Power BI DAX Measures
+Phase 7: BI & Operational Dashboards
+============================================================
+*/
+
+// 1. Total Orders
+Total Orders = COUNTROWS('fact_orders')
+
+// 2. Delivered Orders
+Delivered Orders = 
+CALCULATE(
+    COUNTROWS('fact_orders'),
+    'fact_orders'[order_status] = "Delivered"
+)
+
+// 3. Cancelled Orders
+Cancelled Orders = 
+CALCULATE(
+    COUNTROWS('fact_orders'),
+    'fact_orders'[order_status] = "Cancelled"
+)
+
+// 4. On-Time Delivery Rate (OTD %)
+On-Time Delivery Rate % = 
+DIVIDE(
+    CALCULATE(COUNTROWS('fact_orders'), 'fact_orders'[is_on_time] = TRUE() && 'fact_orders'[order_status] = "Delivered"),
+    [Delivered Orders],
+    0
+) * 100
+
+// 5. Delay Rate %
+Delay Rate % = 
+DIVIDE(
+    CALCULATE(COUNTROWS('fact_orders'), 'fact_orders'[is_delayed] = TRUE() && 'fact_orders'[order_status] = "Delivered"),
+    [Delivered Orders],
+    0
+) * 100
+
+// 6. Average Delivery Duration (Hours)
+Avg Delivery Time (Hours) = 
+CALCULATE(
+    AVERAGE('fact_orders'[delivery_time_hours]),
+    'fact_orders'[order_status] = "Delivered"
+)
+
+// 7. Average CSAT Score
+Avg CSAT Score = 
+CALCULATE(
+    AVERAGE('fact_orders'[csat_score]),
+    'fact_orders'[order_status] = "Delivered"
+)
+
+// 8. Fleet Active Utilization %
+Fleet Utilization % = 
+DIVIDE(
+    CALCULATE(COUNTROWS('dim_vehicle'), 'dim_vehicle'[current_status] = "Active"),
+    COUNTROWS('dim_vehicle'),
+    0
+) * 100
