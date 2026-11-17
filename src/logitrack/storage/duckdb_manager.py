@@ -40,6 +40,12 @@ class DuckDBManager:
         """Executes a multi-statement SQL script."""
         self.conn.execute(sql_content)
 
+    def execute(self, sql: str, params: Optional[list] = None):
+        """Executes a parameterized SQL command."""
+        if params:
+            return self.conn.execute(sql, params)
+        return self.conn.execute(sql)
+
     def query(self, sql: str, params: Optional[list] = None):
         """Executes a query and returns a pandas DataFrame."""
         if params:

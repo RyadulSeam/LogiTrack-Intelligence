@@ -57,7 +57,8 @@ data/lake/
 *.duckdb.wal
 
 # -------------------- ML Models --------------------
-models/artifacts/
+models/artifacts/*
+!models/artifacts/.gitkeep
 models/*.pkl
 models/*.joblib
 models/*.h5
