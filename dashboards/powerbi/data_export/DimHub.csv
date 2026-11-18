@@ -1,0 +1,7 @@
+hub_key,hub_id,hub_name,city,state,daily_capacity,latitude,longitude,data_origin
+1,1,Dallas Main Hub,Dallas,TX,250,32.7767,-96.797,source: original
+2,2,Houston Hub,Houston,TX,380,29.7604,-95.3698,source: original
+3,3,Austin Hub,Austin,TX,220,30.2672,-97.7431,source: original
+4,4,San Antonio Hub,San Antonio,TX,200,29.4241,-98.4936,source: original
+5,5,Fort Worth Hub,Fort Worth,TX,180,32.7555,-97.3308,source: original
+6,6,El Paso Hub,El Paso,TX,150,31.7619,-106.485,source: original

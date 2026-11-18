@@ -1,0 +1,11 @@
+prediction_id,model_id,model_name,entity_type,order_id,predicted_label,predicted_score,prediction_timestamp
+pred-ac919e1f,mod-delay-f1c40634,delay_risk_classifier,order,13315,ON_TIME,0.426,2026-11-17 20:51:12.427163
+pred-b5c1fe92,mod-delay-f1c40634,delay_risk_classifier,order,13560,DELAY_RISK,0.5385,2026-11-17 20:51:12.430066
+pred-654134ad,mod-delay-f1c40634,delay_risk_classifier,order,24098,ON_TIME,0.4987,2026-11-17 20:51:12.432849
+pred-a7da378e,mod-delay-f1c40634,delay_risk_classifier,order,20194,ON_TIME,0.4994,2026-11-17 20:51:12.435465
+pred-db21c881,mod-delay-f1c40634,delay_risk_classifier,order,9270,ON_TIME,0.4136,2026-11-17 20:51:12.438003
+pred-b83f5af6,mod-delay-f1c40634,delay_risk_classifier,order,10599,ON_TIME,0.4571,2026-11-17 20:51:12.440555
+pred-66f7cf2b,mod-delay-f1c40634,delay_risk_classifier,order,1914,DELAY_RISK,0.5703,2026-11-17 20:51:12.443146
+pred-f5963159,mod-delay-f1c40634,delay_risk_classifier,order,20446,DELAY_RISK,0.519,2026-11-17 20:51:12.445889
+pred-e6691f96,mod-delay-f1c40634,delay_risk_classifier,order,4876,DELAY_RISK,0.5103,2026-11-17 20:51:12.448512
+pred-4a41dc09,mod-delay-f1c40634,delay_risk_classifier,order,8257,ON_TIME,0.465,2026-11-17 20:51:12.451105

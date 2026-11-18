@@ -1,0 +1,501 @@
+maintenance_id,vehicle_key,vehicle_code,service_type,maintenance_status,scheduled_date,completed_date,downtime_hours,cost_usd,data_origin
+maint-e542efb3bc,3,FT-003,Electrical & Alternator Check,Completed,2024-01-03 23:03:19,2024-01-05 04:33:19,29.5,1317.66,source: synthetic
+maint-dcaa2f9ea6,11,FT-011,Electrical & Alternator Check,Scheduled,2024-01-04 16:21:29,,,326.86,source: synthetic
+maint-09ae9bf446,33,FT-033,Engine Diagnostics,Completed,2024-01-05 07:38:23,2024-01-05 20:08:23,12.5,1147.79,source: synthetic
+maint-3be877d636,43,FT-043,Routine Oil & Filter,Completed,2024-01-11 06:00:22,2024-01-12 12:42:22,30.7,543.44,source: synthetic
+maint-278913ebb7,39,FT-039,Routine Oil & Filter,Completed,2024-01-13 06:35:43,2024-01-14 16:47:43,34.2,1454.49,source: synthetic
+maint-abfb2ddf56,19,FT-019,Routine Oil & Filter,Completed,2024-01-15 17:30:18,2024-01-16 16:12:18,22.7,1728.37,source: synthetic
+maint-a2362ed58e,15,FT-015,Suspension & Steering,Completed,2024-01-15 18:14:33,2024-01-16 08:14:33,14.0,355.01,source: synthetic
+maint-5731f11ebb,20,FT-020,Suspension & Steering,Completed,2024-01-27 04:16:14,2024-01-28 05:22:14,25.1,1815.83,source: synthetic
+maint-94cf371e91,32,FT-032,Suspension & Steering,Completed,2024-01-28 02:52:31,2024-01-28 12:46:31,9.9,1326.04,source: synthetic
+maint-715d146289,45,FT-045,Engine Diagnostics,Scheduled,2024-02-04 09:58:02,,,633.42,source: synthetic
+maint-a493ef42e2,15,FT-015,Routine Oil & Filter,Scheduled,2024-02-05 15:38:03,,,481.14,source: synthetic
+maint-d4e2d2445f,15,FT-015,Tire Rotation & Replacement,Completed,2024-02-07 02:16:26,2024-02-07 18:04:26,15.8,623.63,source: synthetic
+maint-26ef62e239,41,FT-041,Brake System Inspection,Completed,2024-02-09 04:28:06,2024-02-09 15:10:06,10.7,387.21,source: synthetic
+maint-5226861942,21,FT-021,Engine Diagnostics,Completed,2024-02-10 12:18:47,2024-02-11 23:00:47,34.7,1571.13,source: synthetic
+maint-f82a507221,16,FT-016,Suspension & Steering,Completed,2024-02-11 03:56:22,2024-02-12 01:38:22,21.7,944.59,source: synthetic
+maint-c0fa01db05,39,FT-039,Engine Diagnostics,Completed,2024-02-12 00:05:10,2024-02-13 00:41:10,24.6,662.8,source: synthetic
+maint-1345707d0f,35,FT-035,Coolant Flush & Thermostat,Completed,2024-02-13 05:01:21,2024-02-14 16:01:21,35.0,453.57,source: synthetic
+maint-7c10f2963c,37,FT-037,Routine Oil & Filter,Completed,2024-02-14 09:50:25,2024-02-15 20:08:25,34.3,1460.74,source: synthetic
+maint-70cc03d8ee,15,FT-015,Brake System Inspection,In Progress,2024-02-19 03:09:35,,,175.27,source: synthetic
+maint-8a04ec697c,15,FT-015,Engine Diagnostics,Completed,2024-02-21 02:57:40,2024-02-21 23:27:40,20.5,435.96,source: synthetic
+maint-47f0646872,10,FT-010,Suspension & Steering,Completed,2024-02-27 20:11:28,2024-02-29 06:59:28,34.8,714.39,source: synthetic
+maint-8b5673aa58,6,FT-006,Transmission Service,Completed,2024-03-02 03:19:27,2024-03-02 20:31:27,17.2,897.02,source: synthetic
+maint-bc198c4703,28,FT-028,Transmission Service,Completed,2024-03-06 07:29:34,2024-03-07 16:05:34,32.6,1503.41,source: synthetic
+maint-deb7dcd116,23,FT-023,Suspension & Steering,Completed,2024-03-07 03:06:53,2024-03-08 12:06:53,33.0,1195.25,source: synthetic
+maint-156d451ac2,11,FT-011,Suspension & Steering,Completed,2024-03-09 04:58:18,2024-03-10 06:10:18,25.2,553.8,source: synthetic
+maint-45261b8c88,38,FT-038,Tire Rotation & Replacement,Completed,2024-03-21 02:39:33,2024-03-21 10:51:33,8.2,1219.34,source: synthetic
+maint-e8e934b40c,21,FT-021,Brake System Inspection,Completed,2024-03-23 01:23:57,2024-03-24 05:11:57,27.8,234.6,source: synthetic
+maint-216d450493,34,FT-034,Transmission Service,Scheduled,2024-03-29 16:37:27,,,182.49,source: synthetic
+maint-de4be45a43,10,FT-010,Suspension & Steering,Completed,2024-03-30 20:22:33,2024-04-01 07:16:33,34.9,1097.39,source: synthetic
+maint-409bc79cc7,20,FT-020,Tire Rotation & Replacement,Completed,2024-03-31 07:36:24,2024-04-01 05:06:24,21.5,283.89,source: synthetic
+maint-d6ff9d053b,10,FT-010,Brake System Inspection,Completed,2024-04-02 23:28:02,2024-04-03 12:16:02,12.8,1423.23,source: synthetic
+maint-9c7beb994b,44,FT-044,Brake System Inspection,Completed,2024-04-04 11:48:15,2024-04-05 01:42:15,13.9,1614.84,source: synthetic
+maint-13e160d069,24,FT-024,Tire Rotation & Replacement,Completed,2024-04-06 20:09:46,2024-04-07 14:15:46,18.1,421.52,source: synthetic
+maint-2157000400,14,FT-014,Engine Diagnostics,Completed,2024-04-07 12:32:44,2024-04-08 17:50:44,29.3,1062.71,source: synthetic
+maint-b49bf03ee7,40,FT-040,Suspension & Steering,Completed,2024-04-07 21:37:13,2024-04-09 06:25:13,32.8,1164.46,source: synthetic
+maint-5b0def9fa6,27,FT-027,Brake System Inspection,Completed,2024-04-09 01:36:55,2024-04-10 06:12:55,28.6,1022.5,source: synthetic
+maint-8b5152642e,9,FT-009,Transmission Service,Completed,2024-04-16 14:34:10,2024-04-16 17:22:10,2.8,1255.03,source: synthetic
+maint-f4584bcd37,35,FT-035,Routine Oil & Filter,Scheduled,2024-04-17 13:13:12,,,488.22,source: synthetic
+maint-94fa218448,25,FT-025,Routine Oil & Filter,Completed,2024-04-23 09:35:47,2024-04-24 13:35:47,28.0,1381.32,source: synthetic
+maint-ca35fc3654,19,FT-019,Transmission Service,Completed,2024-04-25 01:46:16,2024-04-25 15:52:16,14.1,1148.87,source: synthetic
+maint-412b6baecc,27,FT-027,Transmission Service,Completed,2024-04-26 13:47:57,2024-04-28 00:47:57,35.0,725.55,source: synthetic
+maint-af1f33b748,30,FT-030,Tire Rotation & Replacement,Completed,2024-04-27 10:33:08,2024-04-28 17:57:08,31.4,1085.55,source: synthetic
+maint-77cec822ba,9,FT-009,Transmission Service,Completed,2024-04-30 04:55:22,2024-05-01 09:49:22,28.9,1013.07,source: synthetic
+maint-5123c6e230,2,FT-002,Suspension & Steering,In Progress,2024-05-01 06:55:42,,,569.09,source: synthetic
+maint-b0cbe988cd,23,FT-023,Engine Diagnostics,Completed,2024-05-02 20:06:37,2024-05-03 19:54:37,23.8,1086.43,source: synthetic
+maint-e9c321b717,25,FT-025,Electrical & Alternator Check,Completed,2024-05-04 23:56:11,2024-05-06 00:38:11,24.7,1066.81,source: synthetic
+maint-48940b3ccc,27,FT-027,Engine Diagnostics,Completed,2024-05-07 13:41:08,2024-05-08 17:17:08,27.6,238.55,source: synthetic
+maint-d8cf5b87c1,38,FT-038,Electrical & Alternator Check,Completed,2024-05-13 10:54:29,2024-05-13 23:18:29,12.4,568.96,source: synthetic
+maint-c25004d8cd,19,FT-019,Electrical & Alternator Check,Completed,2024-05-13 16:53:56,2024-05-15 02:53:56,34.0,390.85,source: synthetic
+maint-1e41ab325e,28,FT-028,Coolant Flush & Thermostat,Completed,2024-05-15 01:49:06,2024-05-15 07:31:06,5.7,1818.86,source: synthetic
+maint-534019a31a,3,FT-003,Suspension & Steering,Completed,2024-05-17 03:06:25,2024-05-17 16:24:25,13.3,1799.31,source: synthetic
+maint-aabfcf9dd8,19,FT-019,Routine Oil & Filter,Completed,2024-05-19 07:20:14,2024-05-19 17:38:14,10.3,1405.77,source: synthetic
+maint-51bb7cc6c6,33,FT-033,Suspension & Steering,Completed,2024-05-21 13:20:54,2024-05-22 20:38:54,31.3,409.83,source: synthetic
+maint-34398a37bb,29,FT-029,Coolant Flush & Thermostat,Completed,2024-05-23 23:18:27,2024-05-25 05:36:27,30.3,237.61,source: synthetic
+maint-d685e8b6c2,4,FT-004,Routine Oil & Filter,In Progress,2024-05-25 05:05:17,,,781.98,source: synthetic
+maint-728a5d82bc,6,FT-006,Routine Oil & Filter,Completed,2024-05-25 13:57:05,2024-05-26 05:03:05,15.1,959.21,source: synthetic
+maint-9235fe7952,42,FT-042,Brake System Inspection,Completed,2024-05-28 04:42:17,2024-05-28 23:12:17,18.5,375.59,source: synthetic
+maint-c7546cb4dd,23,FT-023,Routine Oil & Filter,Completed,2024-06-01 01:59:24,2024-06-02 08:35:24,30.6,729.01,source: synthetic
+maint-22568dbf31,30,FT-030,Electrical & Alternator Check,Completed,2024-06-03 09:38:27,2024-06-03 15:56:27,6.3,1263.01,source: synthetic
+maint-d75f510f46,7,FT-007,Suspension & Steering,Completed,2024-06-04 05:31:17,2024-06-04 23:19:17,17.8,1378.15,source: synthetic
+maint-7036556343,15,FT-015,Routine Oil & Filter,Completed,2024-06-04 23:39:02,2024-06-06 02:09:02,26.5,320.93,source: synthetic
+maint-416978d40c,34,FT-034,Engine Diagnostics,Completed,2024-06-05 11:53:05,2024-06-06 00:17:05,12.4,763.5,source: synthetic
+maint-0410f3dfaf,24,FT-024,Engine Diagnostics,Completed,2024-06-08 03:27:48,2024-06-08 12:15:48,8.8,913.03,source: synthetic
+maint-fce6cdde67,10,FT-010,Tire Rotation & Replacement,Completed,2024-06-09 00:49:50,2024-06-09 09:55:50,9.1,1174.08,source: synthetic
+maint-388c563490,36,FT-036,Electrical & Alternator Check,Completed,2024-06-09 19:02:22,2024-06-10 09:26:22,14.4,308.21,source: synthetic
+maint-6a2ed05107,26,FT-026,Electrical & Alternator Check,Completed,2024-06-17 01:06:31,2024-06-18 10:06:31,33.0,274.93,source: synthetic
+maint-639b7c6dea,11,FT-011,Engine Diagnostics,Completed,2024-06-17 06:12:48,2024-06-18 15:48:48,33.6,1128.85,source: synthetic
+maint-598b537c9f,25,FT-025,Coolant Flush & Thermostat,Completed,2024-06-17 15:26:07,2024-06-18 09:44:07,18.3,1203.23,source: synthetic
+maint-0d7cdf1c15,17,FT-017,Routine Oil & Filter,Completed,2024-06-17 17:32:23,2024-06-18 07:38:23,14.1,1486.93,source: synthetic
+maint-7454effaf4,17,FT-017,Suspension & Steering,Completed,2024-06-26 13:28:36,2024-06-27 05:22:36,15.9,275.94,source: synthetic
+maint-f569bed8ca,13,FT-013,Electrical & Alternator Check,Completed,2024-06-27 15:10:14,2024-06-28 15:22:14,24.2,1694.3,source: synthetic
+maint-c49c41b12c,19,FT-019,Coolant Flush & Thermostat,Completed,2024-06-28 05:50:16,2024-06-28 10:50:16,5.0,1432.06,source: synthetic
+maint-a86bb7d2f8,9,FT-009,Engine Diagnostics,In Progress,2024-06-28 15:29:33,,,699.09,source: synthetic
+maint-d0f6f4d09f,20,FT-020,Suspension & Steering,Completed,2024-06-29 17:17:07,2024-07-01 01:29:07,32.2,380.63,source: synthetic
+maint-459b66e482,44,FT-044,Engine Diagnostics,Completed,2024-07-01 17:34:34,2024-07-03 03:34:34,34.0,774.82,source: synthetic
+maint-0fd30a6a8b,8,FT-008,Suspension & Steering,Completed,2024-07-01 19:27:19,2024-07-02 03:09:19,7.7,1735.51,source: synthetic
+maint-b6edc18768,42,FT-042,Coolant Flush & Thermostat,Completed,2024-07-03 14:57:54,2024-07-04 11:27:54,20.5,1049.03,source: synthetic
+maint-09b58a74eb,34,FT-034,Suspension & Steering,Completed,2024-07-07 07:21:48,2024-07-07 11:57:48,4.6,185.76,source: synthetic
+maint-8b9047fe76,4,FT-004,Tire Rotation & Replacement,Completed,2024-07-07 20:34:35,2024-07-09 01:52:35,29.3,1284.88,source: synthetic
+maint-79f4dc69b1,24,FT-024,Tire Rotation & Replacement,Scheduled,2024-07-07 20:43:12,,,737.81,source: synthetic
+maint-2bfb6fb4b1,45,FT-045,Suspension & Steering,Completed,2024-07-07 23:05:33,2024-07-08 22:41:33,23.6,1508.83,source: synthetic
+maint-be55515200,18,FT-018,Engine Diagnostics,Completed,2024-07-08 15:47:45,2024-07-09 12:29:45,20.7,1672.79,source: synthetic
+maint-1dd6f8731b,32,FT-032,Tire Rotation & Replacement,Completed,2024-07-09 20:15:16,2024-07-10 01:15:16,5.0,443.52,source: synthetic
+maint-73c6b502c8,22,FT-022,Engine Diagnostics,Completed,2024-07-12 16:45:52,2024-07-13 09:51:52,17.1,830.04,source: synthetic
+maint-f20ee1fd9c,25,FT-025,Coolant Flush & Thermostat,Completed,2024-07-17 20:29:48,2024-07-19 02:47:48,30.3,1405.92,source: synthetic
+maint-11d5d020ff,20,FT-020,Electrical & Alternator Check,Completed,2024-07-19 15:39:58,2024-07-21 01:33:58,33.9,676.29,source: synthetic
+maint-c1c37e07d2,9,FT-009,Transmission Service,Completed,2024-07-19 18:41:50,2024-07-21 03:41:50,33.0,244.2,source: synthetic
+maint-405802a157,15,FT-015,Tire Rotation & Replacement,Completed,2024-07-26 19:48:18,2024-07-27 13:30:18,17.7,1831.02,source: synthetic
+maint-a7227265d4,44,FT-044,Brake System Inspection,Scheduled,2024-07-29 23:07:14,,,732.84,source: synthetic
+maint-a96806be6e,10,FT-010,Engine Diagnostics,Completed,2024-08-05 05:47:44,2024-08-06 03:05:44,21.3,596.66,source: synthetic
+maint-a9587acdfc,22,FT-022,Electrical & Alternator Check,Completed,2024-08-05 17:44:10,2024-08-06 19:20:10,25.6,283.33,source: synthetic
+maint-17e3726596,14,FT-014,Routine Oil & Filter,Completed,2024-08-06 00:37:58,2024-08-06 12:49:58,12.2,1536.84,source: synthetic
+maint-80d60ff484,12,FT-012,Coolant Flush & Thermostat,Completed,2024-08-07 22:13:42,2024-08-08 14:43:42,16.5,384.37,source: synthetic
+maint-63a49679f5,26,FT-026,Brake System Inspection,Completed,2024-08-08 17:28:13,2024-08-10 04:34:13,35.1,305.99,source: synthetic
+maint-e9df1bc4b1,2,FT-002,Tire Rotation & Replacement,Completed,2024-08-11 08:55:57,2024-08-11 11:31:57,2.6,749.79,source: synthetic
+maint-b972bb74cd,42,FT-042,Coolant Flush & Thermostat,Completed,2024-08-15 05:06:46,2024-08-15 17:12:46,12.1,1560.59,source: synthetic
+maint-3ac6b95d68,26,FT-026,Coolant Flush & Thermostat,Completed,2024-08-15 21:01:32,2024-08-16 09:07:32,12.1,1364.04,source: synthetic
+maint-5e27bfc900,40,FT-040,Electrical & Alternator Check,Completed,2024-08-17 21:28:39,2024-08-18 08:04:39,10.6,1123.37,source: synthetic
+maint-73db3ee96e,43,FT-043,Suspension & Steering,Completed,2024-08-19 04:02:19,2024-08-19 22:44:19,18.7,715.15,source: synthetic
+maint-3d3268d1b9,31,FT-031,Suspension & Steering,Completed,2024-08-19 16:54:37,2024-08-20 12:42:37,19.8,707.54,source: synthetic
+maint-801e31c7bd,17,FT-017,Tire Rotation & Replacement,Completed,2024-08-20 14:29:43,2024-08-21 17:23:43,26.9,1047.21,source: synthetic
+maint-bf699cda5a,41,FT-041,Coolant Flush & Thermostat,Completed,2024-08-22 20:05:59,2024-08-23 14:17:59,18.2,1223.35,source: synthetic
+maint-c1adcbf73f,41,FT-041,Routine Oil & Filter,Completed,2024-08-24 00:47:34,2024-08-24 22:11:34,21.4,666.52,source: synthetic
+maint-99fefab5b6,17,FT-017,Coolant Flush & Thermostat,Completed,2024-08-25 10:47:29,2024-08-26 05:11:29,18.4,305.08,source: synthetic
+maint-3977a4010f,41,FT-041,Suspension & Steering,Completed,2024-08-25 23:55:24,2024-08-27 03:01:24,27.1,1791.31,source: synthetic
+maint-5bf07433e9,43,FT-043,Suspension & Steering,Completed,2024-08-28 19:14:38,2024-08-29 05:02:38,9.8,249.42,source: synthetic
+maint-7b8ec40512,12,FT-012,Brake System Inspection,Completed,2024-08-31 11:57:32,2024-09-01 05:33:32,17.6,1159.48,source: synthetic
+maint-93bc93de51,19,FT-019,Engine Diagnostics,Completed,2024-09-02 00:13:16,2024-09-03 09:49:16,33.6,1234.09,source: synthetic
+maint-2f8f75f7da,36,FT-036,Suspension & Steering,Completed,2024-09-04 13:50:12,2024-09-05 08:14:12,18.4,590.63,source: synthetic
+maint-3d31d7e409,25,FT-025,Transmission Service,Completed,2024-09-09 09:00:52,2024-09-10 10:42:52,25.7,1212.06,source: synthetic
+maint-affb118a90,40,FT-040,Coolant Flush & Thermostat,Completed,2024-09-09 18:30:55,2024-09-10 17:42:55,23.2,1582.42,source: synthetic
+maint-1fcc65b793,30,FT-030,Coolant Flush & Thermostat,Completed,2024-09-10 00:11:03,2024-09-10 09:41:03,9.5,603.86,source: synthetic
+maint-b887b38ca7,24,FT-024,Engine Diagnostics,Completed,2024-09-12 22:39:38,2024-09-14 04:45:38,30.1,969.14,source: synthetic
+maint-f90bbe1b69,43,FT-043,Electrical & Alternator Check,Completed,2024-09-13 17:18:48,2024-09-15 02:36:48,33.3,1817.23,source: synthetic
+maint-26d6b96d59,40,FT-040,Electrical & Alternator Check,Completed,2024-09-15 04:14:35,2024-09-16 09:02:35,28.8,1533.0,source: synthetic
+maint-ef2f0c462f,7,FT-007,Suspension & Steering,Completed,2024-09-15 18:31:43,2024-09-17 03:19:43,32.8,228.18,source: synthetic
+maint-35d0cd9ef0,17,FT-017,Coolant Flush & Thermostat,Completed,2024-09-17 23:37:57,2024-09-19 10:25:57,34.8,1371.21,source: synthetic
+maint-c283dafb51,32,FT-032,Suspension & Steering,Completed,2024-09-18 16:12:17,2024-09-19 06:30:17,14.3,387.93,source: synthetic
+maint-bfbb87fe1c,37,FT-037,Transmission Service,Completed,2024-09-21 09:26:59,2024-09-22 08:20:59,22.9,800.33,source: synthetic
+maint-d5573f8a43,38,FT-038,Transmission Service,Completed,2024-09-23 06:49:18,2024-09-24 09:25:18,26.6,1178.74,source: synthetic
+maint-9e083df7b0,41,FT-041,Routine Oil & Filter,Completed,2024-09-23 13:38:34,2024-09-24 20:26:34,30.8,1246.34,source: synthetic
+maint-0470488b71,27,FT-027,Electrical & Alternator Check,Completed,2024-09-27 16:12:34,2024-09-28 04:48:34,12.6,1081.49,source: synthetic
+maint-64e7622ce6,9,FT-009,Engine Diagnostics,Completed,2024-09-28 09:43:27,2024-09-29 17:13:27,31.5,374.07,source: synthetic
+maint-fe32e57df6,19,FT-019,Tire Rotation & Replacement,Completed,2024-09-29 22:55:28,2024-09-30 22:49:28,23.9,839.33,source: synthetic
+maint-6e23453a8f,21,FT-021,Electrical & Alternator Check,Completed,2024-09-30 04:20:11,2024-10-01 09:08:11,28.8,1639.98,source: synthetic
+maint-f7b2eac1b2,42,FT-042,Brake System Inspection,Scheduled,2024-10-02 12:29:10,,,609.8,source: synthetic
+maint-9db626e334,33,FT-033,Electrical & Alternator Check,Completed,2024-10-05 19:33:08,2024-10-06 01:15:08,5.7,403.13,source: synthetic
+maint-e436464deb,35,FT-035,Routine Oil & Filter,In Progress,2024-10-05 22:49:13,,,365.3,source: synthetic
+maint-628012ad37,19,FT-019,Electrical & Alternator Check,Completed,2024-10-06 22:11:24,2024-10-08 02:23:24,28.2,1813.17,source: synthetic
+maint-3452dbd3d4,18,FT-018,Routine Oil & Filter,Completed,2024-10-07 14:23:55,2024-10-08 18:23:55,28.0,1716.61,source: synthetic
+maint-eb764d1e47,23,FT-023,Routine Oil & Filter,In Progress,2024-10-09 03:17:21,,,561.73,source: synthetic
+maint-a27500e392,35,FT-035,Suspension & Steering,In Progress,2024-10-13 05:47:53,,,542.87,source: synthetic
+maint-0f7341c7fc,25,FT-025,Electrical & Alternator Check,Completed,2024-10-15 21:23:59,2024-10-16 17:53:59,20.5,1712.57,source: synthetic
+maint-c1ee4f5ee0,37,FT-037,Electrical & Alternator Check,Completed,2024-10-18 07:34:07,2024-10-18 12:58:07,5.4,1806.91,source: synthetic
+maint-cf9eb5180e,10,FT-010,Engine Diagnostics,Scheduled,2024-10-20 03:03:37,,,685.52,source: synthetic
+maint-e305fd0b23,1,FT-001,Tire Rotation & Replacement,Scheduled,2024-10-22 12:35:48,,,211.51,source: synthetic
+maint-3d6843ca32,16,FT-016,Tire Rotation & Replacement,Completed,2024-10-22 19:30:07,2024-10-23 02:42:07,7.2,461.93,source: synthetic
+maint-34e7ad2751,45,FT-045,Brake System Inspection,Completed,2024-10-23 16:57:19,2024-10-24 05:57:19,13.0,407.43,source: synthetic
+maint-6e78129db5,19,FT-019,Transmission Service,Completed,2024-11-01 02:33:35,2024-11-01 17:45:35,15.2,1566.72,source: synthetic
+maint-5372b4671c,24,FT-024,Coolant Flush & Thermostat,Completed,2024-11-02 11:27:41,2024-11-02 22:45:41,11.3,1616.48,source: synthetic
+maint-80ea627825,25,FT-025,Electrical & Alternator Check,Completed,2024-11-04 10:16:12,2024-11-05 11:52:12,25.6,1216.31,source: synthetic
+maint-b65451fe6f,2,FT-002,Tire Rotation & Replacement,Completed,2024-11-06 00:42:17,2024-11-07 00:00:17,23.3,555.53,source: synthetic
+maint-37874409aa,29,FT-029,Brake System Inspection,Completed,2024-11-15 09:55:20,2024-11-16 04:49:20,18.9,1678.11,source: synthetic
+maint-0d6152e6cc,2,FT-002,Tire Rotation & Replacement,Completed,2024-11-16 11:16:47,2024-11-17 09:40:47,22.4,908.95,source: synthetic
+maint-a09d8d20a4,8,FT-008,Tire Rotation & Replacement,Completed,2024-11-22 08:49:30,2024-11-23 07:01:30,22.2,746.07,source: synthetic
+maint-c4f485e06d,3,FT-003,Coolant Flush & Thermostat,Completed,2024-11-22 16:13:15,2024-11-23 17:01:15,24.8,751.25,source: synthetic
+maint-052b40422d,29,FT-029,Coolant Flush & Thermostat,Completed,2024-11-27 07:16:58,2024-11-27 14:52:58,7.6,849.91,source: synthetic
+maint-b96dbcd028,20,FT-020,Transmission Service,Completed,2024-11-29 01:40:52,2024-11-30 05:52:52,28.2,476.41,source: synthetic
+maint-24995f9b6a,17,FT-017,Suspension & Steering,Scheduled,2024-11-29 15:45:54,,,342.75,source: synthetic
+maint-1d5476f958,12,FT-012,Tire Rotation & Replacement,Completed,2024-12-02 11:24:14,2024-12-02 23:12:14,11.8,1152.3,source: synthetic
+maint-bac5d78108,44,FT-044,Suspension & Steering,Completed,2024-12-03 19:28:07,2024-12-04 01:22:07,5.9,1429.16,source: synthetic
+maint-50aada5019,35,FT-035,Electrical & Alternator Check,Scheduled,2024-12-04 17:17:18,,,763.38,source: synthetic
+maint-8f21a24ecf,10,FT-010,Routine Oil & Filter,Completed,2024-12-06 02:27:37,2024-12-06 17:27:37,15.0,1200.32,source: synthetic
+maint-7481d666dc,7,FT-007,Electrical & Alternator Check,Completed,2024-12-06 06:59:20,2024-12-07 17:35:20,34.6,1030.53,source: synthetic
+maint-d1c821d0d2,15,FT-015,Suspension & Steering,Completed,2024-12-07 04:37:53,2024-12-07 23:25:53,18.8,811.06,source: synthetic
+maint-0c67eb47b2,20,FT-020,Coolant Flush & Thermostat,Completed,2024-12-10 12:48:18,2024-12-10 20:54:18,8.1,1017.82,source: synthetic
+maint-d6f0450b61,3,FT-003,Suspension & Steering,Completed,2024-12-11 20:55:48,2024-12-13 06:13:48,33.3,744.42,source: synthetic
+maint-6c0d564341,10,FT-010,Suspension & Steering,Completed,2024-12-14 16:27:16,2024-12-15 06:39:16,14.2,1095.65,source: synthetic
+maint-0ad981b1f9,6,FT-006,Coolant Flush & Thermostat,Completed,2024-12-15 03:24:42,2024-12-16 13:06:42,33.7,1576.6,source: synthetic
+maint-1d32c62871,16,FT-016,Engine Diagnostics,Completed,2024-12-15 07:12:39,2024-12-15 14:36:39,7.4,228.56,source: synthetic
+maint-3b249302bc,19,FT-019,Routine Oil & Filter,Completed,2024-12-25 22:03:34,2024-12-26 10:03:34,12.0,1611.33,source: synthetic
+maint-9fcb62356a,19,FT-019,Brake System Inspection,In Progress,2024-12-27 23:04:23,,,416.5,source: synthetic
+maint-2b33c96834,31,FT-031,Brake System Inspection,Completed,2025-01-03 19:40:10,2025-01-04 10:10:10,14.5,652.98,source: synthetic
+maint-1bd10f1fa1,8,FT-008,Engine Diagnostics,Completed,2025-01-04 11:52:11,2025-01-04 15:58:11,4.1,863.7,source: synthetic
+maint-7cee767ca1,38,FT-038,Tire Rotation & Replacement,Completed,2025-01-11 23:29:27,2025-01-13 08:17:27,32.8,533.64,source: synthetic
+maint-a281017f8c,9,FT-009,Electrical & Alternator Check,Completed,2025-01-12 14:25:18,2025-01-13 04:01:18,13.6,284.42,source: synthetic
+maint-d7162adb32,37,FT-037,Suspension & Steering,Completed,2025-01-12 19:35:37,2025-01-14 01:11:37,29.6,473.7,source: synthetic
+maint-76678ca199,28,FT-028,Brake System Inspection,Completed,2025-01-13 07:29:44,2025-01-13 23:23:44,15.9,283.7,source: synthetic
+maint-1c291a4d1f,4,FT-004,Coolant Flush & Thermostat,Scheduled,2025-01-13 16:54:23,,,733.84,source: synthetic
+maint-de82e6a186,44,FT-044,Routine Oil & Filter,Completed,2025-01-15 12:21:01,2025-01-16 04:21:01,16.0,548.38,source: synthetic
+maint-afb5f39ddb,43,FT-043,Tire Rotation & Replacement,Completed,2025-01-19 18:10:47,2025-01-20 16:40:47,22.5,1488.53,source: synthetic
+maint-163ad1d65c,31,FT-031,Coolant Flush & Thermostat,Completed,2025-01-20 15:51:56,2025-01-21 07:09:56,15.3,909.45,source: synthetic
+maint-9df3fcecd1,6,FT-006,Brake System Inspection,Completed,2025-01-20 22:43:16,2025-01-21 13:07:16,14.4,1249.9,source: synthetic
+maint-ddedc5391a,39,FT-039,Transmission Service,Completed,2025-01-23 16:47:43,2025-01-24 11:23:43,18.6,781.06,source: synthetic
+maint-3808358912,41,FT-041,Electrical & Alternator Check,Completed,2025-01-23 20:20:15,2025-01-24 08:56:15,12.6,1848.94,source: synthetic
+maint-ac454ca145,6,FT-006,Coolant Flush & Thermostat,Completed,2025-01-24 07:11:20,2025-01-25 07:59:20,24.8,1253.15,source: synthetic
+maint-5c166a26d9,25,FT-025,Coolant Flush & Thermostat,Completed,2025-01-29 08:46:01,2025-01-29 23:16:01,14.5,264.85,source: synthetic
+maint-3c33f7ba01,32,FT-032,Coolant Flush & Thermostat,Completed,2025-02-04 01:50:12,2025-02-04 20:44:12,18.9,1380.05,source: synthetic
+maint-094b2761ea,14,FT-014,Coolant Flush & Thermostat,Completed,2025-02-05 16:04:33,2025-02-07 00:04:33,32.0,1342.01,source: synthetic
+maint-3dbb665772,1,FT-001,Brake System Inspection,Completed,2025-02-06 06:27:56,2025-02-07 09:57:56,27.5,1098.59,source: synthetic
+maint-f060aa019e,38,FT-038,Coolant Flush & Thermostat,Completed,2025-02-09 10:02:59,2025-02-10 12:32:59,26.5,555.77,source: synthetic
+maint-602444ac7c,10,FT-010,Routine Oil & Filter,Completed,2025-02-09 10:21:48,2025-02-10 08:27:48,22.1,1374.02,source: synthetic
+maint-149ac5e9f2,5,FT-005,Tire Rotation & Replacement,Completed,2025-02-15 07:18:40,2025-02-16 06:42:40,23.4,1274.01,source: synthetic
+maint-23fc5eb2ab,36,FT-036,Transmission Service,Completed,2025-02-16 02:01:38,2025-02-17 00:49:38,22.8,1789.42,source: synthetic
+maint-b26dbb0007,27,FT-027,Tire Rotation & Replacement,Completed,2025-02-18 19:14:16,2025-02-19 21:14:16,26.0,800.32,source: synthetic
+maint-b652878d26,4,FT-004,Tire Rotation & Replacement,Completed,2025-02-19 04:34:41,2025-02-20 14:10:41,33.6,894.8,source: synthetic
+maint-c52716189d,5,FT-005,Brake System Inspection,Completed,2025-02-20 14:43:17,2025-02-21 17:01:17,26.3,1227.63,source: synthetic
+maint-dcd964f2df,18,FT-018,Engine Diagnostics,Completed,2025-02-21 06:55:50,2025-02-21 11:31:50,4.6,888.95,source: synthetic
+maint-0cb0bbb42e,30,FT-030,Electrical & Alternator Check,Scheduled,2025-02-23 16:23:03,,,619.2,source: synthetic
+maint-119e3853fd,45,FT-045,Suspension & Steering,Completed,2025-02-25 11:09:22,2025-02-25 16:09:22,5.0,1723.49,source: synthetic
+maint-22d4b6971c,19,FT-019,Tire Rotation & Replacement,Completed,2025-02-26 10:16:24,2025-02-27 18:40:24,32.4,286.98,source: synthetic
+maint-06e6008b73,4,FT-004,Electrical & Alternator Check,Completed,2025-03-04 21:36:20,2025-03-05 04:12:20,6.6,1591.66,source: synthetic
+maint-89ecf0ef85,9,FT-009,Brake System Inspection,Completed,2025-03-05 11:14:58,2025-03-06 18:20:58,31.1,727.79,source: synthetic
+maint-5a5b2ef213,6,FT-006,Electrical & Alternator Check,Completed,2025-03-06 03:23:11,2025-03-06 17:05:11,13.7,372.39,source: synthetic
+maint-7bef13acb6,9,FT-009,Tire Rotation & Replacement,Completed,2025-03-06 14:06:09,2025-03-07 00:54:09,10.8,1171.7,source: synthetic
+maint-12b732d705,16,FT-016,Brake System Inspection,In Progress,2025-03-09 15:11:55,,,310.21,source: synthetic
+maint-35b6e09d1e,4,FT-004,Routine Oil & Filter,Completed,2025-03-13 09:43:28,2025-03-14 17:49:28,32.1,1262.24,source: synthetic
+maint-41f499b3e3,10,FT-010,Engine Diagnostics,Completed,2025-03-14 00:38:06,2025-03-15 03:08:06,26.5,496.12,source: synthetic
+maint-53a2433f0b,11,FT-011,Brake System Inspection,Completed,2025-03-17 04:19:26,2025-03-18 04:01:26,23.7,719.82,source: synthetic
+maint-c2eb652fe3,44,FT-044,Electrical & Alternator Check,Completed,2025-03-17 17:46:01,2025-03-19 00:46:01,31.0,1789.5,source: synthetic
+maint-b0e8d5c8aa,16,FT-016,Coolant Flush & Thermostat,Completed,2025-03-19 01:06:00,2025-03-20 07:30:00,30.4,1346.02,source: synthetic
+maint-772d4eb022,7,FT-007,Brake System Inspection,Completed,2025-03-19 03:55:10,2025-03-19 11:49:10,7.9,913.84,source: synthetic
+maint-91b57693d7,3,FT-003,Tire Rotation & Replacement,Completed,2025-03-20 18:59:14,2025-03-21 23:41:14,28.7,1621.86,source: synthetic
+maint-4528f408a7,4,FT-004,Suspension & Steering,Completed,2025-03-20 22:05:28,2025-03-21 08:17:28,10.2,1513.28,source: synthetic
+maint-88fb3d6e9e,1,FT-001,Engine Diagnostics,Completed,2025-03-22 00:55:07,2025-03-23 05:43:07,28.8,1181.32,source: synthetic
+maint-6bf07aca65,4,FT-004,Coolant Flush & Thermostat,Completed,2025-03-22 07:00:27,2025-03-23 14:30:27,31.5,1604.0,source: synthetic
+maint-1bb87bce10,45,FT-045,Suspension & Steering,Completed,2025-03-24 01:32:17,2025-03-24 17:26:17,15.9,1442.85,source: synthetic
+maint-a9e0abb090,30,FT-030,Routine Oil & Filter,Completed,2025-04-01 04:19:55,2025-04-02 09:19:55,29.0,1655.84,source: synthetic
+maint-89b45b6a47,44,FT-044,Electrical & Alternator Check,Completed,2025-04-07 09:08:18,2025-04-08 10:44:18,25.6,418.74,source: synthetic
+maint-500b93eb35,20,FT-020,Tire Rotation & Replacement,Completed,2025-04-07 15:52:30,2025-04-08 17:58:30,26.1,1323.41,source: synthetic
+maint-771b6b12f9,18,FT-018,Coolant Flush & Thermostat,Completed,2025-04-14 09:21:24,2025-04-15 07:03:24,21.7,594.64,source: synthetic
+maint-89a6dae215,8,FT-008,Transmission Service,Completed,2025-04-17 18:35:05,2025-04-18 07:53:05,13.3,1355.86,source: synthetic
+maint-ea156ae8ad,38,FT-038,Electrical & Alternator Check,Completed,2025-04-19 17:24:02,2025-04-19 21:54:02,4.5,1782.18,source: synthetic
+maint-104c598931,35,FT-035,Tire Rotation & Replacement,Completed,2025-04-29 13:37:32,2025-04-30 14:37:32,25.0,784.81,source: synthetic
+maint-6eef2674bf,7,FT-007,Brake System Inspection,Completed,2025-05-02 02:35:23,2025-05-02 15:05:23,12.5,800.63,source: synthetic
+maint-bb83dcc681,35,FT-035,Routine Oil & Filter,Completed,2025-05-02 12:02:05,2025-05-03 10:08:05,22.1,1004.85,source: synthetic
+maint-2f16d0962f,34,FT-034,Electrical & Alternator Check,Scheduled,2025-05-02 17:32:40,,,478.54,source: synthetic
+maint-5966c1ca09,8,FT-008,Tire Rotation & Replacement,Completed,2025-05-05 12:28:48,2025-05-06 08:58:48,20.5,1445.72,source: synthetic
+maint-a7ec3e4300,35,FT-035,Electrical & Alternator Check,Completed,2025-05-07 05:59:00,2025-05-08 14:11:00,32.2,979.51,source: synthetic
+maint-a4cfe85f7c,12,FT-012,Electrical & Alternator Check,Completed,2025-05-11 02:18:52,2025-05-12 04:06:52,25.8,984.71,source: synthetic
+maint-2cbc83653d,29,FT-029,Brake System Inspection,Completed,2025-05-11 19:05:44,2025-05-12 21:23:44,26.3,1085.0,source: synthetic
+maint-501e10f061,9,FT-009,Engine Diagnostics,Completed,2025-05-13 11:15:48,2025-05-14 13:03:48,25.8,964.32,source: synthetic
+maint-efe6aed796,27,FT-027,Coolant Flush & Thermostat,Completed,2025-05-14 01:55:09,2025-05-15 09:07:09,31.2,710.67,source: synthetic
+maint-12700972fb,32,FT-032,Engine Diagnostics,Completed,2025-05-16 21:17:06,2025-05-17 11:05:06,13.8,1132.49,source: synthetic
+maint-30b0f8c20b,36,FT-036,Tire Rotation & Replacement,Completed,2025-05-19 02:08:11,2025-05-20 06:38:11,28.5,539.38,source: synthetic
+maint-1aaff5102f,37,FT-037,Tire Rotation & Replacement,Completed,2025-05-21 13:55:10,2025-05-22 19:49:10,29.9,817.99,source: synthetic
+maint-c1c88987c6,20,FT-020,Electrical & Alternator Check,Completed,2025-05-22 00:58:48,2025-05-22 13:22:48,12.4,366.39,source: synthetic
+maint-f917d698ec,40,FT-040,Electrical & Alternator Check,Completed,2025-05-22 08:12:12,2025-05-22 19:54:12,11.7,1837.4,source: synthetic
+maint-0a31d35aab,17,FT-017,Engine Diagnostics,Completed,2025-05-25 01:17:17,2025-05-25 20:29:17,19.2,882.11,source: synthetic
+maint-a7e31b7df7,3,FT-003,Electrical & Alternator Check,Scheduled,2025-05-30 10:49:15,,,455.76,source: synthetic
+maint-05ebc97719,1,FT-001,Electrical & Alternator Check,Completed,2025-05-31 09:57:19,2025-06-01 01:09:19,15.2,1615.74,source: synthetic
+maint-8005452382,39,FT-039,Transmission Service,Completed,2025-06-02 04:38:15,2025-06-03 05:20:15,24.7,1708.47,source: synthetic
+maint-cbe2218ffb,30,FT-030,Electrical & Alternator Check,Completed,2025-06-06 21:46:30,2025-06-08 04:46:30,31.0,459.13,source: synthetic
+maint-516269e97b,30,FT-030,Coolant Flush & Thermostat,Completed,2025-06-08 14:55:56,2025-06-09 06:07:56,15.2,1428.42,source: synthetic
+maint-8a9f9e8c1c,29,FT-029,Electrical & Alternator Check,Scheduled,2025-06-11 00:12:05,,,507.04,source: synthetic
+maint-46614933d4,26,FT-026,Coolant Flush & Thermostat,Completed,2025-06-11 02:00:58,2025-06-11 16:42:58,14.7,395.25,source: synthetic
+maint-07e971283f,11,FT-011,Electrical & Alternator Check,Completed,2025-06-12 21:27:31,2025-06-13 07:09:31,9.7,1447.94,source: synthetic
+maint-d22cf900b7,8,FT-008,Routine Oil & Filter,Completed,2025-06-17 06:52:22,2025-06-18 08:04:22,25.2,429.4,source: synthetic
+maint-bcd33c0855,37,FT-037,Suspension & Steering,In Progress,2025-06-18 07:32:30,,,714.56,source: synthetic
+maint-806796e029,45,FT-045,Transmission Service,Scheduled,2025-06-20 05:18:58,,,496.56,source: synthetic
+maint-232060832d,8,FT-008,Tire Rotation & Replacement,Completed,2025-06-27 01:39:14,2025-06-28 12:15:14,34.6,1247.25,source: synthetic
+maint-82de6d078a,5,FT-005,Engine Diagnostics,Completed,2025-06-29 19:40:35,2025-06-30 11:34:35,15.9,1817.95,source: synthetic
+maint-940fc9a441,38,FT-038,Electrical & Alternator Check,Scheduled,2025-06-30 10:11:54,,,365.31,source: synthetic
+maint-793861db8d,36,FT-036,Coolant Flush & Thermostat,Completed,2025-06-30 20:26:49,2025-07-01 08:02:49,11.6,577.39,source: synthetic
+maint-eeccecc266,18,FT-018,Routine Oil & Filter,Completed,2025-07-01 01:21:25,2025-07-01 14:15:25,12.9,918.25,source: synthetic
+maint-5a7f007757,7,FT-007,Electrical & Alternator Check,Completed,2025-07-04 17:10:14,2025-07-05 11:16:14,18.1,1389.43,source: synthetic
+maint-dd1b3ee2ea,13,FT-013,Engine Diagnostics,Completed,2025-07-04 22:31:19,2025-07-05 14:19:19,15.8,784.19,source: synthetic
+maint-296fd23d83,32,FT-032,Tire Rotation & Replacement,Completed,2025-07-07 01:36:10,2025-07-07 16:42:10,15.1,465.75,source: synthetic
+maint-00b5e3122b,4,FT-004,Engine Diagnostics,Completed,2025-07-11 04:28:55,2025-07-11 11:52:55,7.4,1052.98,source: synthetic
+maint-35e0f9ce61,40,FT-040,Routine Oil & Filter,Scheduled,2025-07-12 01:57:01,,,497.99,source: synthetic
+maint-e217225a27,35,FT-035,Routine Oil & Filter,Completed,2025-07-12 20:13:51,2025-07-14 01:55:51,29.7,1159.49,source: synthetic
+maint-642b1ea09b,25,FT-025,Coolant Flush & Thermostat,Completed,2025-07-14 15:52:45,2025-07-14 18:34:45,2.7,674.05,source: synthetic
+maint-07660fc1db,34,FT-034,Routine Oil & Filter,Scheduled,2025-07-15 06:43:00,,,222.95,source: synthetic
+maint-a48d9ad0ad,16,FT-016,Coolant Flush & Thermostat,Completed,2025-07-16 21:57:08,2025-07-17 19:27:08,21.5,1178.66,source: synthetic
+maint-89a9406c2c,5,FT-005,Electrical & Alternator Check,Completed,2025-07-18 17:13:14,2025-07-19 20:49:14,27.6,421.98,source: synthetic
+maint-9dd62857cf,34,FT-034,Transmission Service,Completed,2025-07-19 15:05:57,2025-07-20 03:05:57,12.0,844.91,source: synthetic
+maint-ca90bf13ac,43,FT-043,Tire Rotation & Replacement,Completed,2025-07-20 03:09:38,2025-07-21 13:27:38,34.3,1715.31,source: synthetic
+maint-fa6838d613,37,FT-037,Electrical & Alternator Check,Completed,2025-07-21 23:33:50,2025-07-22 07:51:50,8.3,950.72,source: synthetic
+maint-a9e4409954,31,FT-031,Tire Rotation & Replacement,Completed,2025-07-25 18:06:17,2025-07-26 15:42:17,21.6,899.02,source: synthetic
+maint-5bbec248be,26,FT-026,Engine Diagnostics,Completed,2025-07-27 15:58:14,2025-07-28 10:46:14,18.8,1139.32,source: synthetic
+maint-c893599583,21,FT-021,Tire Rotation & Replacement,Completed,2025-07-30 04:52:52,2025-07-30 08:52:52,4.0,1618.94,source: synthetic
+maint-49a8a3600c,44,FT-044,Suspension & Steering,Completed,2025-07-30 14:33:33,2025-07-31 18:39:33,28.1,1125.67,source: synthetic
+maint-0312d54e83,42,FT-042,Electrical & Alternator Check,Scheduled,2025-08-05 00:54:53,,,418.33,source: synthetic
+maint-1847b0e19b,34,FT-034,Tire Rotation & Replacement,Completed,2025-08-07 17:32:38,2025-08-08 07:26:38,13.9,779.09,source: synthetic
+maint-d7215a22c8,7,FT-007,Brake System Inspection,Completed,2025-08-13 12:42:59,2025-08-14 19:36:59,30.9,1176.33,source: synthetic
+maint-4df814732b,21,FT-021,Engine Diagnostics,Completed,2025-08-14 16:05:54,2025-08-15 16:17:54,24.2,674.32,source: synthetic
+maint-e2efc63819,38,FT-038,Coolant Flush & Thermostat,Scheduled,2025-08-15 01:08:42,,,533.83,source: synthetic
+maint-9577ee2928,21,FT-021,Suspension & Steering,Completed,2025-08-15 13:19:38,2025-08-16 14:01:38,24.7,1545.27,source: synthetic
+maint-a79aca6729,10,FT-010,Tire Rotation & Replacement,Completed,2025-08-18 08:35:26,2025-08-19 10:47:26,26.2,259.19,source: synthetic
+maint-1dcf072e04,36,FT-036,Transmission Service,Completed,2025-08-19 05:07:23,2025-08-20 03:43:23,22.6,1418.7,source: synthetic
+maint-283d95649e,4,FT-004,Engine Diagnostics,In Progress,2025-08-20 02:08:37,,,446.15,source: synthetic
+maint-fb5e75cedd,28,FT-028,Brake System Inspection,In Progress,2025-08-21 17:07:35,,,268.26,source: synthetic
+maint-d7f7765bb2,39,FT-039,Coolant Flush & Thermostat,Completed,2025-08-21 18:42:38,2025-08-22 11:06:38,16.4,1474.59,source: synthetic
+maint-b5739873b7,16,FT-016,Suspension & Steering,Completed,2025-08-22 18:51:25,2025-08-23 14:03:25,19.2,1159.68,source: synthetic
+maint-712486c28d,5,FT-005,Routine Oil & Filter,In Progress,2025-08-29 21:10:12,,,153.96,source: synthetic
+maint-d830817e49,34,FT-034,Tire Rotation & Replacement,Completed,2025-08-31 21:32:11,2025-09-01 01:50:11,4.3,1676.45,source: synthetic
+maint-0dfb55b278,21,FT-021,Tire Rotation & Replacement,Completed,2025-09-02 08:56:42,2025-09-03 06:44:42,21.8,606.82,source: synthetic
+maint-caf3d09bd7,35,FT-035,Routine Oil & Filter,Completed,2025-09-04 10:08:23,2025-09-05 10:50:23,24.7,292.71,source: synthetic
+maint-ec47a49428,23,FT-023,Brake System Inspection,In Progress,2025-09-09 03:53:10,,,153.0,source: synthetic
+maint-ef4bfc9eca,34,FT-034,Coolant Flush & Thermostat,Completed,2025-09-10 15:47:05,2025-09-11 03:35:05,11.8,1782.88,source: synthetic
+maint-713c716460,14,FT-014,Transmission Service,In Progress,2025-09-11 01:33:06,,,353.44,source: synthetic
+maint-75bf3de878,21,FT-021,Coolant Flush & Thermostat,Completed,2025-09-11 17:13:57,2025-09-12 08:07:57,14.9,1104.81,source: synthetic
+maint-04a2f437f8,3,FT-003,Coolant Flush & Thermostat,Completed,2025-09-15 12:30:26,2025-09-15 22:06:26,9.6,1752.95,source: synthetic
+maint-2a6fde1c46,17,FT-017,Coolant Flush & Thermostat,Completed,2025-09-18 18:24:05,2025-09-19 10:18:05,15.9,1119.48,source: synthetic
+maint-a6dbe3610c,19,FT-019,Brake System Inspection,Completed,2025-09-27 21:54:14,2025-09-28 05:06:14,7.2,664.82,source: synthetic
+maint-f53a96b5e6,45,FT-045,Tire Rotation & Replacement,Completed,2025-09-29 19:58:43,2025-09-30 18:58:43,23.0,951.73,source: synthetic
+maint-29949c94b6,43,FT-043,Brake System Inspection,Completed,2025-09-30 12:03:21,2025-10-01 12:51:21,24.8,1425.48,source: synthetic
+maint-0861b9b43b,11,FT-011,Transmission Service,Completed,2025-10-02 19:26:59,2025-10-03 22:38:59,27.2,714.72,source: synthetic
+maint-8a9d5720bf,23,FT-023,Routine Oil & Filter,Completed,2025-10-06 20:28:40,2025-10-07 15:46:40,19.3,550.82,source: synthetic
+maint-9bbfdd900e,19,FT-019,Engine Diagnostics,Completed,2025-10-07 18:36:09,2025-10-09 05:54:09,35.3,564.34,source: synthetic
+maint-2f4bd6c943,30,FT-030,Electrical & Alternator Check,Completed,2025-10-08 13:13:05,2025-10-09 02:13:05,13.0,681.29,source: synthetic
+maint-c4d1fe14b6,3,FT-003,Transmission Service,In Progress,2025-10-11 11:52:52,,,257.12,source: synthetic
+maint-d5fc6818bf,22,FT-022,Routine Oil & Filter,Completed,2025-10-14 20:55:29,2025-10-15 02:55:29,6.0,1783.34,source: synthetic
+maint-17e3bbf83c,30,FT-030,Engine Diagnostics,Completed,2025-10-19 10:51:43,2025-10-20 13:51:43,27.0,1481.71,source: synthetic
+maint-dc87ce07ea,17,FT-017,Transmission Service,Completed,2025-10-19 15:21:12,2025-10-19 20:21:12,5.0,1834.19,source: synthetic
+maint-42a82573d8,35,FT-035,Tire Rotation & Replacement,Completed,2025-10-22 18:54:56,2025-10-24 01:12:56,30.3,1427.29,source: synthetic
+maint-7b69b4b349,36,FT-036,Tire Rotation & Replacement,Completed,2025-10-30 10:10:10,2025-10-30 20:22:10,10.2,726.18,source: synthetic
+maint-0f042ebf19,29,FT-029,Coolant Flush & Thermostat,Completed,2025-10-31 06:32:10,2025-11-01 13:50:10,31.3,1806.18,source: synthetic
+maint-36831c2e8d,6,FT-006,Brake System Inspection,Completed,2025-11-02 05:31:25,2025-11-03 08:43:25,27.2,1530.01,source: synthetic
+maint-4d43e6496e,15,FT-015,Brake System Inspection,Scheduled,2025-11-05 11:37:44,,,713.09,source: synthetic
+maint-ae55afc9ab,33,FT-033,Transmission Service,Completed,2025-11-10 22:09:33,2025-11-12 07:09:33,33.0,1538.4,source: synthetic
+maint-a9b4f9975a,18,FT-018,Suspension & Steering,Completed,2025-11-11 08:50:00,2025-11-11 12:38:00,3.8,884.45,source: synthetic
+maint-277a810ba1,37,FT-037,Engine Diagnostics,Completed,2025-11-13 12:49:38,2025-11-14 14:25:38,25.6,1339.55,source: synthetic
+maint-98bf91b4b8,21,FT-021,Suspension & Steering,Completed,2025-11-17 14:58:35,2025-11-18 00:40:35,9.7,954.42,source: synthetic
+maint-961539d793,17,FT-017,Transmission Service,Completed,2025-11-17 16:49:18,2025-11-18 09:37:18,16.8,166.44,source: synthetic
+maint-998101b39d,36,FT-036,Coolant Flush & Thermostat,Completed,2025-11-18 20:19:59,2025-11-19 22:55:59,26.6,1008.12,source: synthetic
+maint-9945c78049,6,FT-006,Engine Diagnostics,Completed,2025-11-19 16:26:56,2025-11-20 11:14:56,18.8,901.48,source: synthetic
+maint-de485d326c,24,FT-024,Tire Rotation & Replacement,Completed,2025-11-20 02:31:10,2025-11-20 12:55:10,10.4,766.57,source: synthetic
+maint-14a3d313ed,45,FT-045,Tire Rotation & Replacement,Completed,2025-11-23 19:49:44,2025-11-24 13:49:44,18.0,1305.24,source: synthetic
+maint-9c1d50ca32,19,FT-019,Engine Diagnostics,Completed,2025-11-24 00:56:40,2025-11-24 17:44:40,16.8,1322.6,source: synthetic
+maint-cef93153f6,29,FT-029,Engine Diagnostics,Completed,2025-11-28 17:14:51,2025-11-29 03:44:51,10.5,1791.51,source: synthetic
+maint-9c8d461a56,2,FT-002,Tire Rotation & Replacement,Completed,2025-11-29 17:22:16,2025-11-30 08:52:16,15.5,1348.05,source: synthetic
+maint-dc48876e84,20,FT-020,Routine Oil & Filter,Completed,2025-11-29 23:14:13,2025-12-01 06:38:13,31.4,297.87,source: synthetic
+maint-bc91dbe03f,15,FT-015,Electrical & Alternator Check,In Progress,2025-12-01 04:23:47,,,351.94,source: synthetic
+maint-80e7b7cd57,10,FT-010,Routine Oil & Filter,Completed,2025-12-01 04:43:08,2025-12-02 13:19:08,32.6,733.84,source: synthetic
+maint-24e12f0f46,27,FT-027,Electrical & Alternator Check,Completed,2025-12-03 11:28:22,2025-12-04 16:34:22,29.1,1457.1,source: synthetic
+maint-4ea5b808f2,7,FT-007,Suspension & Steering,Completed,2025-12-04 04:27:14,2025-12-04 17:03:14,12.6,1527.32,source: synthetic
+maint-f4fc130253,29,FT-029,Routine Oil & Filter,Completed,2025-12-05 17:10:53,2025-12-06 09:34:53,16.4,1108.65,source: synthetic
+maint-664de64a87,22,FT-022,Engine Diagnostics,Scheduled,2025-12-07 03:21:40,,,543.77,source: synthetic
+maint-1287de89d2,35,FT-035,Brake System Inspection,Completed,2025-12-07 19:39:07,2025-12-08 23:15:07,27.6,595.67,source: synthetic
+maint-9170966720,20,FT-020,Coolant Flush & Thermostat,Completed,2025-12-08 16:01:51,2025-12-09 12:01:51,20.0,742.11,source: synthetic
+maint-8e7e7625f4,35,FT-035,Electrical & Alternator Check,Scheduled,2025-12-08 16:28:39,,,798.29,source: synthetic
+maint-0bebf6b81a,31,FT-031,Brake System Inspection,Completed,2025-12-08 19:08:43,2025-12-09 18:44:43,23.6,480.54,source: synthetic
+maint-816578de18,11,FT-011,Suspension & Steering,Completed,2025-12-10 12:13:47,2025-12-11 22:49:47,34.6,493.94,source: synthetic
+maint-219da3dbad,43,FT-043,Engine Diagnostics,Completed,2025-12-12 21:03:46,2025-12-13 00:33:46,3.5,1847.6,source: synthetic
+maint-2bd0bc27fb,5,FT-005,Routine Oil & Filter,Completed,2025-12-13 06:07:21,2025-12-14 03:31:21,21.4,319.97,source: synthetic
+maint-6f263957b2,30,FT-030,Engine Diagnostics,Completed,2025-12-15 06:01:48,2025-12-15 08:49:48,2.8,1517.88,source: synthetic
+maint-c6a7ac09d8,36,FT-036,Routine Oil & Filter,Scheduled,2025-12-18 10:31:25,,,283.53,source: synthetic
+maint-f721a42983,28,FT-028,Transmission Service,Completed,2025-12-18 13:21:56,2025-12-19 00:33:56,11.2,706.5,source: synthetic
+maint-0d7d0e8045,40,FT-040,Electrical & Alternator Check,Completed,2025-12-20 03:08:27,2025-12-21 13:38:27,34.5,1406.17,source: synthetic
+maint-a17d907b52,27,FT-027,Suspension & Steering,Completed,2025-12-22 19:39:31,2025-12-23 18:27:31,22.8,681.39,source: synthetic
+maint-ae6f151b6d,18,FT-018,Suspension & Steering,Completed,2025-12-23 11:45:01,2025-12-24 14:45:01,27.0,606.27,source: synthetic
+maint-3cd9fb9596,24,FT-024,Suspension & Steering,Completed,2025-12-25 05:53:27,2025-12-26 17:17:27,35.4,948.13,source: synthetic
+maint-463b6b10a3,21,FT-021,Tire Rotation & Replacement,Completed,2025-12-25 23:21:28,2025-12-26 16:57:28,17.6,389.49,source: synthetic
+maint-f9145f04cd,45,FT-045,Transmission Service,Completed,2025-12-30 01:41:35,2025-12-30 04:23:35,2.7,284.68,source: synthetic
+maint-b33f3c1c20,1,FT-001,Engine Diagnostics,Completed,2025-12-30 12:23:11,2025-12-31 02:17:11,13.9,1791.35,source: synthetic
+maint-b06df2f4de,20,FT-020,Coolant Flush & Thermostat,Completed,2026-01-05 12:25:47,2026-01-06 02:25:47,14.0,1844.27,source: synthetic
+maint-3e4e0a6b9d,42,FT-042,Suspension & Steering,Completed,2026-01-12 00:34:15,2026-01-13 04:22:15,27.8,638.32,source: synthetic
+maint-95f6175a60,28,FT-028,Transmission Service,Completed,2026-01-12 09:57:21,2026-01-13 01:15:21,15.3,1392.3,source: synthetic
+maint-093cefed9a,36,FT-036,Tire Rotation & Replacement,Completed,2026-01-15 01:06:41,2026-01-16 10:00:41,32.9,665.42,source: synthetic
+maint-31f78b2482,32,FT-032,Coolant Flush & Thermostat,Completed,2026-01-15 16:22:05,2026-01-17 02:10:05,33.8,1502.19,source: synthetic
+maint-3654094b16,27,FT-027,Engine Diagnostics,Completed,2026-01-22 13:27:06,2026-01-23 04:03:06,14.6,1755.18,source: synthetic
+maint-a8e91e3956,11,FT-011,Electrical & Alternator Check,Completed,2026-01-24 18:00:48,2026-01-26 01:30:48,31.5,1684.15,source: synthetic
+maint-a48d34cb9c,27,FT-027,Suspension & Steering,Completed,2026-01-29 12:02:18,2026-01-30 09:26:18,21.4,1503.0,source: synthetic
+maint-33aaa07c6e,12,FT-012,Transmission Service,Completed,2026-01-30 23:10:40,2026-01-31 07:58:40,8.8,1581.37,source: synthetic
+maint-65a4fd9a73,45,FT-045,Electrical & Alternator Check,Completed,2026-02-07 07:43:00,2026-02-07 15:07:00,7.4,1318.96,source: synthetic
+maint-f7090f01f3,3,FT-003,Electrical & Alternator Check,Completed,2026-02-08 21:15:01,2026-02-10 00:51:01,27.6,1632.89,source: synthetic
+maint-f7857c0a63,44,FT-044,Tire Rotation & Replacement,In Progress,2026-02-12 10:22:47,,,231.63,source: synthetic
+maint-ba124bf86c,33,FT-033,Suspension & Steering,In Progress,2026-02-14 03:06:34,,,507.95,source: synthetic
+maint-2d3de3fb59,2,FT-002,Transmission Service,Completed,2026-02-14 13:42:26,2026-02-15 22:48:26,33.1,350.19,source: synthetic
+maint-19a075f12e,39,FT-039,Electrical & Alternator Check,Completed,2026-02-16 04:15:20,2026-02-16 08:03:20,3.8,1363.11,source: synthetic
+maint-e3df77f644,1,FT-001,Engine Diagnostics,Completed,2026-02-16 23:12:10,2026-02-17 18:42:10,19.5,330.9,source: synthetic
+maint-aa200798be,19,FT-019,Electrical & Alternator Check,Completed,2026-02-20 13:43:13,2026-02-22 00:37:13,34.9,1538.72,source: synthetic
+maint-38f070890e,7,FT-007,Suspension & Steering,Completed,2026-02-22 00:28:04,2026-02-22 23:34:04,23.1,1386.31,source: synthetic
+maint-65d451eaa7,32,FT-032,Transmission Service,Completed,2026-02-22 14:24:39,2026-02-22 23:24:39,9.0,341.5,source: synthetic
+maint-36b0b23077,41,FT-041,Engine Diagnostics,Completed,2026-02-24 11:00:55,2026-02-25 19:48:55,32.8,1588.38,source: synthetic
+maint-da3beedf05,6,FT-006,Electrical & Alternator Check,Completed,2026-02-24 12:20:07,2026-02-24 22:56:07,10.6,1141.68,source: synthetic
+maint-5689242b37,35,FT-035,Tire Rotation & Replacement,Completed,2026-02-25 04:44:54,2026-02-26 14:32:54,33.8,1647.47,source: synthetic
+maint-f129a7ade9,38,FT-038,Coolant Flush & Thermostat,Completed,2026-02-27 10:04:24,2026-02-28 06:22:24,20.3,1354.86,source: synthetic
+maint-5df60da8c0,18,FT-018,Tire Rotation & Replacement,Completed,2026-03-07 05:39:17,2026-03-07 22:33:17,16.9,631.52,source: synthetic
+maint-036fcbeb46,21,FT-021,Engine Diagnostics,Completed,2026-03-11 22:53:34,2026-03-13 04:41:34,29.8,954.78,source: synthetic
+maint-b2e8738f37,18,FT-018,Routine Oil & Filter,Scheduled,2026-03-13 21:15:35,,,186.78,source: synthetic
+maint-42acd38111,4,FT-004,Tire Rotation & Replacement,Completed,2026-03-16 16:49:17,2026-03-17 20:37:17,27.8,1213.19,source: synthetic
+maint-b873479900,4,FT-004,Transmission Service,Completed,2026-03-17 01:54:42,2026-03-17 15:18:42,13.4,1275.79,source: synthetic
+maint-e839881e08,12,FT-012,Suspension & Steering,Completed,2026-03-17 12:22:27,2026-03-18 21:34:27,33.2,458.53,source: synthetic
+maint-b9ba019258,32,FT-032,Coolant Flush & Thermostat,Completed,2026-03-18 00:00:25,2026-03-18 05:18:25,5.3,871.65,source: synthetic
+maint-876632753d,16,FT-016,Engine Diagnostics,Completed,2026-03-21 03:27:56,2026-03-21 13:57:56,10.5,897.78,source: synthetic
+maint-28228ee682,42,FT-042,Routine Oil & Filter,Completed,2026-03-25 06:03:49,2026-03-26 12:57:49,30.9,1756.82,source: synthetic
+maint-774a228b5f,23,FT-023,Electrical & Alternator Check,Completed,2026-03-26 01:24:00,2026-03-26 17:48:00,16.4,403.67,source: synthetic
+maint-fbd947ba39,26,FT-026,Suspension & Steering,Completed,2026-03-27 23:21:16,2026-03-28 15:33:16,16.2,1127.33,source: synthetic
+maint-135d138abf,44,FT-044,Suspension & Steering,Completed,2026-03-29 21:31:38,2026-03-30 01:31:38,4.0,821.95,source: synthetic
+maint-b028b1092a,22,FT-022,Brake System Inspection,In Progress,2026-03-31 19:12:05,,,299.22,source: synthetic
+maint-e763d899fd,34,FT-034,Suspension & Steering,Completed,2026-03-31 19:43:16,2026-04-01 00:49:16,5.1,1109.09,source: synthetic
+maint-71f5b5aec3,1,FT-001,Routine Oil & Filter,Completed,2026-04-02 18:07:13,2026-04-03 14:31:13,20.4,637.37,source: synthetic
+maint-8b26cb3765,35,FT-035,Electrical & Alternator Check,Completed,2026-04-06 15:55:20,2026-04-07 02:07:20,10.2,933.06,source: synthetic
+maint-a6a8f30e98,4,FT-004,Coolant Flush & Thermostat,Completed,2026-04-07 04:51:59,2026-04-08 01:21:59,20.5,700.21,source: synthetic
+maint-b9e4dab88e,9,FT-009,Electrical & Alternator Check,Completed,2026-04-07 16:06:32,2026-04-08 11:24:32,19.3,1566.7,source: synthetic
+maint-7851a1ce02,32,FT-032,Brake System Inspection,Completed,2026-04-07 20:43:31,2026-04-08 03:31:31,6.8,957.98,source: synthetic
+maint-ef8d0f4337,3,FT-003,Coolant Flush & Thermostat,Completed,2026-04-07 22:10:56,2026-04-08 13:04:56,14.9,1010.13,source: synthetic
+maint-2d83ded645,20,FT-020,Routine Oil & Filter,Completed,2026-04-10 01:59:58,2026-04-10 05:59:58,4.0,242.69,source: synthetic
+maint-8dc4c33aba,31,FT-031,Electrical & Alternator Check,Completed,2026-04-10 10:39:38,2026-04-11 19:57:38,33.3,1325.91,source: synthetic
+maint-9fea2c50d1,3,FT-003,Suspension & Steering,Completed,2026-04-13 08:01:56,2026-04-14 17:25:56,33.4,283.96,source: synthetic
+maint-6386c6cb53,31,FT-031,Engine Diagnostics,Completed,2026-04-14 01:16:53,2026-04-14 07:22:53,6.1,377.69,source: synthetic
+maint-3eab5333cd,25,FT-025,Transmission Service,Completed,2026-04-15 23:25:09,2026-04-17 06:25:09,31.0,661.25,source: synthetic
+maint-ef04e82b40,25,FT-025,Electrical & Alternator Check,Completed,2026-04-16 10:19:01,2026-04-17 07:07:01,20.8,1175.53,source: synthetic
+maint-e84cfb206f,35,FT-035,Coolant Flush & Thermostat,Completed,2026-04-22 08:50:30,2026-04-22 12:44:30,3.9,1372.27,source: synthetic
+maint-1421d49392,27,FT-027,Coolant Flush & Thermostat,Completed,2026-04-23 06:00:34,2026-04-23 10:36:34,4.6,1565.91,source: synthetic
+maint-eca6bb8021,44,FT-044,Coolant Flush & Thermostat,In Progress,2026-04-26 03:09:30,,,622.96,source: synthetic
+maint-15d2049a78,28,FT-028,Transmission Service,Completed,2026-04-27 16:45:34,2026-04-27 22:39:34,5.9,707.46,source: synthetic
+maint-0f30ec29c1,5,FT-005,Transmission Service,Completed,2026-04-27 21:04:49,2026-04-28 11:58:49,14.9,1089.29,source: synthetic
+maint-f67a463734,35,FT-035,Coolant Flush & Thermostat,Completed,2026-04-28 22:32:30,2026-04-30 02:56:30,28.4,1375.57,source: synthetic
+maint-4d674b55f1,24,FT-024,Electrical & Alternator Check,In Progress,2026-05-03 12:56:47,,,710.73,source: synthetic
+maint-b11daf36aa,30,FT-030,Suspension & Steering,Completed,2026-05-04 07:16:39,2026-05-05 04:58:39,21.7,605.41,source: synthetic
+maint-ec121e263b,9,FT-009,Routine Oil & Filter,Scheduled,2026-05-05 06:37:50,,,243.19,source: synthetic
+maint-24a0f04f14,11,FT-011,Engine Diagnostics,Completed,2026-05-06 00:46:00,2026-05-06 16:58:00,16.2,531.99,source: synthetic
+maint-686e14c2c9,16,FT-016,Transmission Service,Completed,2026-05-07 16:42:25,2026-05-08 14:00:25,21.3,1779.39,source: synthetic
+maint-50d4424dd4,13,FT-013,Coolant Flush & Thermostat,Completed,2026-05-09 17:38:44,2026-05-10 09:02:44,15.4,915.6,source: synthetic
+maint-65c6b0cb00,34,FT-034,Engine Diagnostics,In Progress,2026-05-09 17:45:22,,,128.96,source: synthetic
+maint-2b796483a1,14,FT-014,Brake System Inspection,Completed,2026-05-11 06:21:50,2026-05-11 16:03:50,9.7,1628.48,source: synthetic
+maint-8a6921a976,27,FT-027,Suspension & Steering,Completed,2026-05-12 18:28:09,2026-05-13 20:04:09,25.6,1248.03,source: synthetic
+maint-78830fb6f8,15,FT-015,Electrical & Alternator Check,Completed,2026-05-16 02:07:13,2026-05-17 07:07:13,29.0,173.66,source: synthetic
+maint-ef4b381f4a,16,FT-016,Brake System Inspection,Completed,2026-05-17 06:28:14,2026-05-18 05:16:14,22.8,1494.26,source: synthetic
+maint-d2117cd865,33,FT-033,Routine Oil & Filter,Completed,2026-05-22 04:43:57,2026-05-23 05:01:57,24.3,1076.4,source: synthetic
+maint-4bb7c521c1,13,FT-013,Electrical & Alternator Check,Completed,2026-05-22 17:17:50,2026-05-23 12:23:50,19.1,1313.98,source: synthetic
+maint-0da590a20e,35,FT-035,Engine Diagnostics,Completed,2026-05-23 09:33:01,2026-05-23 16:39:01,7.1,1196.65,source: synthetic
+maint-38154499bc,31,FT-031,Brake System Inspection,Scheduled,2026-05-26 10:18:35,,,482.73,source: synthetic
+maint-b2ebf7fa49,30,FT-030,Suspension & Steering,Completed,2026-05-27 05:46:44,2026-05-28 17:16:44,35.5,699.45,source: synthetic
+maint-6633c47bf0,26,FT-026,Suspension & Steering,Completed,2026-05-28 00:48:29,2026-05-29 02:42:29,25.9,659.96,source: synthetic
+maint-d8cff5a3e5,18,FT-018,Routine Oil & Filter,In Progress,2026-05-29 11:21:46,,,727.08,source: synthetic
+maint-f571fec85d,37,FT-037,Tire Rotation & Replacement,Completed,2026-05-30 15:57:18,2026-05-31 07:27:18,15.5,1674.09,source: synthetic
+maint-0eae4ad63f,3,FT-003,Suspension & Steering,Completed,2026-06-07 08:54:21,2026-06-07 22:12:21,13.3,958.57,source: synthetic
+maint-ff36e2d7d1,45,FT-045,Tire Rotation & Replacement,Completed,2026-06-07 14:09:40,2026-06-08 21:21:40,31.2,848.32,source: synthetic
+maint-d4a79353be,36,FT-036,Tire Rotation & Replacement,Completed,2026-06-07 20:13:49,2026-06-08 21:43:49,25.5,438.15,source: synthetic
+maint-340d915726,17,FT-017,Tire Rotation & Replacement,Completed,2026-06-08 02:49:15,2026-06-09 02:43:15,23.9,996.66,source: synthetic
+maint-36c5b5a5cc,4,FT-004,Tire Rotation & Replacement,Completed,2026-06-08 23:51:57,2026-06-09 07:51:57,8.0,1602.63,source: synthetic
+maint-78e0ce3f2e,19,FT-019,Engine Diagnostics,Completed,2026-06-09 01:07:48,2026-06-10 08:19:48,31.2,1825.33,source: synthetic
+maint-4b7e9ea0f0,8,FT-008,Engine Diagnostics,Completed,2026-06-11 03:59:58,2026-06-11 20:53:58,16.9,1103.64,source: synthetic
+maint-2c9fc0dcac,25,FT-025,Routine Oil & Filter,Completed,2026-06-13 15:17:30,2026-06-13 17:59:30,2.7,747.99,source: synthetic
+maint-73edb45914,19,FT-019,Coolant Flush & Thermostat,Completed,2026-06-16 05:14:53,2026-06-16 10:02:53,4.8,1274.15,source: synthetic
+maint-409545a692,37,FT-037,Coolant Flush & Thermostat,Completed,2026-06-16 09:49:17,2026-06-17 10:49:17,25.0,695.13,source: synthetic
+maint-590747fb55,11,FT-011,Coolant Flush & Thermostat,Completed,2026-06-16 17:44:01,2026-06-17 02:38:01,8.9,420.88,source: synthetic
+maint-a66377f2ea,1,FT-001,Tire Rotation & Replacement,Completed,2026-06-17 17:00:24,2026-06-18 09:42:24,16.7,1340.65,source: synthetic
+maint-4a618ccddc,37,FT-037,Tire Rotation & Replacement,Completed,2026-06-18 15:40:00,2026-06-19 14:52:00,23.2,862.68,source: synthetic
+maint-5aacd4772c,29,FT-029,Routine Oil & Filter,Completed,2026-06-19 16:04:39,2026-06-19 22:58:39,6.9,1696.37,source: synthetic
+maint-5ffd55c41a,16,FT-016,Brake System Inspection,Completed,2026-06-23 06:55:41,2026-06-23 20:31:41,13.6,225.37,source: synthetic
+maint-8019a610bf,38,FT-038,Electrical & Alternator Check,Completed,2026-06-25 19:41:03,2026-06-26 05:29:03,9.8,1845.81,source: synthetic
+maint-5fb0d9a763,36,FT-036,Routine Oil & Filter,Scheduled,2026-06-30 09:00:10,,,558.11,source: synthetic
+maint-5e07221b16,35,FT-035,Electrical & Alternator Check,Completed,2026-07-01 17:38:06,2026-07-02 01:20:06,7.7,855.3,source: synthetic
+maint-1a39c44beb,5,FT-005,Routine Oil & Filter,Completed,2026-07-01 18:29:54,2026-07-02 05:47:54,11.3,217.71,source: synthetic
+maint-5c5634d5d8,36,FT-036,Tire Rotation & Replacement,Completed,2026-07-03 10:38:15,2026-07-03 15:32:15,4.9,1222.88,source: synthetic
+maint-f794be5d20,23,FT-023,Tire Rotation & Replacement,Completed,2026-07-04 02:01:41,2026-07-04 10:19:41,8.3,239.08,source: synthetic
+maint-2790661776,15,FT-015,Suspension & Steering,Completed,2026-07-04 17:25:01,2026-07-06 01:01:01,31.6,1439.97,source: synthetic
+maint-ed73e3250a,7,FT-007,Brake System Inspection,Completed,2026-07-06 15:09:23,2026-07-06 18:39:23,3.5,521.68,source: synthetic
+maint-68d0750304,8,FT-008,Tire Rotation & Replacement,Scheduled,2026-07-09 07:49:26,,,260.34,source: synthetic
+maint-3b06f54805,41,FT-041,Suspension & Steering,Completed,2026-07-11 18:42:25,2026-07-12 12:30:25,17.8,380.33,source: synthetic
+maint-a4aa96aed8,12,FT-012,Brake System Inspection,Completed,2026-07-13 16:31:00,2026-07-14 23:55:00,31.4,836.42,source: synthetic
+maint-8d191cc442,22,FT-022,Transmission Service,Completed,2026-07-15 03:48:21,2026-07-16 11:06:21,31.3,395.97,source: synthetic
+maint-2808d6a618,11,FT-011,Electrical & Alternator Check,Completed,2026-07-15 19:44:25,2026-07-16 11:02:25,15.3,1843.41,source: synthetic
+maint-8f1069d4c2,34,FT-034,Coolant Flush & Thermostat,Completed,2026-07-16 16:41:08,2026-07-17 08:23:08,15.7,344.19,source: synthetic
+maint-5c15314244,11,FT-011,Routine Oil & Filter,Completed,2026-07-19 18:16:21,2026-07-19 21:28:21,3.2,1729.47,source: synthetic
+maint-1b53d99866,4,FT-004,Engine Diagnostics,Completed,2026-07-22 00:54:38,2026-07-22 06:54:38,6.0,1012.6,source: synthetic
+maint-d1e2fe14e2,7,FT-007,Engine Diagnostics,Completed,2026-07-22 00:58:02,2026-07-23 06:10:02,29.2,1112.09,source: synthetic
+maint-bed66d6c96,31,FT-031,Tire Rotation & Replacement,Completed,2026-07-28 05:43:20,2026-07-28 21:31:20,15.8,556.86,source: synthetic
+maint-852dd961f4,2,FT-002,Transmission Service,Completed,2026-08-02 03:57:34,2026-08-02 21:09:34,17.2,364.59,source: synthetic
+maint-33368c93a3,6,FT-006,Coolant Flush & Thermostat,Completed,2026-08-03 06:58:18,2026-08-03 13:40:18,6.7,1211.34,source: synthetic
+maint-29273e8065,40,FT-040,Routine Oil & Filter,In Progress,2026-08-04 08:58:33,,,766.98,source: synthetic
+maint-844dacc1f6,44,FT-044,Brake System Inspection,Completed,2026-08-04 14:02:59,2026-08-05 10:26:59,20.4,566.18,source: synthetic
+maint-e3972b29c1,42,FT-042,Engine Diagnostics,Completed,2026-08-06 01:18:12,2026-08-07 11:54:12,34.6,624.31,source: synthetic
+maint-969e2de1cf,36,FT-036,Coolant Flush & Thermostat,Completed,2026-08-06 01:30:46,2026-08-06 06:06:46,4.6,1550.55,source: synthetic
+maint-b1dedf008d,36,FT-036,Transmission Service,In Progress,2026-08-08 23:05:18,,,171.28,source: synthetic
+maint-71686f24af,9,FT-009,Engine Diagnostics,Completed,2026-08-12 19:32:47,2026-08-13 14:50:47,19.3,436.68,source: synthetic
+maint-8edf67bd52,7,FT-007,Suspension & Steering,Completed,2026-08-14 17:10:41,2026-08-16 03:34:41,34.4,205.62,source: synthetic
+maint-82384adf6b,23,FT-023,Suspension & Steering,Completed,2026-08-17 08:56:56,2026-08-18 10:02:56,25.1,1511.04,source: synthetic
+maint-95bffd3280,35,FT-035,Routine Oil & Filter,Completed,2026-08-17 12:33:26,2026-08-18 12:09:26,23.6,1715.58,source: synthetic
+maint-e1f435edfc,21,FT-021,Transmission Service,Completed,2026-08-18 13:22:48,2026-08-19 14:58:48,25.6,765.15,source: synthetic
+maint-3753f2197e,36,FT-036,Electrical & Alternator Check,Completed,2026-08-22 11:56:17,2026-08-23 21:26:17,33.5,552.45,source: synthetic
+maint-3a16c37589,15,FT-015,Tire Rotation & Replacement,Completed,2026-08-22 20:30:01,2026-08-24 00:18:01,27.8,1454.7,source: synthetic
+maint-38513e65cc,36,FT-036,Engine Diagnostics,Completed,2026-08-26 12:07:48,2026-08-26 18:37:48,6.5,1807.64,source: synthetic
+maint-62bedc8d35,7,FT-007,Tire Rotation & Replacement,Completed,2026-08-30 00:53:26,2026-08-31 01:29:26,24.6,417.0,source: synthetic
+maint-bea9d4e2eb,4,FT-004,Electrical & Alternator Check,Completed,2026-08-30 04:13:04,2026-08-31 06:07:04,25.9,548.04,source: synthetic
+maint-c18efc3c1a,36,FT-036,Transmission Service,Completed,2026-08-30 18:42:56,2026-08-31 15:48:56,21.1,229.7,source: synthetic
+maint-e3b91ca53b,3,FT-003,Brake System Inspection,Completed,2026-08-31 01:39:52,2026-08-31 19:33:52,17.9,361.2,source: synthetic
+maint-6002e364e4,44,FT-044,Transmission Service,Completed,2026-09-03 06:47:13,2026-09-04 06:17:13,23.5,217.02,source: synthetic
+maint-8b46fe6287,38,FT-038,Engine Diagnostics,Completed,2026-09-04 20:31:52,2026-09-05 14:55:52,18.4,1794.02,source: synthetic
+maint-20f118dc78,15,FT-015,Electrical & Alternator Check,Completed,2026-09-05 15:09:59,2026-09-06 15:09:59,24.0,884.63,source: synthetic
+maint-f93e07a06a,22,FT-022,Routine Oil & Filter,Completed,2026-09-07 09:09:22,2026-09-07 13:51:22,4.7,310.66,source: synthetic
+maint-e281add388,45,FT-045,Suspension & Steering,Completed,2026-09-08 16:49:10,2026-09-08 23:49:10,7.0,1367.28,source: synthetic
+maint-69f3c5b541,38,FT-038,Electrical & Alternator Check,Completed,2026-09-13 10:29:22,2026-09-14 21:29:22,35.0,949.02,source: synthetic
+maint-fe66c84d34,6,FT-006,Suspension & Steering,Completed,2026-09-13 12:34:15,2026-09-14 03:04:15,14.5,257.66,source: synthetic
+maint-1a01337e0d,19,FT-019,Transmission Service,In Progress,2026-09-18 05:30:15,,,502.89,source: synthetic
+maint-49b8ae1228,41,FT-041,Engine Diagnostics,Completed,2026-09-19 21:45:49,2026-09-20 06:57:49,9.2,785.65,source: synthetic
+maint-14b39b781b,28,FT-028,Engine Diagnostics,Scheduled,2026-09-20 17:08:37,,,859.37,source: synthetic
+maint-dca5cd7a67,37,FT-037,Electrical & Alternator Check,Completed,2026-09-21 18:12:40,2026-09-22 00:36:40,6.4,185.46,source: synthetic
+maint-22e81878d1,8,FT-008,Engine Diagnostics,Completed,2026-09-23 00:47:16,2026-09-23 13:05:16,12.3,418.87,source: synthetic
+maint-92a452afdc,41,FT-041,Engine Diagnostics,Scheduled,2026-09-24 12:02:17,,,496.7,source: synthetic
+maint-df7642ee73,9,FT-009,Coolant Flush & Thermostat,Completed,2026-09-25 04:07:06,2026-09-25 22:13:06,18.1,1029.51,source: synthetic
+maint-6777f03abc,35,FT-035,Coolant Flush & Thermostat,Completed,2026-09-25 21:09:27,2026-09-27 01:45:27,28.6,939.86,source: synthetic
+maint-a61b0a5dd7,44,FT-044,Brake System Inspection,Completed,2026-09-30 21:33:03,2026-10-01 17:03:03,19.5,180.99,source: synthetic
+maint-d4fa1804a9,11,FT-011,Suspension & Steering,Completed,2026-10-04 09:49:45,2026-10-04 18:31:45,8.7,1402.25,source: synthetic
+maint-b8c68e6d90,45,FT-045,Engine Diagnostics,Completed,2026-10-05 21:24:03,2026-10-06 04:36:03,7.2,1758.64,source: synthetic
+maint-289f6bc915,45,FT-045,Electrical & Alternator Check,Completed,2026-10-06 19:39:59,2026-10-07 09:09:59,13.5,1296.41,source: synthetic
+maint-703c075406,45,FT-045,Transmission Service,Completed,2026-10-07 01:39:07,2026-10-08 09:27:07,31.8,1640.21,source: synthetic
+maint-2c3638caa1,23,FT-023,Tire Rotation & Replacement,Completed,2026-10-07 07:07:43,2026-10-08 17:43:43,34.6,218.44,source: synthetic
+maint-f8c4da2c5a,21,FT-021,Tire Rotation & Replacement,Completed,2026-10-15 12:31:28,2026-10-16 20:37:28,32.1,1242.85,source: synthetic
+maint-42cccec352,4,FT-004,Engine Diagnostics,Completed,2026-10-16 05:35:08,2026-10-17 13:05:08,31.5,574.45,source: synthetic
+maint-4668d1389f,23,FT-023,Suspension & Steering,Completed,2026-10-16 08:24:38,2026-10-17 02:54:38,18.5,493.52,source: synthetic
+maint-f3d9542acc,26,FT-026,Routine Oil & Filter,In Progress,2026-10-18 23:21:22,,,480.34,source: synthetic
+maint-ae53a2d861,43,FT-043,Suspension & Steering,Completed,2026-10-21 11:54:06,2026-10-21 14:36:06,2.7,1087.79,source: synthetic
+maint-c96b078dd4,8,FT-008,Routine Oil & Filter,Completed,2026-10-22 21:57:13,2026-10-24 02:09:13,28.2,1652.39,source: synthetic
+maint-574f0a1710,20,FT-020,Transmission Service,Completed,2026-10-22 22:30:11,2026-10-23 14:54:11,16.4,617.76,source: synthetic
+maint-69b63def82,35,FT-035,Routine Oil & Filter,Completed,2026-10-25 14:30:38,2026-10-26 18:42:38,28.2,372.78,source: synthetic
+maint-153986dfda,30,FT-030,Brake System Inspection,Completed,2026-10-26 21:48:34,2026-10-27 21:42:34,23.9,1800.86,source: synthetic
+maint-c55652bb61,40,FT-040,Coolant Flush & Thermostat,Completed,2026-10-27 20:52:39,2026-10-28 23:28:39,26.6,660.55,source: synthetic
+maint-601a52bd39,40,FT-040,Routine Oil & Filter,Completed,2026-11-03 19:44:41,2026-11-04 08:14:41,12.5,1277.76,source: synthetic
+maint-490847a450,16,FT-016,Engine Diagnostics,Completed,2026-11-05 13:17:57,2026-11-06 09:53:57,20.6,1379.7,source: synthetic
+maint-08124c02c5,30,FT-030,Coolant Flush & Thermostat,Scheduled,2026-11-07 21:32:16,,,663.26,source: synthetic
+maint-a64db45942,26,FT-026,Transmission Service,Completed,2026-11-09 18:25:35,2026-11-10 12:13:35,17.8,1729.33,source: synthetic
+maint-c7348d85fd,40,FT-040,Brake System Inspection,Completed,2026-11-10 10:04:48,2026-11-10 16:28:48,6.4,669.15,source: synthetic
+maint-94c429ded2,37,FT-037,Routine Oil & Filter,Completed,2026-11-10 16:28:26,2026-11-11 14:16:26,21.8,1447.29,source: synthetic
+maint-dc726a89d1,36,FT-036,Suspension & Steering,Completed,2026-11-11 10:35:53,2026-11-12 13:17:53,26.7,823.11,source: synthetic

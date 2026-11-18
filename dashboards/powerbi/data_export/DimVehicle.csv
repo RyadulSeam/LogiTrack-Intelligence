@@ -1,0 +1,46 @@
+vehicle_key,vehicle_id,vehicle_code,vehicle_model,vehicle_type,current_status,lifetime_breakdowns,is_maintenance_alert,purchase_date,data_origin
+1,1,FT-001,Mercedes Sprinter,Van,Active,5,False,2022-07-22,source: original
+2,2,FT-002,Freightliner M2,Truck,Maintenance,25,True,2019-10-05,source: original
+3,3,FT-003,Mercedes Sprinter,Van,Active,11,False,2022-10-13,source: original
+4,4,FT-004,Chevrolet Express,Van,Active,7,False,2020-11-12,source: original
+5,5,FT-005,Chevrolet Silverado,Pickup,Maintenance,11,True,2021-10-07,source: original
+6,6,FT-006,Freightliner M2,Truck,Active,15,False,2020-12-11,source: original
+7,7,FT-007,Ford Transit,Van,Active,13,False,2020-01-25,source: original
+8,8,FT-008,Freightliner M2,Truck,Active,5,False,2020-01-25,source: original
+9,9,FT-009,Isuzu NPR,Box Truck,Active,17,False,2019-03-18,source: original
+10,10,FT-010,Freightliner M2,Truck,Active,28,False,2019-12-20,source: original
+11,11,FT-011,Mercedes Sprinter,Van,Active,15,False,2021-05-12,source: original
+12,12,FT-012,International DuraStar,Van,Active,5,False,2023-09-28,source: original
+13,13,FT-013,Isuzu NPR,Box Truck,Active,13,False,2021-06-19,source: original
+14,14,FT-014,Mercedes Sprinter,Van,Active,10,False,2019-11-10,source: original
+15,15,FT-015,Chevrolet Silverado,Pickup,Active,15,False,2023-02-26,source: original
+16,16,FT-016,Mercedes Sprinter,Van,Active,10,False,2021-01-11,source: original
+17,17,FT-017,Chevrolet Express,Van,Active,3,False,2023-03-10,source: original
+18,18,FT-018,Ram ProMaster,Van,Active,7,False,2023-02-11,source: original
+19,19,FT-019,Ford Transit,Van,Active,14,False,2020-12-22,source: original
+20,20,FT-020,Freightliner M2,Truck,Maintenance,24,True,2018-03-24,source: original
+21,21,FT-021,International DuraStar,Van,Active,7,False,2020-11-12,source: original
+22,22,FT-022,Ford Transit,Van,Maintenance,3,True,2022-01-05,source: original
+23,23,FT-023,Chevrolet Express,Van,Active,5,False,2021-12-18,source: original
+24,24,FT-024,Ford Transit,Van,Maintenance,17,True,2018-06-24,source: original
+25,25,FT-025,Ram ProMaster,Van,Maintenance,23,True,2019-03-10,source: original
+26,26,FT-026,Mercedes Sprinter,Van,Active,12,False,2022-10-19,source: original
+27,27,FT-027,Ram ProMaster,Van,Maintenance,14,True,2020-11-01,source: original
+28,28,FT-028,Ford Transit,Van,Active,5,False,2020-04-16,source: original
+29,29,FT-029,Chevrolet Express,Van,Maintenance,7,True,2021-04-26,source: original
+30,30,FT-030,Ford F-150,Van,Maintenance,22,True,2018-04-11,source: original
+31,31,FT-031,Mercedes Sprinter,Van,Active,17,False,2021-04-06,source: original
+32,32,FT-032,Chevrolet Silverado,Pickup,Active,1,False,2022-04-14,source: original
+33,33,FT-033,Ford Transit,Van,Active,16,False,2020-10-25,source: original
+34,34,FT-034,International DuraStar,Van,Active,10,False,2019-08-08,source: original
+35,35,FT-035,Freightliner M2,Truck,Maintenance,9,True,2022-02-28,source: original
+36,36,FT-036,Freightliner M2,Truck,Active,19,False,2019-08-15,source: original
+37,37,FT-037,Freightliner M2,Truck,Active,9,False,2023-07-13,source: original
+38,38,FT-038,Ford F-150,Van,Active,11,False,2023-01-06,source: original
+39,39,FT-039,Mercedes Sprinter,Van,Active,7,False,2019-10-19,source: original
+40,40,FT-040,Ford F-150,Van,Maintenance,13,True,2020-02-22,source: original
+41,41,FT-041,Freightliner M2,Truck,Active,19,False,2018-10-26,source: original
+42,42,FT-042,Isuzu NPR,Box Truck,Active,14,False,2020-05-26,source: original
+43,43,FT-043,International DuraStar,Van,Maintenance,19,True,2019-03-23,source: original
+44,44,FT-044,International DuraStar,Van,Active,0,False,2023-06-07,source: original
+45,45,FT-045,Mercedes Sprinter,Van,Active,5,False,2023-05-14,source: original
