@@ -16,7 +16,6 @@
             "name": "_Dummy",
             "dataType": "string",
             "isHidden": true,
-            "isNameInferred": false,
             "sourceColumn": "_Dummy"
           }
         ],

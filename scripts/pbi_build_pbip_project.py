@@ -142,7 +142,6 @@ model_tables = [
                 "name": "_Dummy",
                 "dataType": "string",
                 "isHidden": True,
-                "isNameInferred": False,
                 "sourceColumn": "_Dummy"
             }
         ],
