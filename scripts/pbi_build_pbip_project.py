@@ -43,8 +43,7 @@ pbir_content = {
     "datasetReference": {
         "byPath": {
             "path": "../LogiTrack_Analytics.Dataset"
-        },
-        "byConnection": None
+        }
     }
 }
 with open(REPORT_DIR / "definition.pbir", "w", encoding="utf-8") as f:
@@ -54,9 +53,7 @@ print("  Created LogiTrack_Analytics.Report/definition.pbir")
 # 3. Dataset definition.pbidataset
 pbidataset_content = {
     "version": "1.0",
-    "dataset": {
-        "type": "semanticModel"
-    }
+    "settings": {}
 }
 with open(DATASET_DIR / "definition.pbidataset", "w", encoding="utf-8") as f:
     json.dump(pbidataset_content, f, indent=2)

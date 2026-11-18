@@ -3,7 +3,6 @@
   "datasetReference": {
     "byPath": {
       "path": "../LogiTrack_Analytics.Dataset"
-    },
-    "byConnection": null
+    }
   }
 }
