@@ -1,0 +1,443 @@
+{
+  "config": "{\"version\": \"5.50\", \"themeCollection\": {\"baseTheme\": {\"name\": \"CY24SU10\", \"version\": \"5.50\", \"type\": 2}}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [],
+  "sections": [
+    {
+      "name": "ReportSection_ExecutiveControlTower",
+      "displayName": "Executive Control Tower",
+      "ordinal": 0,
+      "height": 720.0,
+      "width": 1280.0,
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20.0,
+          "y": 15.0,
+          "z": 10.0,
+          "width": 1240.0,
+          "height": 45.0,
+          "config": "{\"name\": \"vis_ReportSection_ExecutiveControlTower_0_textbox\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 15.0, \"z\": 10.0, \"width\": 1240.0, \"height\": 45.0}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"LOGITRACK INTELLIGENCE | Executive Logistics Control Tower\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"16pt\", \"color\": \"#142B45\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_ExecutiveControlTower_1_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL ORDERS'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 225.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_ExecutiveControlTower_2_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 225.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Delivered Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delivered Orders\"}, \"Name\": \"_Measures.Delivered Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'FULFILLED ORDERS'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 430.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_ExecutiveControlTower_3_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 430.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.On-Time Delivery Rate %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"On-Time Delivery Rate %\"}, \"Name\": \"_Measures.On-Time Delivery Rate %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'ON-TIME RATE (OTD %)'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 635.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_ExecutiveControlTower_4_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 635.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Delay Rate %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delay Rate %\"}, \"Name\": \"_Measures.Delay Rate %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'DELAY RATE %'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_ExecutiveControlTower_5_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 840.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Avg Delivery Duration (Hours)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Avg Delivery Duration (Hours)\"}, \"Name\": \"_Measures.Avg Delivery Duration (Hours)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'AVG DURATION (HRS)'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1045.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 215.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_ExecutiveControlTower_6_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1045.0, \"y\": 70.0, \"z\": 100.0, \"width\": 215.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Fleet Availability Rate %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Fleet Availability Rate %\"}, \"Name\": \"_Measures.Fleet Availability Rate %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'FLEET AVAILABILITY %'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 170.0,
+          "z": 20.0,
+          "width": 780.0,
+          "height": 260.0,
+          "config": "{\"name\": \"vis_ReportSection_ExecutiveControlTower_7_columnChart\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 170.0, \"z\": 20.0, \"width\": 780.0, \"height\": 260.0}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Monthly Order Volume & OTD Trend'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 820.0,
+          "y": 170.0,
+          "z": 20.0,
+          "width": 440.0,
+          "height": 260.0,
+          "config": "{\"name\": \"vis_ReportSection_ExecutiveControlTower_8_pieChart\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 820.0, \"y\": 170.0, \"z\": 20.0, \"width\": 440.0, \"height\": 260.0}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Fulfillment vs Cancellation Ratio'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 445.0,
+          "z": 30.0,
+          "width": 600.0,
+          "height": 255.0,
+          "config": "{\"name\": \"vis_ReportSection_ExecutiveControlTower_9_barChart\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 445.0, \"z\": 30.0, \"width\": 600.0, \"height\": 255.0}}], \"singleVisual\": {\"visualType\": \"barChart\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Delivery Volume by Regional Hub'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 445.0,
+          "z": 30.0,
+          "width": 620.0,
+          "height": 255.0,
+          "config": "{\"name\": \"vis_ReportSection_ExecutiveControlTower_10_tableEx\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640.0, \"y\": 445.0, \"z\": 30.0, \"width\": 620.0, \"height\": 255.0}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Regional Hub Operational Summary'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection_RegionalHubOperations",
+      "displayName": "Regional Hub Operations",
+      "ordinal": 1,
+      "height": 720.0,
+      "width": 1280.0,
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20.0,
+          "y": 15.0,
+          "z": 10.0,
+          "width": 1240.0,
+          "height": 45.0,
+          "config": "{\"name\": \"vis_ReportSection_RegionalHubOperations_0_textbox\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 15.0, \"z\": 10.0, \"width\": 1240.0, \"height\": 45.0}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"LOGITRACK INTELLIGENCE | Regional Hub Operations & Throughput Monitor\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"16pt\", \"color\": \"#142B45\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_RegionalHubOperations_1_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Hubs\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Hubs\"}, \"Name\": \"_Measures.Total Hubs\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'ACTIVE TEXAS HUBS'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 225.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_RegionalHubOperations_2_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 225.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Network Daily Capacity\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Network Daily Capacity\"}, \"Name\": \"_Measures.Network Daily Capacity\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'NETWORK DAILY CAPACITY'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 430.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_RegionalHubOperations_3_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 430.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Avg Hub Processing Time (Hours)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Avg Hub Processing Time (Hours)\"}, \"Name\": \"_Measures.Avg Hub Processing Time (Hours)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'AVG PROCESSING TIME'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 635.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_RegionalHubOperations_4_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 635.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Orders Received (Hub)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders Received (Hub)\"}, \"Name\": \"_Measures.Total Orders Received (Hub)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL INTAKE VOLUME'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_RegionalHubOperations_5_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 840.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Orders Dispatched (Hub)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders Dispatched (Hub)\"}, \"Name\": \"_Measures.Total Orders Dispatched (Hub)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL DISPATCHED'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1045.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 215.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_RegionalHubOperations_6_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1045.0, \"y\": 70.0, \"z\": 100.0, \"width\": 215.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Backlog Volume\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Backlog Volume\"}, \"Name\": \"_Measures.Total Backlog Volume\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL BACKLOG VOLUME'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 170.0,
+          "z": 20.0,
+          "width": 600.0,
+          "height": 260.0,
+          "config": "{\"name\": \"vis_ReportSection_RegionalHubOperations_7_map\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 170.0, \"z\": 20.0, \"width\": 600.0, \"height\": 260.0}}], \"singleVisual\": {\"visualType\": \"map\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Texas Hub Spatial Distribution & Volume'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 170.0,
+          "z": 20.0,
+          "width": 620.0,
+          "height": 260.0,
+          "config": "{\"name\": \"vis_ReportSection_RegionalHubOperations_8_columnChart\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640.0, \"y\": 170.0, \"z\": 20.0, \"width\": 620.0, \"height\": 260.0}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Designed Capacity vs Processed Volume'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 445.0,
+          "z": 30.0,
+          "width": 600.0,
+          "height": 255.0,
+          "config": "{\"name\": \"vis_ReportSection_RegionalHubOperations_9_lineChart\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 445.0, \"z\": 30.0, \"width\": 600.0, \"height\": 255.0}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'24-Hour Intake vs Dispatch Rhythm'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 445.0,
+          "z": 30.0,
+          "width": 620.0,
+          "height": 255.0,
+          "config": "{\"name\": \"vis_ReportSection_RegionalHubOperations_10_tableEx\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640.0, \"y\": 445.0, \"z\": 30.0, \"width\": 620.0, \"height\": 255.0}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Hub Operational Performance Matrix'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection_DelayRootCauseAnalytics",
+      "displayName": "Delay & Root-Cause Analytics",
+      "ordinal": 2,
+      "height": 720.0,
+      "width": 1280.0,
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20.0,
+          "y": 15.0,
+          "z": 10.0,
+          "width": 1240.0,
+          "height": 45.0,
+          "config": "{\"name\": \"vis_ReportSection_DelayRootCauseAnalytics_0_textbox\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 15.0, \"z\": 10.0, \"width\": 1240.0, \"height\": 45.0}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"LOGITRACK INTELLIGENCE | Delivery Delay Root-Cause & SLA Failure Diagnostics\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"16pt\", \"color\": \"#142B45\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_DelayRootCauseAnalytics_1_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Delayed Deliveries\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delayed Deliveries\"}, \"Name\": \"_Measures.Delayed Deliveries\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL LATE DELIVERIES'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 225.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_DelayRootCauseAnalytics_2_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 225.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Delay Rate %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delay Rate %\"}, \"Name\": \"_Measures.Delay Rate %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'DELIVERY DELAY RATE %'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 430.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_DelayRootCauseAnalytics_3_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 430.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Avg Delayed Duration (Hours)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Avg Delayed Duration (Hours)\"}, \"Name\": \"_Measures.Avg Delayed Duration (Hours)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'AVG LATE DURATION'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 635.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_DelayRootCauseAnalytics_4_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 635.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Delivery SLA Variance (Hours)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delivery SLA Variance (Hours)\"}, \"Name\": \"_Measures.Delivery SLA Variance (Hours)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'DELAY SLA VARIANCE'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_DelayRootCauseAnalytics_5_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 840.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Delay Incidents by Reason\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delay Incidents by Reason\"}, \"Name\": \"_Measures.Delay Incidents by Reason\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL REASON INCIDENTS'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1045.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 215.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_DelayRootCauseAnalytics_6_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1045.0, \"y\": 70.0, \"z\": 100.0, \"width\": 215.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL ANALYZED ORDERS'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 170.0,
+          "z": 20.0,
+          "width": 780.0,
+          "height": 260.0,
+          "config": "{\"name\": \"vis_ReportSection_DelayRootCauseAnalytics_7_columnChart\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 170.0, \"z\": 20.0, \"width\": 780.0, \"height\": 260.0}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Delay Reason Pareto Analysis (80/20 Rule)'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 820.0,
+          "y": 170.0,
+          "z": 20.0,
+          "width": 440.0,
+          "height": 260.0,
+          "config": "{\"name\": \"vis_ReportSection_DelayRootCauseAnalytics_8_barChart\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 820.0, \"y\": 170.0, \"z\": 20.0, \"width\": 440.0, \"height\": 260.0}}], \"singleVisual\": {\"visualType\": \"barChart\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Delay Rate by Vehicle Type'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 445.0,
+          "z": 30.0,
+          "width": 600.0,
+          "height": 255.0,
+          "config": "{\"name\": \"vis_ReportSection_DelayRootCauseAnalytics_9_scatterChart\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 445.0, \"z\": 30.0, \"width\": 600.0, \"height\": 255.0}}], \"singleVisual\": {\"visualType\": \"scatterChart\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Driver Experience vs On-Time Rate %'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 640.0,
+          "y": 445.0,
+          "z": 30.0,
+          "width": 620.0,
+          "height": 255.0,
+          "config": "{\"name\": \"vis_ReportSection_DelayRootCauseAnalytics_10_tableEx\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 640.0, \"y\": 445.0, \"z\": 30.0, \"width\": 620.0, \"height\": 255.0}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'ML Delay Inference Pilot Feed'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection_FleetPredictiveMaintenance",
+      "displayName": "Fleet Telematics & Predictive Maintenance",
+      "ordinal": 3,
+      "height": 720.0,
+      "width": 1280.0,
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20.0,
+          "y": 15.0,
+          "z": 10.0,
+          "width": 1240.0,
+          "height": 45.0,
+          "config": "{\"name\": \"vis_ReportSection_FleetPredictiveMaintenance_0_textbox\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 15.0, \"z\": 10.0, \"width\": 1240.0, \"height\": 45.0}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"LOGITRACK INTELLIGENCE | Fleet Telematics & Predictive Maintenance Watchlist\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"16pt\", \"color\": \"#142B45\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_FleetPredictiveMaintenance_1_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Fleet Vehicles\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Fleet Vehicles\"}, \"Name\": \"_Measures.Total Fleet Vehicles\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL FLEET ASSETS'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 225.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_FleetPredictiveMaintenance_2_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 225.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Active Vehicles\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Vehicles\"}, \"Name\": \"_Measures.Active Vehicles\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'ACTIVE ON-ROAD FLEET'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 430.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_FleetPredictiveMaintenance_3_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 430.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Vehicles In Maintenance\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Vehicles In Maintenance\"}, \"Name\": \"_Measures.Vehicles In Maintenance\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'VEHICLES IN DEPOT'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 635.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_FleetPredictiveMaintenance_4_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 635.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Maintenance Alert Vehicles\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Maintenance Alert Vehicles\"}, \"Name\": \"_Measures.Maintenance Alert Vehicles\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'CRITICAL RISK ALERTS'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 195.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_FleetPredictiveMaintenance_5_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 840.0, \"y\": 70.0, \"z\": 100.0, \"width\": 195.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Maintenance Expense ($)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Maintenance Expense ($)\"}, \"Name\": \"_Measures.Total Maintenance Expense ($)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL MAINT. EXPENSE'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1045.0,
+          "y": 70.0,
+          "z": 100.0,
+          "width": 215.0,
+          "height": 85.0,
+          "config": "{\"name\": \"vis_ReportSection_FleetPredictiveMaintenance_6_card\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1045.0, \"y\": 70.0, \"z\": 100.0, \"width\": 215.0, \"height\": 85.0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Downtime Hours\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Downtime Hours\"}, \"Name\": \"_Measures.Total Downtime Hours\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL DOWNTIME (HRS)'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 170.0,
+          "z": 20.0,
+          "width": 420.0,
+          "height": 260.0,
+          "config": "{\"name\": \"vis_ReportSection_FleetPredictiveMaintenance_7_pieChart\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 170.0, \"z\": 20.0, \"width\": 420.0, \"height\": 260.0}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Fleet Operational Availability Status'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 460.0,
+          "y": 170.0,
+          "z": 20.0,
+          "width": 800.0,
+          "height": 260.0,
+          "config": "{\"name\": \"vis_ReportSection_FleetPredictiveMaintenance_8_scatterChart\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 460.0, \"y\": 170.0, \"z\": 20.0, \"width\": 800.0, \"height\": 260.0}}], \"singleVisual\": {\"visualType\": \"scatterChart\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Vehicle Age vs Lifetime Mechanical Breakdowns'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20.0,
+          "y": 445.0,
+          "z": 30.0,
+          "width": 550.0,
+          "height": 255.0,
+          "config": "{\"name\": \"vis_ReportSection_FleetPredictiveMaintenance_9_barChart\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20.0, \"y\": 445.0, \"z\": 30.0, \"width\": 550.0, \"height\": 255.0}}], \"singleVisual\": {\"visualType\": \"barChart\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Maintenance Expense ($) by Service Category'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 590.0,
+          "y": 445.0,
+          "z": 30.0,
+          "width": 670.0,
+          "height": 255.0,
+          "config": "{\"name\": \"vis_ReportSection_FleetPredictiveMaintenance_10_tableEx\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 590.0, \"y\": 445.0, \"z\": 30.0, \"width\": 670.0, \"height\": 255.0}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Fleet Maintenance Action Watchlist'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    }
+  ]
+}
