@@ -89,6 +89,8 @@ deployment/monitoring/grafana-data/
 htmlcov/
 .pytest_cache/
 .tox/
+coverage.xml
+coverage-*.xml
 
 # -------------------- Misc --------------------
 *.bak
