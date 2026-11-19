@@ -1,0 +1,538 @@
+{
+  "config": "{\"version\": \"5.50\", \"themeCollection\": {\"baseTheme\": {\"name\": \"CY24SU10\", \"version\": \"5.50\", \"type\": 2}, \"customTheme\": {\"name\": \"LogiTrack_Corporate_Theme.json\", \"type\": 1}}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "name": "RegisteredResources",
+        "type": 1,
+        "items": [
+          {
+            "name": "LogiTrack_Corporate_Theme.json",
+            "path": "StaticResources/RegisteredResources/LogiTrack_Corporate_Theme.json",
+            "type": 201
+          }
+        ]
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "ReportSection_ExecutiveControlTower",
+      "displayName": "Executive Control Tower",
+      "ordinal": 0,
+      "height": 720.0,
+      "width": 1280.0,
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 10,
+          "z": 50,
+          "width": 650,
+          "height": 48,
+          "config": "{\"name\": \"p1_textbox_header_banner\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 10, \"z\": 50, \"width\": 650, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"LOGITRACK INTELLIGENCE | Executive Logistics Control Tower\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"15pt\", \"color\": \"#142B45\"}}, {\"value\": \"  |  High-level Operations SLA & Fulfillment Monitoring\", \"textStyle\": {\"fontFamily\": \"Segoe UI\", \"fontSize\": \"10pt\", \"color\": \"#64748B\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 685,
+          "y": 10,
+          "z": 200,
+          "width": 180,
+          "height": 48,
+          "config": "{\"name\": \"p1_slicer_dimdate_year\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 685, \"y\": 10, \"z\": 200, \"width\": 180, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"DimDate.year\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"da\", \"Entity\": \"DimDate\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"da\"}}, \"Property\": \"year\"}, \"Name\": \"DimDate.year\", \"NativeReferenceName\": \"year\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Filter Year'\"}}}}}], \"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 880,
+          "y": 10,
+          "z": 200,
+          "width": 190,
+          "height": 48,
+          "config": "{\"name\": \"p1_slicer_dimhub_hub_name\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 880, \"y\": 10, \"z\": 200, \"width\": 190, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"DimHub.hub_name\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"hu\", \"Entity\": \"DimHub\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"hub_name\"}, \"Name\": \"DimHub.hub_name\", \"NativeReferenceName\": \"hub_name\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Filter Hub'\"}}}}}], \"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1085,
+          "y": 10,
+          "z": 200,
+          "width": 175,
+          "height": 48,
+          "config": "{\"name\": \"p1_slicer_factorders_order_status\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1085, \"y\": 10, \"z\": 200, \"width\": 175, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"FactOrders.order_status\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"or\", \"Entity\": \"FactOrders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"or\"}}, \"Property\": \"order_status\"}, \"Name\": \"FactOrders.order_status\", \"NativeReferenceName\": \"order_status\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Filter Status'\"}}}}}], \"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p1_card_total_orders\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL ORDERS'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142B45'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 225,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p1_card_delivered_orders\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 225, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Delivered Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delivered Orders\"}, \"Name\": \"_Measures.Delivered Orders\", \"NativeReferenceName\": \"Delivered Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'FULFILLED ORDERS'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142B45'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 430,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p1_card_on_time_delivery_rate\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 430, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.On-Time Delivery Rate %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"On-Time Delivery Rate %\"}, \"Name\": \"_Measures.On-Time Delivery Rate %\", \"NativeReferenceName\": \"On-Time Delivery Rate %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'ON-TIME RATE (OTD %)'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#2E7D5B'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 635,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p1_card_delay_rate\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 635, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Delay Rate %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delay Rate %\"}, \"Name\": \"_Measures.Delay Rate %\", \"NativeReferenceName\": \"Delay Rate %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'DELAY RATE %'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C65353'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p1_card_avg_delivery_duration_hours\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 840, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Avg Delivery Duration (Hours)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Avg Delivery Duration (Hours)\"}, \"Name\": \"_Measures.Avg Delivery Duration (Hours)\", \"NativeReferenceName\": \"Avg Delivery Duration (Hours)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'AVG DURATION (HRS)'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#2F5D8A'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1045,
+          "y": 68,
+          "z": 100,
+          "width": 215,
+          "height": 82,
+          "config": "{\"name\": \"p1_card_fleet_availability_rate\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1045, \"y\": 68, \"z\": 100, \"width\": 215, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Fleet Availability Rate %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Fleet Availability Rate %\"}, \"Name\": \"_Measures.Fleet Availability Rate %\", \"NativeReferenceName\": \"Fleet Availability Rate %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'FLEET AVAILABILITY %'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#2E7D5B'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 160,
+          "z": 30,
+          "width": 780,
+          "height": 265,
+          "config": "{\"name\": \"p1_columnchart_monthly_volume_trajectory\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 160, \"z\": 30, \"width\": 780, \"height\": 265}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"DimDate.month_name\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Orders\"}, {\"queryRef\": \"_Measures.Delivered Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"da\", \"Entity\": \"DimDate\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"da\"}}, \"Property\": \"month_name\"}, \"Name\": \"DimDate.month_name\", \"NativeReferenceName\": \"month_name\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delivered Orders\"}, \"Name\": \"_Measures.Delivered Orders\", \"NativeReferenceName\": \"Delivered Orders\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"da\"}}, \"Property\": \"month_number\"}}}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Monthly Order Volume & Fulfillment Trajectory'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 815,
+          "y": 160,
+          "z": 30,
+          "width": 445,
+          "height": 265,
+          "config": "{\"name\": \"p1_piechart_fulfillment_ratio_donut\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 815, \"y\": 160, \"z\": 30, \"width\": 445, \"height\": 265}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"FactOrders.order_status\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"or\", \"Entity\": \"FactOrders\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"or\"}}, \"Property\": \"order_status\"}, \"Name\": \"FactOrders.order_status\", \"NativeReferenceName\": \"order_status\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Order Fulfillment vs Cancellation Breakdown'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 435,
+          "z": 30,
+          "width": 545,
+          "height": 270,
+          "config": "{\"name\": \"p1_barchart_volume_by_hub\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 435, \"z\": 30, \"width\": 545, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"DimHub.hub_name\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"hu\", \"Entity\": \"DimHub\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"hub_name\"}, \"Name\": \"DimHub.hub_name\", \"NativeReferenceName\": \"hub_name\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Order Volume by Texas Regional Hub'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 580,
+          "y": 435,
+          "z": 40,
+          "width": 680,
+          "height": 270,
+          "config": "{\"name\": \"p1_table_hub_operational_summary\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 580, \"y\": 435, \"z\": 40, \"width\": 680, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"DimHub.hub_name\"}, {\"queryRef\": \"DimHub.city\"}, {\"queryRef\": \"_Measures.Total Orders\"}, {\"queryRef\": \"_Measures.Delivered Orders\"}, {\"queryRef\": \"_Measures.On-Time Delivery Rate %\"}, {\"queryRef\": \"_Measures.Delay Rate %\"}, {\"queryRef\": \"_Measures.Avg Delivery Duration (Hours)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"hu\", \"Entity\": \"DimHub\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"hub_name\"}, \"Name\": \"DimHub.hub_name\", \"NativeReferenceName\": \"hub_name\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"city\"}, \"Name\": \"DimHub.city\", \"NativeReferenceName\": \"city\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delivered Orders\"}, \"Name\": \"_Measures.Delivered Orders\", \"NativeReferenceName\": \"Delivered Orders\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"On-Time Delivery Rate %\"}, \"Name\": \"_Measures.On-Time Delivery Rate %\", \"NativeReferenceName\": \"On-Time Delivery Rate %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delay Rate %\"}, \"Name\": \"_Measures.Delay Rate %\", \"NativeReferenceName\": \"Delay Rate %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Avg Delivery Duration (Hours)\"}, \"Name\": \"_Measures.Avg Delivery Duration (Hours)\", \"NativeReferenceName\": \"Avg Delivery Duration (Hours)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Regional Hub Operational Summary & SLA Scorecard'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection_RegionalHubOperations",
+      "displayName": "Regional Hub Operations",
+      "ordinal": 1,
+      "height": 720.0,
+      "width": 1280.0,
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 10,
+          "z": 50,
+          "width": 700,
+          "height": 48,
+          "config": "{\"name\": \"p2_textbox_header_banner\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 10, \"z\": 50, \"width\": 700, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"LOGITRACK INTELLIGENCE | Regional Hub Operations Monitor\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"15pt\", \"color\": \"#142B45\"}}, {\"value\": \"  |  Network Daily Throughput, Capacity & Backlog Analysis\", \"textStyle\": {\"fontFamily\": \"Segoe UI\", \"fontSize\": \"10pt\", \"color\": \"#64748B\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 735,
+          "y": 10,
+          "z": 200,
+          "width": 255,
+          "height": 48,
+          "config": "{\"name\": \"p2_slicer_dimhub_hub_name\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 735, \"y\": 10, \"z\": 200, \"width\": 255, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"DimHub.hub_name\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"hu\", \"Entity\": \"DimHub\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"hub_name\"}, \"Name\": \"DimHub.hub_name\", \"NativeReferenceName\": \"hub_name\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Select Regional Hub'\"}}}}}], \"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1005,
+          "y": 10,
+          "z": 200,
+          "width": 255,
+          "height": 48,
+          "config": "{\"name\": \"p2_slicer_dimdate_year\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1005, \"y\": 10, \"z\": 200, \"width\": 255, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"DimDate.year\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"da\", \"Entity\": \"DimDate\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"da\"}}, \"Property\": \"year\"}, \"Name\": \"DimDate.year\", \"NativeReferenceName\": \"year\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Select Operating Year'\"}}}}}], \"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p2_card_total_hubs\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Hubs\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Hubs\"}, \"Name\": \"_Measures.Total Hubs\", \"NativeReferenceName\": \"Total Hubs\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL HUBS'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142B45'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 225,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p2_card_network_daily_capacity\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 225, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Network Daily Capacity\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Network Daily Capacity\"}, \"Name\": \"_Measures.Network Daily Capacity\", \"NativeReferenceName\": \"Network Daily Capacity\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'DAILY CAPACITY (PARCELS)'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#2F5D8A'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 430,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p2_card_avg_hub_processing_time_hours\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 430, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Avg Hub Processing Time (Hours)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Avg Hub Processing Time (Hours)\"}, \"Name\": \"_Measures.Avg Hub Processing Time (Hours)\", \"NativeReferenceName\": \"Avg Hub Processing Time (Hours)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'AVG PROCESSING TIME'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#2F5D8A'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 635,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p2_card_total_orders_received_hub\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 635, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Orders Received (Hub)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders Received (Hub)\"}, \"Name\": \"_Measures.Total Orders Received (Hub)\", \"NativeReferenceName\": \"Total Orders Received (Hub)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL ORDERS RECEIVED'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142B45'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p2_card_total_orders_dispatched_hub\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 840, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Orders Dispatched (Hub)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders Dispatched (Hub)\"}, \"Name\": \"_Measures.Total Orders Dispatched (Hub)\", \"NativeReferenceName\": \"Total Orders Dispatched (Hub)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'ORDERS DISPATCHED'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#2E7D5B'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1045,
+          "y": 68,
+          "z": 100,
+          "width": 215,
+          "height": 82,
+          "config": "{\"name\": \"p2_card_total_backlog_volume\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1045, \"y\": 68, \"z\": 100, \"width\": 215, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Backlog Volume\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Backlog Volume\"}, \"Name\": \"_Measures.Total Backlog Volume\", \"NativeReferenceName\": \"Total Backlog Volume\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL BACKLOG VOLUME'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C58B2A'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 160,
+          "z": 30,
+          "width": 545,
+          "height": 265,
+          "config": "{\"name\": \"p2_barchart_hub_throughput_ranking\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 160, \"z\": 30, \"width\": 545, \"height\": 265}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"DimHub.hub_name\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Orders Received (Hub)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"hu\", \"Entity\": \"DimHub\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"hub_name\"}, \"Name\": \"DimHub.hub_name\", \"NativeReferenceName\": \"hub_name\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders Received (Hub)\"}, \"Name\": \"_Measures.Total Orders Received (Hub)\", \"NativeReferenceName\": \"Total Orders Received (Hub)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Hub Throughput Ranking (Orders Received)'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 580,
+          "y": 160,
+          "z": 30,
+          "width": 680,
+          "height": 265,
+          "config": "{\"name\": \"p2_columnchart_hub_capacity_vs_volume\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 580, \"y\": 160, \"z\": 30, \"width\": 680, \"height\": 265}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"DimHub.hub_name\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Network Daily Capacity\"}, {\"queryRef\": \"_Measures.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"hu\", \"Entity\": \"DimHub\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"hub_name\"}, \"Name\": \"DimHub.hub_name\", \"NativeReferenceName\": \"hub_name\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Network Daily Capacity\"}, \"Name\": \"_Measures.Network Daily Capacity\", \"NativeReferenceName\": \"Network Daily Capacity\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Designed Capacity vs Total Order Volume by Hub'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 435,
+          "z": 30,
+          "width": 545,
+          "height": 270,
+          "config": "{\"name\": \"p2_linechart_hourly_network_flow\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 435, \"z\": 30, \"width\": 545, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"FactHubHourly.hour_of_day\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Orders Received (Hub)\"}, {\"queryRef\": \"_Measures.Total Orders Dispatched (Hub)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"hu\", \"Entity\": \"FactHubHourly\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"hour_of_day\"}, \"Name\": \"FactHubHourly.hour_of_day\", \"NativeReferenceName\": \"hour_of_day\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders Received (Hub)\"}, \"Name\": \"_Measures.Total Orders Received (Hub)\", \"NativeReferenceName\": \"Total Orders Received (Hub)\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders Dispatched (Hub)\"}, \"Name\": \"_Measures.Total Orders Dispatched (Hub)\", \"NativeReferenceName\": \"Total Orders Dispatched (Hub)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Network Hourly Flow: Received vs Dispatched'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 580,
+          "y": 435,
+          "z": 40,
+          "width": 680,
+          "height": 270,
+          "config": "{\"name\": \"p2_table_hub_bottleneck_and_performance\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 580, \"y\": 435, \"z\": 40, \"width\": 680, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"DimHub.hub_name\"}, {\"queryRef\": \"DimHub.city\"}, {\"queryRef\": \"_Measures.Network Daily Capacity\"}, {\"queryRef\": \"_Measures.Total Orders Received (Hub)\"}, {\"queryRef\": \"_Measures.Total Orders Dispatched (Hub)\"}, {\"queryRef\": \"_Measures.Total Backlog Volume\"}, {\"queryRef\": \"_Measures.Avg Hub Processing Time (Hours)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"hu\", \"Entity\": \"DimHub\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"hub_name\"}, \"Name\": \"DimHub.hub_name\", \"NativeReferenceName\": \"hub_name\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"city\"}, \"Name\": \"DimHub.city\", \"NativeReferenceName\": \"city\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Network Daily Capacity\"}, \"Name\": \"_Measures.Network Daily Capacity\", \"NativeReferenceName\": \"Network Daily Capacity\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders Received (Hub)\"}, \"Name\": \"_Measures.Total Orders Received (Hub)\", \"NativeReferenceName\": \"Total Orders Received (Hub)\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders Dispatched (Hub)\"}, \"Name\": \"_Measures.Total Orders Dispatched (Hub)\", \"NativeReferenceName\": \"Total Orders Dispatched (Hub)\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Backlog Volume\"}, \"Name\": \"_Measures.Total Backlog Volume\", \"NativeReferenceName\": \"Total Backlog Volume\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Avg Hub Processing Time (Hours)\"}, \"Name\": \"_Measures.Avg Hub Processing Time (Hours)\", \"NativeReferenceName\": \"Avg Hub Processing Time (Hours)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Regional Hub Bottleneck & Processing Performance Matrix'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection_DelayRootCauseAnalytics",
+      "displayName": "Delay & Root-Cause Analytics",
+      "ordinal": 2,
+      "height": 720.0,
+      "width": 1280.0,
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 10,
+          "z": 50,
+          "width": 650,
+          "height": 48,
+          "config": "{\"name\": \"p3_textbox_header_banner\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 10, \"z\": 50, \"width\": 650, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"LOGITRACK INTELLIGENCE | Delay & Root-Cause Analytics\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"15pt\", \"color\": \"#142B45\"}}, {\"value\": \"  |  SLA Exceptions, Root-Cause Drivers & Driver Performance\", \"textStyle\": {\"fontFamily\": \"Segoe UI\", \"fontSize\": \"10pt\", \"color\": \"#64748B\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 685,
+          "y": 10,
+          "z": 200,
+          "width": 280,
+          "height": 48,
+          "config": "{\"name\": \"p3_slicer_factorders_delay_reason\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 685, \"y\": 10, \"z\": 200, \"width\": 280, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"FactOrders.delay_reason\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"or\", \"Entity\": \"FactOrders\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"or\"}}, \"Property\": \"delay_reason\"}, \"Name\": \"FactOrders.delay_reason\", \"NativeReferenceName\": \"delay_reason\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Filter Delay Reason'\"}}}}}], \"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 980,
+          "y": 10,
+          "z": 200,
+          "width": 280,
+          "height": 48,
+          "config": "{\"name\": \"p3_slicer_dimhub_hub_name\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 980, \"y\": 10, \"z\": 200, \"width\": 280, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"DimHub.hub_name\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"hu\", \"Entity\": \"DimHub\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"hub_name\"}, \"Name\": \"DimHub.hub_name\", \"NativeReferenceName\": \"hub_name\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Filter Operating Hub'\"}}}}}], \"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p3_card_total_orders\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Orders\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Orders\"}, \"Name\": \"_Measures.Total Orders\", \"NativeReferenceName\": \"Total Orders\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL DELIVERIES'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142B45'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 225,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p3_card_on_time_deliveries\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 225, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.On-Time Deliveries\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"On-Time Deliveries\"}, \"Name\": \"_Measures.On-Time Deliveries\", \"NativeReferenceName\": \"On-Time Deliveries\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'ON-TIME DELIVERIES'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#2E7D5B'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 430,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p3_card_delayed_deliveries\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 430, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Delayed Deliveries\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delayed Deliveries\"}, \"Name\": \"_Measures.Delayed Deliveries\", \"NativeReferenceName\": \"Delayed Deliveries\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'DELAYED DELIVERIES'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C65353'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 635,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p3_card_on_time_delivery_rate\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 635, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.On-Time Delivery Rate %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"On-Time Delivery Rate %\"}, \"Name\": \"_Measures.On-Time Delivery Rate %\", \"NativeReferenceName\": \"On-Time Delivery Rate %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'ON-TIME RATE %'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#2E7D5B'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p3_card_delay_rate\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 840, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Delay Rate %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delay Rate %\"}, \"Name\": \"_Measures.Delay Rate %\", \"NativeReferenceName\": \"Delay Rate %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'DELAY RATE %'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C65353'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1045,
+          "y": 68,
+          "z": 100,
+          "width": 215,
+          "height": 82,
+          "config": "{\"name\": \"p3_card_avg_delayed_duration_hours\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1045, \"y\": 68, \"z\": 100, \"width\": 215, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Avg Delayed Duration (Hours)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Avg Delayed Duration (Hours)\"}, \"Name\": \"_Measures.Avg Delayed Duration (Hours)\", \"NativeReferenceName\": \"Avg Delayed Duration (Hours)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'AVG DELAY DURATION (HRS)'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C65353'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 160,
+          "z": 30,
+          "width": 650,
+          "height": 265,
+          "config": "{\"name\": \"p3_barchart_delay_reason_distribution\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 160, \"z\": 30, \"width\": 650, \"height\": 265}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"FactOrders.delay_reason\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Delay Incidents by Reason\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"or\", \"Entity\": \"FactOrders\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"or\"}}, \"Property\": \"delay_reason\"}, \"Name\": \"FactOrders.delay_reason\", \"NativeReferenceName\": \"delay_reason\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delay Incidents by Reason\"}, \"Name\": \"_Measures.Delay Incidents by Reason\", \"NativeReferenceName\": \"Delay Incidents by Reason\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Delivery Delay Root-Cause Distribution (10 Verified Reasons)'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 685,
+          "y": 160,
+          "z": 30,
+          "width": 575,
+          "height": 265,
+          "config": "{\"name\": \"p3_columnchart_delay_rate_by_vehicle_type\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 685, \"y\": 160, \"z\": 30, \"width\": 575, \"height\": 265}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"DimVehicle.vehicle_type\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Delay Rate %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"ve\", \"Entity\": \"DimVehicle\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ve\"}}, \"Property\": \"vehicle_type\"}, \"Name\": \"DimVehicle.vehicle_type\", \"NativeReferenceName\": \"vehicle_type\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delay Rate %\"}, \"Name\": \"_Measures.Delay Rate %\", \"NativeReferenceName\": \"Delay Rate %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Delivery Delay Rate % by Fleet Vehicle Type'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 435,
+          "z": 40,
+          "width": 650,
+          "height": 270,
+          "config": "{\"name\": \"p3_table_driver_performance_scorecard\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 435, \"z\": 40, \"width\": 650, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"DimDriver.driver_name\"}, {\"queryRef\": \"DimDriver.employment_type\"}, {\"queryRef\": \"DimDriver.experience_years\"}, {\"queryRef\": \"DimDriver.performance_rating\"}, {\"queryRef\": \"_Measures.Driver Completed Deliveries\"}, {\"queryRef\": \"_Measures.On-Time Delivery Rate %\"}, {\"queryRef\": \"_Measures.Delay Rate %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"dr\", \"Entity\": \"DimDriver\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"dr\"}}, \"Property\": \"driver_name\"}, \"Name\": \"DimDriver.driver_name\", \"NativeReferenceName\": \"driver_name\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"dr\"}}, \"Property\": \"employment_type\"}, \"Name\": \"DimDriver.employment_type\", \"NativeReferenceName\": \"employment_type\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"dr\"}}, \"Property\": \"experience_years\"}, \"Name\": \"DimDriver.experience_years\", \"NativeReferenceName\": \"experience_years\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"dr\"}}, \"Property\": \"performance_rating\"}, \"Name\": \"DimDriver.performance_rating\", \"NativeReferenceName\": \"performance_rating\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Driver Completed Deliveries\"}, \"Name\": \"_Measures.Driver Completed Deliveries\", \"NativeReferenceName\": \"Driver Completed Deliveries\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"On-Time Delivery Rate %\"}, \"Name\": \"_Measures.On-Time Delivery Rate %\", \"NativeReferenceName\": \"On-Time Delivery Rate %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delay Rate %\"}, \"Name\": \"_Measures.Delay Rate %\", \"NativeReferenceName\": \"Delay Rate %\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Driver Performance Scorecard: Experience & SLA Adherence'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 685,
+          "y": 435,
+          "z": 40,
+          "width": 575,
+          "height": 270,
+          "config": "{\"name\": \"p3_table_delay_incident_feed_and_sla\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 685, \"y\": 435, \"z\": 40, \"width\": 575, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"FactOrders.order_id\"}, {\"queryRef\": \"DimHub.hub_name\"}, {\"queryRef\": \"FactOrders.delay_reason\"}, {\"queryRef\": \"_Measures.Avg Delivery Duration (Hours)\"}, {\"queryRef\": \"_Measures.Delivery SLA Variance (Hours)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"or\", \"Entity\": \"FactOrders\", \"Type\": 0}, {\"Name\": \"hu\", \"Entity\": \"DimHub\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"or\"}}, \"Property\": \"order_id\"}, \"Name\": \"FactOrders.order_id\", \"NativeReferenceName\": \"order_id\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"hu\"}}, \"Property\": \"hub_name\"}, \"Name\": \"DimHub.hub_name\", \"NativeReferenceName\": \"hub_name\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"or\"}}, \"Property\": \"delay_reason\"}, \"Name\": \"FactOrders.delay_reason\", \"NativeReferenceName\": \"delay_reason\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Avg Delivery Duration (Hours)\"}, \"Name\": \"_Measures.Avg Delivery Duration (Hours)\", \"NativeReferenceName\": \"Avg Delivery Duration (Hours)\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Delivery SLA Variance (Hours)\"}, \"Name\": \"_Measures.Delivery SLA Variance (Hours)\", \"NativeReferenceName\": \"Delivery SLA Variance (Hours)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Delay Incident Feed & SLA Breach Details'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection_FleetPredictiveMaintenance",
+      "displayName": "Fleet Telematics & Predictive Maintenance",
+      "ordinal": 3,
+      "height": 720.0,
+      "width": 1280.0,
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 10,
+          "z": 50,
+          "width": 650,
+          "height": 48,
+          "config": "{\"name\": \"p4_textbox_header_banner\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 10, \"z\": 50, \"width\": 650, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"LOGITRACK INTELLIGENCE | Fleet Telematics & Predictive Maintenance\", \"textStyle\": {\"fontFamily\": \"Segoe UI Semibold\", \"fontSize\": \"15pt\", \"color\": \"#142B45\"}}, {\"value\": \"  |  Vehicle Health, Depots, Downtime & Service Expense\", \"textStyle\": {\"fontFamily\": \"Segoe UI\", \"fontSize\": \"10pt\", \"color\": \"#64748B\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 685,
+          "y": 10,
+          "z": 200,
+          "width": 280,
+          "height": 48,
+          "config": "{\"name\": \"p4_slicer_dimvehicle_current_status\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 685, \"y\": 10, \"z\": 200, \"width\": 280, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"DimVehicle.current_status\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"ve\", \"Entity\": \"DimVehicle\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ve\"}}, \"Property\": \"current_status\"}, \"Name\": \"DimVehicle.current_status\", \"NativeReferenceName\": \"current_status\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Filter Fleet Status'\"}}}}}], \"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 980,
+          "y": 10,
+          "z": 200,
+          "width": 280,
+          "height": 48,
+          "config": "{\"name\": \"p4_slicer_dimvehicle_vehicle_type\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 980, \"y\": 10, \"z\": 200, \"width\": 280, \"height\": 48}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"DimVehicle.vehicle_type\", \"active\": true}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"ve\", \"Entity\": \"DimVehicle\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ve\"}}, \"Property\": \"vehicle_type\"}, \"Name\": \"DimVehicle.vehicle_type\", \"NativeReferenceName\": \"vehicle_type\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Filter Vehicle Type'\"}}}}}], \"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p4_card_total_fleet_vehicles\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Fleet Vehicles\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Fleet Vehicles\"}, \"Name\": \"_Measures.Total Fleet Vehicles\", \"NativeReferenceName\": \"Total Fleet Vehicles\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL FLEET ASSETS'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#142B45'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 225,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p4_card_active_vehicles\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 225, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Active Vehicles\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Active Vehicles\"}, \"Name\": \"_Measures.Active Vehicles\", \"NativeReferenceName\": \"Active Vehicles\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'ACTIVE ON-ROAD FLEET'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#2E7D5B'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 430,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p4_card_vehicles_in_maintenance\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 430, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Vehicles In Maintenance\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Vehicles In Maintenance\"}, \"Name\": \"_Measures.Vehicles In Maintenance\", \"NativeReferenceName\": \"Vehicles In Maintenance\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'VEHICLES IN DEPOT'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C58B2A'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 635,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p4_card_maintenance_alert_vehicles\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 635, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Maintenance Alert Vehicles\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Maintenance Alert Vehicles\"}, \"Name\": \"_Measures.Maintenance Alert Vehicles\", \"NativeReferenceName\": \"Maintenance Alert Vehicles\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'CRITICAL RISK ALERTS'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C65353'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 840,
+          "y": 68,
+          "z": 100,
+          "width": 195,
+          "height": 82,
+          "config": "{\"name\": \"p4_card_total_maintenance_expense\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 840, \"y\": 68, \"z\": 100, \"width\": 195, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Maintenance Expense ($)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Maintenance Expense ($)\"}, \"Name\": \"_Measures.Total Maintenance Expense ($)\", \"NativeReferenceName\": \"Total Maintenance Expense ($)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'MAINTENANCE EXPENSE'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#2F5D8A'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1045,
+          "y": 68,
+          "z": 100,
+          "width": 215,
+          "height": 82,
+          "config": "{\"name\": \"p4_card_total_downtime_hours\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1045, \"y\": 68, \"z\": 100, \"width\": 215, \"height\": 82}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Downtime Hours\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Downtime Hours\"}, \"Name\": \"_Measures.Total Downtime Hours\", \"NativeReferenceName\": \"Total Downtime Hours\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'TOTAL DOWNTIME (HRS)'\"}}}}}], \"labels\": [{\"properties\": {\"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#C58B2A'\"}}}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"20D\"}}}}}], \"categoryLabels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"color\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#64748B'\"}}}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 160,
+          "z": 30,
+          "width": 480,
+          "height": 265,
+          "config": "{\"name\": \"p4_piechart_fleet_availability_breakdown\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 160, \"z\": 30, \"width\": 480, \"height\": 265}}], \"singleVisual\": {\"visualType\": \"pieChart\", \"projections\": {\"Category\": [{\"queryRef\": \"DimVehicle.current_status\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Fleet Vehicles\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"ve\", \"Entity\": \"DimVehicle\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ve\"}}, \"Property\": \"current_status\"}, \"Name\": \"DimVehicle.current_status\", \"NativeReferenceName\": \"current_status\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Fleet Vehicles\"}, \"Name\": \"_Measures.Total Fleet Vehicles\", \"NativeReferenceName\": \"Total Fleet Vehicles\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Fleet Operational Availability Breakdown'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 515,
+          "y": 160,
+          "z": 30,
+          "width": 745,
+          "height": 265,
+          "config": "{\"name\": \"p4_barchart_maintenance_expense_by_service\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 515, \"y\": 160, \"z\": 30, \"width\": 745, \"height\": 265}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"FactMaintenance.service_type\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Maintenance Expense ($)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"ma\", \"Entity\": \"FactMaintenance\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ma\"}}, \"Property\": \"service_type\"}, \"Name\": \"FactMaintenance.service_type\", \"NativeReferenceName\": \"service_type\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Maintenance Expense ($)\"}, \"Name\": \"_Measures.Total Maintenance Expense ($)\", \"NativeReferenceName\": \"Total Maintenance Expense ($)\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Maintenance Expense ($) by Service Category (source: synthetic)'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 435,
+          "z": 30,
+          "width": 545,
+          "height": 270,
+          "config": "{\"name\": \"p4_columnchart_vehicle_fleet_distribution\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 435, \"z\": 30, \"width\": 545, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"DimVehicle.vehicle_code\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Fleet Vehicles\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"ve\", \"Entity\": \"DimVehicle\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ve\"}}, \"Property\": \"vehicle_code\"}, \"Name\": \"DimVehicle.vehicle_code\", \"NativeReferenceName\": \"vehicle_code\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Fleet Vehicles\"}, \"Name\": \"_Measures.Total Fleet Vehicles\", \"NativeReferenceName\": \"Total Fleet Vehicles\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'Vehicle Fleet Asset Distribution'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 580,
+          "y": 435,
+          "z": 40,
+          "width": 680,
+          "height": 270,
+          "config": "{\"name\": \"p4_table_high_risk_vehicle_watchlist\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 580, \"y\": 435, \"z\": 40, \"width\": 680, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"DimVehicle.vehicle_code\"}, {\"queryRef\": \"DimVehicle.vehicle_model\"}, {\"queryRef\": \"DimVehicle.vehicle_type\"}, {\"queryRef\": \"DimVehicle.current_status\"}, {\"queryRef\": \"DimVehicle.lifetime_breakdowns\"}, {\"queryRef\": \"DimVehicle.is_maintenance_alert\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"ve\", \"Entity\": \"DimVehicle\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ve\"}}, \"Property\": \"vehicle_code\"}, \"Name\": \"DimVehicle.vehicle_code\", \"NativeReferenceName\": \"vehicle_code\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ve\"}}, \"Property\": \"vehicle_model\"}, \"Name\": \"DimVehicle.vehicle_model\", \"NativeReferenceName\": \"vehicle_model\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ve\"}}, \"Property\": \"vehicle_type\"}, \"Name\": \"DimVehicle.vehicle_type\", \"NativeReferenceName\": \"vehicle_type\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ve\"}}, \"Property\": \"current_status\"}, \"Name\": \"DimVehicle.current_status\", \"NativeReferenceName\": \"current_status\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ve\"}}, \"Property\": \"lifetime_breakdowns\"}, \"Name\": \"DimVehicle.lifetime_breakdowns\", \"NativeReferenceName\": \"lifetime_breakdowns\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"ve\"}}, \"Property\": \"is_maintenance_alert\"}, \"Name\": \"DimVehicle.is_maintenance_alert\", \"NativeReferenceName\": \"is_maintenance_alert\"}]}, \"objects\": {\"general\": [{\"properties\": {\"title\": {\"expr\": {\"Literal\": {\"Value\": \"'High-Risk Vehicle Fleet Maintenance Action Watchlist'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    }
+  ]
+}

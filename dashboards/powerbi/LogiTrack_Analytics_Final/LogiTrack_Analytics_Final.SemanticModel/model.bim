@@ -1,0 +1,987 @@
+{
+  "name": "LogiTrack_Analytics_Final",
+  "compatibilityLevel": 1550,
+  "model": {
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "tables": [
+      {
+        "name": "_Measures",
+        "columns": [
+          {
+            "name": "_Dummy",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "_Dummy"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "_Measures-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [_Dummy = _t])",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Orders",
+            "expression": "DISTINCTCOUNT('FactOrders'[order_id])",
+            "formatString": "#,##0",
+            "displayFolder": "01 - Executive KPIs",
+            "description": "Total distinct operational orders placed"
+          },
+          {
+            "name": "Delivered Orders",
+            "expression": "CALCULATE([Total Orders], KEEPFILTERS('FactOrders'[order_status] = \"Delivered\"))",
+            "formatString": "#,##0",
+            "displayFolder": "01 - Executive KPIs",
+            "description": "Count of successfully delivered orders"
+          },
+          {
+            "name": "Cancelled Orders",
+            "expression": "CALCULATE([Total Orders], KEEPFILTERS('FactOrders'[order_status] = \"Cancelled\"))",
+            "formatString": "#,##0",
+            "displayFolder": "01 - Executive KPIs",
+            "description": "Count of cancelled orders"
+          },
+          {
+            "name": "Cancellation Rate %",
+            "expression": "DIVIDE([Cancelled Orders], [Total Orders], 0)",
+            "formatString": "0.00%",
+            "displayFolder": "01 - Executive KPIs",
+            "description": "Percentage of total orders cancelled"
+          },
+          {
+            "name": "On-Time Delivery Rate %",
+            "expression": "DIVIDE([On-Time Deliveries], [Delivered Orders], 0)",
+            "formatString": "0.00%",
+            "displayFolder": "01 - Executive KPIs",
+            "description": "On-Time Delivery Rate (OTD %)"
+          },
+          {
+            "name": "Delay Rate %",
+            "expression": "DIVIDE([Delayed Deliveries], [Delivered Orders], 0)",
+            "formatString": "0.00%",
+            "displayFolder": "01 - Executive KPIs",
+            "description": "Percentage of delivered orders delayed"
+          },
+          {
+            "name": "Avg Delivery Duration (Hours)",
+            "expression": "CALCULATE(AVERAGE('FactOrders'[delivery_time_hours]), KEEPFILTERS('FactOrders'[order_status] = \"Delivered\"))",
+            "formatString": "0.00",
+            "displayFolder": "01 - Executive KPIs",
+            "description": "Average transit delivery hours"
+          },
+          {
+            "name": "Avg CSAT Score",
+            "expression": "CALCULATE(AVERAGE('FactOrders'[csat_score]), KEEPFILTERS('FactOrders'[order_status] = \"Delivered\"))",
+            "formatString": "0.00",
+            "displayFolder": "01 - Executive KPIs",
+            "description": "Average Customer Satisfaction Score (1-5)"
+          },
+          {
+            "name": "Total Orders (Prior Month)",
+            "expression": "CALCULATE([Total Orders], DATEADD('DimDate'[full_date], -1, MONTH))",
+            "formatString": "#,##0",
+            "displayFolder": "01 - Executive KPIs",
+            "description": "Order volume in prior calendar month"
+          },
+          {
+            "name": "Order Volume MoM Growth %",
+            "expression": "VAR _Current = [Total Orders] VAR _Prior = [Total Orders (Prior Month)] RETURN DIVIDE(_Current - _Prior, _Prior, 0)",
+            "formatString": "+0.00%;-0.00%;0.00%",
+            "displayFolder": "01 - Executive KPIs",
+            "description": "Month-over-month percentage order growth"
+          },
+          {
+            "name": "On-Time Deliveries",
+            "expression": "CALCULATE([Total Orders], KEEPFILTERS('FactOrders'[order_status] = \"Delivered\"), KEEPFILTERS('FactOrders'[is_on_time] = TRUE()))",
+            "formatString": "#,##0",
+            "displayFolder": "02 - Delivery & SLAs",
+            "description": "Volume of orders delivered on time"
+          },
+          {
+            "name": "Delayed Deliveries",
+            "expression": "CALCULATE([Total Orders], KEEPFILTERS('FactOrders'[order_status] = \"Delivered\"), KEEPFILTERS('FactOrders'[is_delayed] = TRUE()))",
+            "formatString": "#,##0",
+            "displayFolder": "02 - Delivery & SLAs",
+            "description": "Volume of orders delivered late"
+          },
+          {
+            "name": "Avg Delayed Duration (Hours)",
+            "expression": "CALCULATE(AVERAGE('FactOrders'[delivery_time_hours]), KEEPFILTERS('FactOrders'[order_status] = \"Delivered\"), KEEPFILTERS('FactOrders'[is_delayed] = TRUE()))",
+            "formatString": "0.00",
+            "displayFolder": "02 - Delivery & SLAs",
+            "description": "Average duration for delayed deliveries"
+          },
+          {
+            "name": "Avg On-Time Duration (Hours)",
+            "expression": "CALCULATE(AVERAGE('FactOrders'[delivery_time_hours]), KEEPFILTERS('FactOrders'[order_status] = \"Delivered\"), KEEPFILTERS('FactOrders'[is_on_time] = TRUE()))",
+            "formatString": "0.00",
+            "displayFolder": "02 - Delivery & SLAs",
+            "description": "Average duration for on-time deliveries"
+          },
+          {
+            "name": "Delivery SLA Variance (Hours)",
+            "expression": "[Avg Delayed Duration (Hours)] - [Avg On-Time Duration (Hours)]",
+            "formatString": "+0.00;-0.00;0.00",
+            "displayFolder": "02 - Delivery & SLAs",
+            "description": "Variance between late and on-time transit duration"
+          },
+          {
+            "name": "Delay Incidents by Reason",
+            "expression": "CALCULATE(COUNTROWS('FactOrders'), KEEPFILTERS(NOT ISBLANK('FactOrders'[delay_reason])))",
+            "formatString": "#,##0",
+            "displayFolder": "02 - Delivery & SLAs",
+            "description": "Count of recorded delay incidents"
+          },
+          {
+            "name": "Cumulative Delay Reason %",
+            "expression": "VAR _CurrentCount = [Delay Incidents by Reason] VAR _TotalIncidents = CALCULATE([Delay Incidents by Reason], ALLSELECTED('FactOrders'[delay_reason])) VAR _TableRanked = ADDCOLUMNS(ALLSELECTED('FactOrders'[delay_reason]), \"@Incidents\", [Delay Incidents by Reason]) VAR _CumulativeSum = SUMX(FILTER(_TableRanked, [@Incidents] >= _CurrentCount), [@Incidents]) RETURN DIVIDE(_CumulativeSum, _TotalIncidents, 0)",
+            "formatString": "0.0%",
+            "displayFolder": "02 - Delivery & SLAs",
+            "description": "Pareto cumulative percentage across ranked delay reasons"
+          },
+          {
+            "name": "Total Hubs",
+            "expression": "DISTINCTCOUNT('DimHub'[hub_key])",
+            "formatString": "#,##0",
+            "displayFolder": "03 - Hub Operations",
+            "description": "Total regional Texas distribution hubs"
+          },
+          {
+            "name": "Network Daily Capacity",
+            "expression": "SUM('DimHub'[daily_capacity])",
+            "formatString": "#,##0",
+            "displayFolder": "03 - Hub Operations",
+            "description": "Network aggregate designed daily capacity"
+          },
+          {
+            "name": "Avg Hub Processing Time (Hours)",
+            "expression": "AVERAGE('FactOrders'[hub_processing_time_hours])",
+            "formatString": "0.00",
+            "displayFolder": "03 - Hub Operations",
+            "description": "Average internal sorting and staging time"
+          },
+          {
+            "name": "Total Orders Received (Hub)",
+            "expression": "SUM('FactHubHourly'[orders_received])",
+            "formatString": "#,##0",
+            "displayFolder": "03 - Hub Operations",
+            "description": "Total hourly incoming volume to hubs"
+          },
+          {
+            "name": "Total Orders Dispatched (Hub)",
+            "expression": "SUM('FactHubHourly'[orders_dispatched])",
+            "formatString": "#,##0",
+            "displayFolder": "03 - Hub Operations",
+            "description": "Total hourly dispatches from hubs"
+          },
+          {
+            "name": "Total Backlog Volume",
+            "expression": "SUM('FactHubHourly'[backlog_volume])",
+            "formatString": "#,##0",
+            "displayFolder": "03 - Hub Operations",
+            "description": "Active pending orders in staging backlog"
+          },
+          {
+            "name": "Hub Capacity Utilization %",
+            "expression": "AVERAGE('FactHubHourly'[capacity_utilization_pct]) / 100",
+            "formatString": "0.00%",
+            "displayFolder": "03 - Hub Operations",
+            "description": "Hourly hub utilization relative to daily capacity"
+          },
+          {
+            "name": "Total Fleet Vehicles",
+            "expression": "DISTINCTCOUNT('DimVehicle'[vehicle_key])",
+            "formatString": "#,##0",
+            "displayFolder": "04 - Fleet & Maintenance",
+            "description": "Total fleet vehicle assets"
+          },
+          {
+            "name": "Active Vehicles",
+            "expression": "CALCULATE([Total Fleet Vehicles], KEEPFILTERS('DimVehicle'[current_status] = \"Active\"))",
+            "formatString": "#,##0",
+            "displayFolder": "04 - Fleet & Maintenance",
+            "description": "Fleet vehicles active in road service"
+          },
+          {
+            "name": "Vehicles In Maintenance",
+            "expression": "CALCULATE([Total Fleet Vehicles], KEEPFILTERS('DimVehicle'[current_status] = \"Maintenance\"))",
+            "formatString": "#,##0",
+            "displayFolder": "04 - Fleet & Maintenance",
+            "description": "Vehicles out-of-service in maintenance depots"
+          },
+          {
+            "name": "Fleet Availability Rate %",
+            "expression": "DIVIDE([Active Vehicles], [Total Fleet Vehicles], 0)",
+            "formatString": "0.00%",
+            "displayFolder": "04 - Fleet & Maintenance",
+            "description": "Operational availability ratio of vehicle fleet"
+          },
+          {
+            "name": "Maintenance Alert Vehicles",
+            "expression": "CALCULATE([Total Fleet Vehicles], KEEPFILTERS('DimVehicle'[is_maintenance_alert] = TRUE()))",
+            "formatString": "#,##0",
+            "displayFolder": "04 - Fleet & Maintenance",
+            "description": "Vehicles flagged for critical breakdown risk"
+          },
+          {
+            "name": "Avg Fleet Age (Days)",
+            "expression": "AVERAGEX('DimVehicle', DATEDIFF('DimVehicle'[purchase_date], DATE(2026, 11, 18), DAY))",
+            "formatString": "#,##0",
+            "displayFolder": "04 - Fleet & Maintenance",
+            "description": "Average vehicle age since purchase"
+          },
+          {
+            "name": "Total Maintenance Events",
+            "expression": "COUNTROWS('FactMaintenance')",
+            "formatString": "#,##0",
+            "displayFolder": "04 - Fleet & Maintenance",
+            "description": "Historical maintenance interventions (source: synthetic)"
+          },
+          {
+            "name": "Total Maintenance Expense ($)",
+            "expression": "SUM('FactMaintenance'[cost_usd])",
+            "formatString": "$#,##0.00",
+            "displayFolder": "04 - Fleet & Maintenance",
+            "description": "Cumulative maintenance repair costs (source: synthetic)"
+          },
+          {
+            "name": "Total Downtime Hours",
+            "expression": "SUM('FactMaintenance'[downtime_hours])",
+            "formatString": "#,##0.0",
+            "displayFolder": "04 - Fleet & Maintenance",
+            "description": "Cumulative maintenance downtime hours (source: synthetic)"
+          },
+          {
+            "name": "Total Drivers",
+            "expression": "DISTINCTCOUNT('DimDriver'[driver_key])",
+            "formatString": "#,##0",
+            "displayFolder": "05 - Driver Metrics",
+            "description": "Total registered delivery driver workforce"
+          },
+          {
+            "name": "Avg Driver Experience (Years)",
+            "expression": "AVERAGE('DimDriver'[experience_years])",
+            "formatString": "0.0",
+            "displayFolder": "05 - Driver Metrics",
+            "description": "Average driver seniority in years"
+          },
+          {
+            "name": "Avg Driver Rating",
+            "expression": "AVERAGE('DimDriver'[performance_rating])",
+            "formatString": "0.00",
+            "displayFolder": "05 - Driver Metrics",
+            "description": "Average driver quality rating (1-5 scale)"
+          },
+          {
+            "name": "Driver Completed Deliveries",
+            "expression": "CALCULATE([Delivered Orders], ALLEXCEPT('DimDriver', 'DimDriver'[driver_name], 'DimDriver'[driver_id]))",
+            "formatString": "#,##0",
+            "displayFolder": "05 - Driver Metrics",
+            "description": "Deliveries completed by driver"
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "date_key",
+            "dataType": "int64",
+            "sourceColumn": "date_key",
+            "isHidden": true
+          },
+          {
+            "name": "full_date",
+            "dataType": "dateTime",
+            "sourceColumn": "full_date",
+            "isKey": true,
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "day_of_week",
+            "dataType": "int64",
+            "sourceColumn": "day_of_week",
+            "isHidden": true
+          },
+          {
+            "name": "day_name",
+            "dataType": "string",
+            "sourceColumn": "day_name",
+            "sortByColumn": "day_of_week"
+          },
+          {
+            "name": "day_of_month",
+            "dataType": "int64",
+            "sourceColumn": "day_of_month"
+          },
+          {
+            "name": "month_number",
+            "dataType": "int64",
+            "sourceColumn": "month_number",
+            "isHidden": true
+          },
+          {
+            "name": "month_name",
+            "dataType": "string",
+            "sourceColumn": "month_name",
+            "sortByColumn": "month_number"
+          },
+          {
+            "name": "quarter",
+            "dataType": "int64",
+            "sourceColumn": "quarter"
+          },
+          {
+            "name": "year",
+            "dataType": "int64",
+            "sourceColumn": "year"
+          },
+          {
+            "name": "is_weekend",
+            "dataType": "boolean",
+            "sourceColumn": "is_weekend"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/DimDate.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimHub",
+        "columns": [
+          {
+            "name": "hub_key",
+            "dataType": "int64",
+            "sourceColumn": "hub_key",
+            "isHidden": true
+          },
+          {
+            "name": "hub_id",
+            "dataType": "int64",
+            "sourceColumn": "hub_id",
+            "isHidden": true
+          },
+          {
+            "name": "hub_name",
+            "dataType": "string",
+            "sourceColumn": "hub_name"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "sourceColumn": "city",
+            "dataCategory": "City"
+          },
+          {
+            "name": "state",
+            "dataType": "string",
+            "sourceColumn": "state",
+            "dataCategory": "StateOrProvince"
+          },
+          {
+            "name": "daily_capacity",
+            "dataType": "int64",
+            "sourceColumn": "daily_capacity",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "latitude",
+            "dataType": "double",
+            "sourceColumn": "latitude",
+            "dataCategory": "Latitude"
+          },
+          {
+            "name": "longitude",
+            "dataType": "double",
+            "sourceColumn": "longitude",
+            "dataCategory": "Longitude"
+          },
+          {
+            "name": "data_origin",
+            "dataType": "string",
+            "sourceColumn": "data_origin",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimHub-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/DimHub.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimDriver",
+        "columns": [
+          {
+            "name": "driver_key",
+            "dataType": "int64",
+            "sourceColumn": "driver_key",
+            "isHidden": true
+          },
+          {
+            "name": "driver_id",
+            "dataType": "int64",
+            "sourceColumn": "driver_id",
+            "isHidden": true
+          },
+          {
+            "name": "driver_name",
+            "dataType": "string",
+            "sourceColumn": "driver_name"
+          },
+          {
+            "name": "employment_type",
+            "dataType": "string",
+            "sourceColumn": "employment_type"
+          },
+          {
+            "name": "hire_date",
+            "dataType": "dateTime",
+            "sourceColumn": "hire_date",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "experience_years",
+            "dataType": "int64",
+            "sourceColumn": "experience_years",
+            "formatString": "0"
+          },
+          {
+            "name": "performance_rating",
+            "dataType": "int64",
+            "sourceColumn": "performance_rating",
+            "formatString": "0"
+          },
+          {
+            "name": "data_origin",
+            "dataType": "string",
+            "sourceColumn": "data_origin",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDriver-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/DimDriver.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimVehicle",
+        "columns": [
+          {
+            "name": "vehicle_key",
+            "dataType": "int64",
+            "sourceColumn": "vehicle_key",
+            "isHidden": true
+          },
+          {
+            "name": "vehicle_id",
+            "dataType": "int64",
+            "sourceColumn": "vehicle_id",
+            "isHidden": true
+          },
+          {
+            "name": "vehicle_code",
+            "dataType": "string",
+            "sourceColumn": "vehicle_code"
+          },
+          {
+            "name": "vehicle_model",
+            "dataType": "string",
+            "sourceColumn": "vehicle_model"
+          },
+          {
+            "name": "vehicle_type",
+            "dataType": "string",
+            "sourceColumn": "vehicle_type"
+          },
+          {
+            "name": "current_status",
+            "dataType": "string",
+            "sourceColumn": "current_status"
+          },
+          {
+            "name": "lifetime_breakdowns",
+            "dataType": "int64",
+            "sourceColumn": "lifetime_breakdowns",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "is_maintenance_alert",
+            "dataType": "boolean",
+            "sourceColumn": "is_maintenance_alert"
+          },
+          {
+            "name": "purchase_date",
+            "dataType": "dateTime",
+            "sourceColumn": "purchase_date",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "data_origin",
+            "dataType": "string",
+            "sourceColumn": "data_origin",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimVehicle-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/DimVehicle.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactOrders",
+        "columns": [
+          {
+            "name": "order_id",
+            "dataType": "int64",
+            "sourceColumn": "order_id"
+          },
+          {
+            "name": "order_date_key",
+            "dataType": "int64",
+            "sourceColumn": "order_date_key",
+            "isHidden": true
+          },
+          {
+            "name": "delivery_date_key",
+            "dataType": "int64",
+            "sourceColumn": "delivery_date_key",
+            "isHidden": true
+          },
+          {
+            "name": "hub_key",
+            "dataType": "int64",
+            "sourceColumn": "hub_key",
+            "isHidden": true
+          },
+          {
+            "name": "driver_key",
+            "dataType": "int64",
+            "sourceColumn": "driver_key",
+            "isHidden": true
+          },
+          {
+            "name": "vehicle_key",
+            "dataType": "int64",
+            "sourceColumn": "vehicle_key",
+            "isHidden": true
+          },
+          {
+            "name": "order_status",
+            "dataType": "string",
+            "sourceColumn": "order_status"
+          },
+          {
+            "name": "is_delayed",
+            "dataType": "boolean",
+            "sourceColumn": "is_delayed"
+          },
+          {
+            "name": "is_on_time",
+            "dataType": "boolean",
+            "sourceColumn": "is_on_time"
+          },
+          {
+            "name": "delay_reason",
+            "dataType": "string",
+            "sourceColumn": "delay_reason"
+          },
+          {
+            "name": "csat_score",
+            "dataType": "int64",
+            "sourceColumn": "csat_score",
+            "formatString": "0"
+          },
+          {
+            "name": "delivery_time_hours",
+            "dataType": "double",
+            "sourceColumn": "delivery_time_hours",
+            "formatString": "0.00"
+          },
+          {
+            "name": "hub_processing_time_hours",
+            "dataType": "double",
+            "sourceColumn": "hub_processing_time_hours",
+            "formatString": "0.00"
+          },
+          {
+            "name": "data_origin",
+            "dataType": "string",
+            "sourceColumn": "data_origin",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactOrders-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/FactOrders.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactHubHourly",
+        "columns": [
+          {
+            "name": "hub_hourly_id",
+            "dataType": "string",
+            "sourceColumn": "hub_hourly_id",
+            "isHidden": true
+          },
+          {
+            "name": "hub_key",
+            "dataType": "int64",
+            "sourceColumn": "hub_key",
+            "isHidden": true
+          },
+          {
+            "name": "date_key",
+            "dataType": "int64",
+            "sourceColumn": "date_key",
+            "isHidden": true
+          },
+          {
+            "name": "hour_of_day",
+            "dataType": "int64",
+            "sourceColumn": "hour_of_day",
+            "formatString": "0"
+          },
+          {
+            "name": "orders_received",
+            "dataType": "int64",
+            "sourceColumn": "orders_received",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "orders_dispatched",
+            "dataType": "int64",
+            "sourceColumn": "orders_dispatched",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "avg_processing_time_hours",
+            "dataType": "double",
+            "sourceColumn": "avg_processing_time_hours",
+            "formatString": "0.00"
+          },
+          {
+            "name": "backlog_volume",
+            "dataType": "int64",
+            "sourceColumn": "backlog_volume",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "capacity_utilization_pct",
+            "dataType": "double",
+            "sourceColumn": "capacity_utilization_pct",
+            "formatString": "0.00"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactHubHourly-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/FactHubHourly.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactMaintenance",
+        "columns": [
+          {
+            "name": "maintenance_id",
+            "dataType": "string",
+            "sourceColumn": "maintenance_id"
+          },
+          {
+            "name": "vehicle_key",
+            "dataType": "int64",
+            "sourceColumn": "vehicle_key",
+            "isHidden": true
+          },
+          {
+            "name": "vehicle_code",
+            "dataType": "string",
+            "sourceColumn": "vehicle_code"
+          },
+          {
+            "name": "service_type",
+            "dataType": "string",
+            "sourceColumn": "service_type"
+          },
+          {
+            "name": "maintenance_status",
+            "dataType": "string",
+            "sourceColumn": "maintenance_status"
+          },
+          {
+            "name": "scheduled_date",
+            "dataType": "dateTime",
+            "sourceColumn": "scheduled_date",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "completed_date",
+            "dataType": "dateTime",
+            "sourceColumn": "completed_date",
+            "formatString": "yyyy-MM-dd"
+          },
+          {
+            "name": "downtime_hours",
+            "dataType": "double",
+            "sourceColumn": "downtime_hours",
+            "formatString": "0.0"
+          },
+          {
+            "name": "cost_usd",
+            "dataType": "double",
+            "sourceColumn": "cost_usd",
+            "formatString": "$#,##0.00"
+          },
+          {
+            "name": "data_origin",
+            "dataType": "string",
+            "sourceColumn": "data_origin",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactMaintenance-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/FactMaintenance.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactMLPredictions",
+        "columns": [
+          {
+            "name": "prediction_id",
+            "dataType": "string",
+            "sourceColumn": "prediction_id"
+          },
+          {
+            "name": "model_id",
+            "dataType": "string",
+            "sourceColumn": "model_id",
+            "isHidden": true
+          },
+          {
+            "name": "model_name",
+            "dataType": "string",
+            "sourceColumn": "model_name"
+          },
+          {
+            "name": "entity_type",
+            "dataType": "string",
+            "sourceColumn": "entity_type"
+          },
+          {
+            "name": "order_id",
+            "dataType": "int64",
+            "sourceColumn": "order_id"
+          },
+          {
+            "name": "predicted_label",
+            "dataType": "string",
+            "sourceColumn": "predicted_label"
+          },
+          {
+            "name": "predicted_score",
+            "dataType": "double",
+            "sourceColumn": "predicted_score",
+            "formatString": "0.0000"
+          },
+          {
+            "name": "prediction_timestamp",
+            "dataType": "dateTime",
+            "sourceColumn": "prediction_timestamp",
+            "formatString": "yyyy-MM-dd HH:mm:ss"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactMLPredictions-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/FactMLPredictions.csv\"),[Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "DimDate_FactOrders_OrderDate",
+        "fromTable": "FactOrders",
+        "fromColumn": "order_date_key",
+        "toTable": "DimDate",
+        "toColumn": "date_key",
+        "isActive": true
+      },
+      {
+        "name": "DimDate_FactOrders_DeliveryDate",
+        "fromTable": "FactOrders",
+        "fromColumn": "delivery_date_key",
+        "toTable": "DimDate",
+        "toColumn": "date_key",
+        "isActive": false
+      },
+      {
+        "name": "DimHub_FactOrders",
+        "fromTable": "FactOrders",
+        "fromColumn": "hub_key",
+        "toTable": "DimHub",
+        "toColumn": "hub_key",
+        "isActive": true
+      },
+      {
+        "name": "DimDriver_FactOrders",
+        "fromTable": "FactOrders",
+        "fromColumn": "driver_key",
+        "toTable": "DimDriver",
+        "toColumn": "driver_key",
+        "isActive": true
+      },
+      {
+        "name": "DimVehicle_FactOrders",
+        "fromTable": "FactOrders",
+        "fromColumn": "vehicle_key",
+        "toTable": "DimVehicle",
+        "toColumn": "vehicle_key",
+        "isActive": true
+      },
+      {
+        "name": "DimDate_FactHubHourly",
+        "fromTable": "FactHubHourly",
+        "fromColumn": "date_key",
+        "toTable": "DimDate",
+        "toColumn": "date_key",
+        "isActive": true
+      },
+      {
+        "name": "DimHub_FactHubHourly",
+        "fromTable": "FactHubHourly",
+        "fromColumn": "hub_key",
+        "toTable": "DimHub",
+        "toColumn": "hub_key",
+        "isActive": true
+      },
+      {
+        "name": "DimVehicle_FactMaintenance",
+        "fromTable": "FactMaintenance",
+        "fromColumn": "vehicle_key",
+        "toTable": "DimVehicle",
+        "toColumn": "vehicle_key",
+        "isActive": true
+      },
+      {
+        "name": "FactOrders_FactMLPredictions",
+        "fromTable": "FactMLPredictions",
+        "fromColumn": "order_id",
+        "toTable": "FactOrders",
+        "toColumn": "order_id",
+        "isActive": true
+      }
+    ]
+  }
+}
