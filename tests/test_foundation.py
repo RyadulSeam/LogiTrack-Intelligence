@@ -15,7 +15,7 @@ def test_python_version():
 def test_project_package_importable():
     """The logitrack package must be importable."""
     import logitrack
-    assert logitrack.__version__ == "0.1.0"
+    assert logitrack.__version__ == "1.0.0"
     assert logitrack.__project__ == "LogiTrack Intelligence"
 
 

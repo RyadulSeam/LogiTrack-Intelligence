@@ -1,0 +1,108 @@
+version: '3.8'
+
+# ============================================================
+# LogiTrack Intelligence — Multi-Service Production Stack
+# Phase 12: Production-Style Release (v1.0.0)
+# ============================================================
+
+services:
+  # ──────────────────────────────────────────────────────────
+  # Service 1: MQTT Message Broker (Mosquitto)
+  # ──────────────────────────────────────────────────────────
+  mosquitto:
+    image: eclipse-mosquitto:2.0
+    container_name: logitrack-mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./deployment/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - mosquitto-data:/mosquitto/data
+      - mosquitto-logs:/mosquitto/log
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 5 mosquitto_sub -t '$$SYS/#' -C 1 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - logitrack-network
+
+  # ──────────────────────────────────────────────────────────
+  # Service 2: FastAPI REST API Service
+  # ──────────────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: deployment/docker/Dockerfile.api
+    container_name: logitrack-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - API_DEBUG=false
+      - MQTT_BROKER_HOST=mosquitto
+      - MQTT_BROKER_PORT=1883
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./data/lake:/app/data/lake:ro
+      - ./models/artifacts:/app/models/artifacts:ro
+      - ./configs:/app/configs:ro
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+    networks:
+      - logitrack-network
+
+  # ──────────────────────────────────────────────────────────
+  # Service 3: Operational Control Tower (Streamlit)
+  # ──────────────────────────────────────────────────────────
+  control-tower:
+    build:
+      context: .
+      dockerfile: deployment/docker/Dockerfile.streamlit
+    container_name: logitrack-control-tower
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+      - API_URL=http://api:8000/api/v1
+      - MQTT_BROKER_HOST=mosquitto
+      - MQTT_BROKER_PORT=1883
+    volumes:
+      - ./data/lake:/app/data/lake:ro
+      - ./models/artifacts:/app/models/artifacts:ro
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8501/_stcore/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+    networks:
+      - logitrack-network
+
+# ────────────────────────────────────────────────────────────
+# Storage Volumes & Virtual Network
+# ────────────────────────────────────────────────────────────
+volumes:
+  mosquitto-data:
+    driver: local
+  mosquitto-logs:
+    driver: local
+
+networks:
+  logitrack-network:
+    name: logitrack-network
+    driver: bridge

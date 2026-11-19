@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "logitrack-intelligence"
-version = "0.1.0"
+version = "1.0.0"
 description = "Enterprise Logistics Data & Predictive Operations Platform"
 readme = "README.md"
 license = {text = "MIT"}

@@ -10,13 +10,15 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-Neon-green?logo=postgresql&logoColor=white" alt="Neon"/>
-  <img src="https://img.shields.io/badge/DuckDB-Analytics-yellow?logo=duckdb&logoColor=white" alt="DuckDB"/>
-  <img src="https://img.shields.io/badge/MQTT-Mosquitto-purple?logo=eclipsemosquitto&logoColor=white" alt="MQTT"/>
-  <img src="https://img.shields.io/badge/dbt-Transform-orange?logo=dbt&logoColor=white" alt="dbt"/>
-  <img src="https://img.shields.io/badge/FastAPI-Serve-teal?logo=fastapi&logoColor=white" alt="FastAPI"/>
-  <img src="https://img.shields.io/badge/license-MIT-brightgreen" alt="License"/>
+  <img src="https://img.shields.io/badge/Release-v1.0.0-blueviolet?style=flat-square" alt="Release"/>
+  <img src="https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white&style=flat-square" alt="Python"/>
+  <img src="https://img.shields.io/badge/Tests-107%20Passed-success?style=flat-square" alt="Tests"/>
+  <img src="https://img.shields.io/badge/Coverage-62%25-brightgreen?style=flat-square" alt="Coverage"/>
+  <img src="https://img.shields.io/badge/DuckDB-Analytics-yellow?logo=duckdb&logoColor=white&style=flat-square" alt="DuckDB"/>
+  <img src="https://img.shields.io/badge/FastAPI-1.0.0-teal?logo=fastapi&logoColor=white&style=flat-square" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/Streamlit-1.67-red?logo=streamlit&logoColor=white&style=flat-square" alt="Streamlit"/>
+  <img src="https://img.shields.io/badge/MQTT-Mosquitto-purple?logo=eclipsemosquitto&logoColor=white&style=flat-square" alt="MQTT"/>
+  <img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="License"/>
 </p>
 
 ---
@@ -127,7 +129,20 @@ LogiTrack-Intelligence/
 - Docker Desktop (for Mosquitto MQTT)
 - Power BI Desktop (optional, for BI reports)
 
-### Setup
+### Option 1: Docker Compose (Production Stack)
+
+Run the entire platform (FastAPI REST API, Streamlit Control Tower, and Mosquitto MQTT) with a single command:
+
+```bash
+docker compose up -d --build
+```
+- **API Swagger Docs**: http://localhost:8000/docs
+- **Streamlit Control Tower**: http://localhost:8501
+- **MQTT Event Broker**: tcp://localhost:1883
+
+---
+
+### Option 2: Local Virtual Environment Setup
 
 ```bash
 # Clone the repository
@@ -193,7 +208,7 @@ pip install -e ".[all]"         # Everything
 | **9** | Forecasting Engineering | ✅ Completed |
 | **10** | API & Application Layer | ✅ Completed |
 | **11** | Monitoring, Testing & CI/CD | ✅ Completed |
-| **12** | Final Production-Style Release | 🔲 Next |
+| **12** | Final Production-Style Release | ✅ Completed |
 
 ---
 

@@ -1,0 +1,42 @@
+# ============================================================
+# LogiTrack Intelligence — .dockerignore
+# ============================================================
+
+.git
+.gitignore
+.github
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+coverage-*.xml
+.tox/
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Large Data & Artifacts (Mount as volumes instead)
+data/source/
+data/synthetic/
+data/processed/
+data/quarantine/
+*.duckdb.wal
+
+# Power BI & Reports
+dashboards/powerbi/

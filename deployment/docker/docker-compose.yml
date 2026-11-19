@@ -1,5 +1,9 @@
 version: '3.8'
 
+# ============================================================
+# LogiTrack Intelligence — Deployment Docker Compose
+# ============================================================
+
 services:
   mosquitto:
     image: eclipse-mosquitto:2.0
@@ -9,10 +13,77 @@ services:
       - "1883:1883"
     volumes:
       - ../mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
-      - ../mosquitto/data:/mosquitto/data
-      - ../mosquitto/log:/mosquitto/log
+      - mosquitto-data:/mosquitto/data
+      - mosquitto-logs:/mosquitto/log
     healthcheck:
       test: ["CMD-SHELL", "timeout 5 mosquitto_sub -t '$$SYS/#' -C 1 || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 3
+    networks:
+      - logitrack-network
+
+  api:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.api
+    container_name: logitrack-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - MQTT_BROKER_HOST=mosquitto
+      - MQTT_BROKER_PORT=1883
+    volumes:
+      - ../../data/lake:/app/data/lake:ro
+      - ../../models/artifacts:/app/models/artifacts:ro
+      - ../../configs:/app/configs:ro
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    networks:
+      - logitrack-network
+
+  control-tower:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.streamlit
+    container_name: logitrack-control-tower
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000/api/v1
+      - MQTT_BROKER_HOST=mosquitto
+      - MQTT_BROKER_PORT=1883
+    volumes:
+      - ../../data/lake:/app/data/lake:ro
+      - ../../models/artifacts:/app/models/artifacts:ro
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8501/_stcore/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    networks:
+      - logitrack-network
+
+volumes:
+  mosquitto-data:
+    driver: local
+  mosquitto-logs:
+    driver: local
+
+networks:
+  logitrack-network:
+    name: logitrack-network
+    driver: bridge
