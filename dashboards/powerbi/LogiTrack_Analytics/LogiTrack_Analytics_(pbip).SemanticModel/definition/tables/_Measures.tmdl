@@ -1,0 +1,501 @@
+table _Measures
+	lineageTag: 4011a591-1e64-4e69-bd27-45b16a45b722
+
+	/// Total distinct operational orders placed
+	measure 'Total Orders' = DISTINCTCOUNT('FactOrders'[order_id])
+		formatString: #,##0
+		displayFolder: 01 - Executive KPIs
+		lineageTag: 355faad8-bb5d-46d3-acce-f08e2d2306e8
+
+	/// Count of successfully delivered orders
+	measure 'Delivered Orders' = CALCULATE([Total Orders], KEEPFILTERS('FactOrders'[order_status] = "Delivered"))
+		formatString: #,##0
+		displayFolder: 01 - Executive KPIs
+		lineageTag: dc135bd8-86ba-4e02-90ae-b74da933365f
+
+	/// Count of cancelled orders
+	measure 'Cancelled Orders' = CALCULATE([Total Orders], KEEPFILTERS('FactOrders'[order_status] = "Cancelled"))
+		formatString: #,##0
+		displayFolder: 01 - Executive KPIs
+		lineageTag: 731c1fab-e540-41a0-880c-caef4b02ab59
+
+	/// Percentage of total orders cancelled
+	measure 'Cancellation Rate %' = DIVIDE([Cancelled Orders], [Total Orders], 0)
+		formatString: 0.00%
+		displayFolder: 01 - Executive KPIs
+		lineageTag: 1bcf2208-4eb1-44fc-bac5-3eb9ead623c9
+
+	/// On-Time Delivery Rate (OTD %)
+	measure 'On-Time Delivery Rate %' = DIVIDE([On-Time Deliveries], [Delivered Orders], 0)
+		formatString: 0.00%
+		displayFolder: 01 - Executive KPIs
+		lineageTag: c4d42357-92ba-4595-9e9f-c0af0ac722ce
+
+	/// Percentage of delivered orders delayed
+	measure 'Delay Rate %' = DIVIDE([Delayed Deliveries], [Delivered Orders], 0)
+		formatString: 0.00%
+		displayFolder: 01 - Executive KPIs
+		lineageTag: 3bcd6465-2167-492c-9607-4fa4c4d97602
+
+	/// Average transit delivery hours
+	measure 'Avg Delivery Duration (Hours)' = CALCULATE(AVERAGE('FactOrders'[delivery_time_hours]), KEEPFILTERS('FactOrders'[order_status] = "Delivered"))
+		formatString: 0.00
+		displayFolder: 01 - Executive KPIs
+		lineageTag: 2db0bcf4-9b85-4de9-9137-21252b9981f1
+
+	/// Average Customer Satisfaction Score (1-5)
+	measure 'Avg CSAT Score' = CALCULATE(AVERAGE('FactOrders'[csat_score]), KEEPFILTERS('FactOrders'[order_status] = "Delivered"))
+		formatString: 0.00
+		displayFolder: 01 - Executive KPIs
+		lineageTag: 0242bb14-f9e6-477c-89c7-5ab830658532
+
+	/// Order volume in prior calendar month
+	measure 'Total Orders (Prior Month)' = CALCULATE([Total Orders], DATEADD('DimDate'[full_date], -1, MONTH))
+		formatString: #,##0
+		displayFolder: 01 - Executive KPIs
+		lineageTag: 1936761d-a7a5-4160-ae11-344f046786f3
+
+	/// Month-over-month percentage order growth
+	measure 'Order Volume MoM Growth %' = VAR _Current = [Total Orders] VAR _Prior = [Total Orders (Prior Month)] RETURN DIVIDE(_Current - _Prior, _Prior, 0)
+		formatString: +0.00%;-0.00%;0.00%
+		displayFolder: 01 - Executive KPIs
+		lineageTag: e42c8b9f-2aec-4cf1-9437-55fb1c3101d4
+
+	/// Volume of orders delivered on time
+	measure 'On-Time Deliveries' = CALCULATE([Total Orders], KEEPFILTERS('FactOrders'[order_status] = "Delivered"), KEEPFILTERS('FactOrders'[is_on_time] = TRUE()))
+		formatString: #,##0
+		displayFolder: 02 - Delivery & SLAs
+		lineageTag: 0786cd91-fc27-4fcc-946f-abb3bfed492e
+
+	/// Volume of orders delivered late
+	measure 'Delayed Deliveries' = CALCULATE([Total Orders], KEEPFILTERS('FactOrders'[order_status] = "Delivered"), KEEPFILTERS('FactOrders'[is_delayed] = TRUE()))
+		formatString: #,##0
+		displayFolder: 02 - Delivery & SLAs
+		lineageTag: 1418de6c-7468-42b2-869f-b0f8f5634caa
+
+	/// Average duration for delayed deliveries
+	measure 'Avg Delayed Duration (Hours)' = CALCULATE(AVERAGE('FactOrders'[delivery_time_hours]), KEEPFILTERS('FactOrders'[order_status] = "Delivered"), KEEPFILTERS('FactOrders'[is_delayed] = TRUE()))
+		formatString: 0.00
+		displayFolder: 02 - Delivery & SLAs
+		lineageTag: 84fffc7a-179b-4588-b474-7c1d24f304bc
+
+	/// Average duration for on-time deliveries
+	measure 'Avg On-Time Duration (Hours)' = CALCULATE(AVERAGE('FactOrders'[delivery_time_hours]), KEEPFILTERS('FactOrders'[order_status] = "Delivered"), KEEPFILTERS('FactOrders'[is_on_time] = TRUE()))
+		formatString: 0.00
+		displayFolder: 02 - Delivery & SLAs
+		lineageTag: 16ec863b-21f5-4674-8341-eb2a4a993674
+
+	/// Variance between late and on-time transit duration
+	measure 'Delivery SLA Variance (Hours)' = [Avg Delayed Duration (Hours)] - [Avg On-Time Duration (Hours)]
+		formatString: +0.00;-0.00;0.00
+		displayFolder: 02 - Delivery & SLAs
+		lineageTag: 11e44724-d86b-4370-b37f-3043bab4c331
+
+	/// Count of recorded delay incidents
+	measure 'Delay Incidents by Reason' = CALCULATE(COUNTROWS('FactOrders'), KEEPFILTERS(NOT ISBLANK('FactOrders'[delay_reason])), KEEPFILTERS('FactOrders'[order_status] = "Delivered"))
+		formatString: #,##0
+		displayFolder: 02 - Delivery & SLAs
+		lineageTag: 08fe1311-de9e-4620-baa3-13dff615995e
+
+	/// Pareto cumulative percentage across ranked delay reasons
+	measure 'Cumulative Delay Reason %' = VAR _CurrentCount = [Delay Incidents by Reason] VAR _TotalIncidents = CALCULATE([Delay Incidents by Reason], ALLSELECTED('FactOrders'[delay_reason])) VAR _TableRanked = ADDCOLUMNS(ALLSELECTED('FactOrders'[delay_reason]), "@Incidents", [Delay Incidents by Reason]) VAR _CumulativeSum = SUMX(FILTER(_TableRanked, [@Incidents] >= _CurrentCount), [@Incidents]) RETURN DIVIDE(_CumulativeSum, _TotalIncidents, 0)
+		formatString: 0.0%
+		displayFolder: 02 - Delivery & SLAs
+		lineageTag: 9f8558ad-e4af-46ab-8385-7ea0d539375e
+
+	/// Total regional Texas distribution hubs
+	measure 'Total Hubs' = DISTINCTCOUNT('DimHub'[hub_key])
+		formatString: #,##0
+		displayFolder: 03 - Hub Operations
+		lineageTag: 8f27c932-0df3-4119-9cf6-8c12fb175467
+
+	/// Network aggregate designed daily capacity
+	measure 'Network Daily Capacity' = SUM('DimHub'[daily_capacity])
+		formatString: #,##0
+		displayFolder: 03 - Hub Operations
+		lineageTag: 2b6c29b1-1c4d-47e7-9f63-4175a956fd19
+
+	/// Average internal sorting and staging time
+	measure 'Avg Hub Processing Time (Hours)' = AVERAGE('FactOrders'[hub_processing_time_hours])
+		formatString: 0.00
+		displayFolder: 03 - Hub Operations
+		lineageTag: 4a1a55eb-35ff-4fb0-a2a8-894041c328b2
+
+	/// Total hourly incoming volume to hubs
+	measure 'Total Orders Received (Hub)' = SUM('FactHubHourly'[orders_received])
+		formatString: #,##0
+		displayFolder: 03 - Hub Operations
+		lineageTag: 5393ddf5-daca-45ab-a159-1e3cc5b64284
+
+	/// Total hourly dispatches from hubs
+	measure 'Total Orders Dispatched (Hub)' = SUM('FactHubHourly'[orders_dispatched])
+		formatString: #,##0
+		displayFolder: 03 - Hub Operations
+		lineageTag: ff74ae30-6e0f-4d6f-b87a-817d97f9eef8
+
+	/// Active pending orders in staging backlog
+	measure 'Total Backlog Volume' = SUM('FactHubHourly'[backlog_volume])
+		formatString: #,##0
+		displayFolder: 03 - Hub Operations
+		lineageTag: c2fb99fc-5b6c-4b83-87d1-2d439b01a225
+
+	/// Hourly hub utilization relative to daily capacity
+	measure 'Hub Capacity Utilization %' = AVERAGE('FactHubHourly'[capacity_utilization_pct]) / 100
+		formatString: 0.00%
+		displayFolder: 03 - Hub Operations
+		lineageTag: 282bec19-a5be-4265-8162-f4fe404eb125
+
+	/// Total fleet vehicle assets
+	measure 'Total Fleet Vehicles' = DISTINCTCOUNT('DimVehicle'[vehicle_key])
+		formatString: #,##0
+		displayFolder: 04 - Fleet & Maintenance
+		lineageTag: b1adbf22-28e3-4826-806b-0ed00cc4f93b
+
+	/// Fleet vehicles active in road service
+	measure 'Active Vehicles' = CALCULATE([Total Fleet Vehicles], KEEPFILTERS('DimVehicle'[current_status] = "Active"))
+		formatString: #,##0
+		displayFolder: 04 - Fleet & Maintenance
+		lineageTag: b260281b-380c-4606-85a6-f4f73fa7d099
+
+	/// Vehicles out-of-service in maintenance depots
+	measure 'Vehicles In Maintenance' = CALCULATE([Total Fleet Vehicles], KEEPFILTERS('DimVehicle'[current_status] = "Maintenance"))
+		formatString: #,##0
+		displayFolder: 04 - Fleet & Maintenance
+		lineageTag: d928f007-8306-467d-b705-6011850221a5
+
+	/// Operational availability ratio of vehicle fleet
+	measure 'Fleet Availability Rate %' = DIVIDE([Active Vehicles], [Total Fleet Vehicles], 0)
+		formatString: 0.00%
+		displayFolder: 04 - Fleet & Maintenance
+		lineageTag: 1fc70215-5392-401d-a81b-8abf109d7a0c
+
+	/// Vehicles flagged for critical breakdown risk
+	measure 'Maintenance Alert Vehicles' = CALCULATE([Total Fleet Vehicles], KEEPFILTERS('DimVehicle'[is_maintenance_alert] = TRUE()))
+		formatString: #,##0
+		displayFolder: 04 - Fleet & Maintenance
+		lineageTag: f15afebc-6f2e-4227-8818-6909d199daf9
+
+	/// Average vehicle age since purchase
+	measure 'Avg Fleet Age (Days)' = AVERAGEX('DimVehicle', DATEDIFF('DimVehicle'[purchase_date], DATE(2026, 11, 18), DAY))
+		formatString: #,##0
+		displayFolder: 04 - Fleet & Maintenance
+		lineageTag: ca3cb8a2-9015-44a7-b38d-089224150432
+
+	/// Historical maintenance interventions (source: synthetic)
+	measure 'Total Maintenance Events' = COUNTROWS('FactMaintenance')
+		formatString: #,##0
+		displayFolder: 04 - Fleet & Maintenance
+		lineageTag: ac53ae28-2276-433e-837e-162bae7efbee
+
+	/// Cumulative maintenance repair costs (source: synthetic)
+	measure 'Total Maintenance Expense ($)' = SUM('FactMaintenance'[cost_usd])
+		formatString: $#,##0.00
+		displayFolder: 04 - Fleet & Maintenance
+		lineageTag: bb5d3c67-b016-441e-9ced-59e9fa079993
+
+	/// Cumulative maintenance downtime hours (source: synthetic)
+	measure 'Total Downtime Hours' = SUM('FactMaintenance'[downtime_hours])
+		formatString: #,##0.0
+		displayFolder: 04 - Fleet & Maintenance
+		lineageTag: 036118c5-2a85-47de-9ae7-0e479d76ef61
+
+	/// Total registered delivery driver workforce
+	measure 'Total Drivers' = DISTINCTCOUNT('DimDriver'[driver_key])
+		formatString: #,##0
+		displayFolder: 05 - Driver Metrics
+		lineageTag: 117ea8fe-2a82-40f9-8fc8-164e6ef3bd28
+
+	/// Average driver seniority in years
+	measure 'Avg Driver Experience (Years)' = AVERAGE('DimDriver'[experience_years])
+		formatString: 0.0
+		displayFolder: 05 - Driver Metrics
+		lineageTag: 4857b079-3ed1-4bbb-81f8-0c39769ad257
+
+	/// Average driver quality rating (1-5 scale)
+	measure 'Avg Driver Rating' = AVERAGE('DimDriver'[performance_rating])
+		formatString: 0.00
+		displayFolder: 05 - Driver Metrics
+		lineageTag: 07cfcf06-5177-4979-ad4f-c94eac7d8280
+
+	/// Deliveries completed by driver
+	measure 'Driver Completed Deliveries' = CALCULATE([Delivered Orders], ALLEXCEPT('DimDriver', 'DimDriver'[driver_name], 'DimDriver'[driver_id]))
+		formatString: #,##0
+		displayFolder: 05 - Driver Metrics
+		lineageTag: 01924bd8-3a46-44d9-a5a0-fad8dd903049
+
+	/// Average orders per day in the current filter context (compare with daily hub capacity)
+	measure 'Avg Daily Orders' = DIVIDE([Total Orders], DISTINCTCOUNT('FactOrders'[order_date_key]), 0)
+		formatString: #,##0.0
+		displayFolder: 03 - Hub Operations
+		lineageTag: f53f8109-dd68-4151-b5d8-cddd21e90320
+
+	measure 'Sel Month' = SELECTEDVALUE('DimDate'[month_name], "All Months")
+		lineageTag: d1d24293-c67f-4a24-bcc4-0519773dda4e
+
+	measure 'Sel Hub' = SELECTEDVALUE('DimHub'[hub_name], "All Hubs")
+		lineageTag: 7b0b08ef-0b81-4981-8f6b-7e70c26530df
+
+	measure 'Sel Status' = SELECTEDVALUE('FactOrders'[order_status], "All Statuses")
+		lineageTag: 5b509a07-a8d8-4d0f-9b00-0686729fbafc
+
+	measure 'Sel Delay Reason' = SELECTEDVALUE('FactOrders'[delay_reason], "All Delay Reasons")
+		lineageTag: 3b3f13e4-e1ea-43ba-b67c-81009325d1b5
+
+	measure 'Sel Vehicle' = SELECTEDVALUE('DimVehicle'[vehicle_code], "All Vehicles")
+		lineageTag: 1d92eafd-54e2-4a44-bf1a-3d0a415cd4b3
+
+	measure 'Sel Vehicle Type' = SELECTEDVALUE('DimVehicle'[vehicle_type], "All Vehicle Types")
+		lineageTag: 68952ca7-68de-4e6f-83d0-0858ef2a1318
+
+	measure 'Sel Service' = SELECTEDVALUE('FactMaintenance'[service_type], "All Services")
+		lineageTag: 540ef899-d484-4467-a35f-54041666aefb
+
+	measure 'Sel Driver' = SELECTEDVALUE('DimDriver'[driver_name], "All Drivers")
+		lineageTag: 6261a7d0-2a58-4284-9319-20a0017b946a
+
+	measure 'Lifetime Breakdowns' = SUM('DimVehicle'[lifetime_breakdowns])
+		formatString: #,##0
+		lineageTag: 5df0e91a-31f9-4c33-9baf-e6b24727f525
+
+	measure 'Delay Share %' = DIVIDE([Delay Incidents by Reason], CALCULATE([Delay Incidents by Reason], ALL('FactOrders'[delay_reason])), 0)
+		formatString: 0.0%
+		lineageTag: 190b9cb8-de9d-495f-8eee-6db84ef65a14
+
+	measure 'Avg Cost per Maintenance Event' = DIVIDE([Total Maintenance Expense ($)], [Total Maintenance Events], 0)
+		formatString: $#,##0.00
+		lineageTag: fd449c13-8cf2-4520-8c4c-e40d580fa6af
+
+	measure 'Vehicles Serviced' = DISTINCTCOUNT('FactMaintenance'[vehicle_key])
+		formatString: #,##0
+		lineageTag: 704cf468-fb3d-4731-9a9b-3f834f759a80
+
+	measure 'Avg Orders per Month (Line)' = AVERAGEX(ALLSELECTED('DimDate'[month_name]), [Total Orders])
+		formatString: #,##0
+		lineageTag: a685ac4e-7114-42d5-8166-339b0a522221
+
+	measure 'Avg Orders per Hub (Line)' = AVERAGEX(ALLSELECTED('DimHub'[hub_name]), [Total Orders])
+		formatString: #,##0
+		lineageTag: 2eb6f9a9-587f-4602-89a2-66af868bc464
+
+	measure 'Avg Received per Hub (Line)' = AVERAGEX(ALLSELECTED('DimHub'[hub_name]), [Total Orders Received (Hub)])
+		formatString: #,##0
+		lineageTag: 31ab353d-a110-4d11-be2f-0b31613d264a
+
+	measure 'Avg Utilization (Line)' = AVERAGEX(ALLSELECTED('DimHub'[hub_name]), [Hub Capacity Utilization %])
+		formatString: 0.00%
+		lineageTag: 4cc722fd-6abb-414a-a6f9-97fe06dc7bff
+
+	measure 'Avg Delay Incidents (Line)' = AVERAGEX(FILTER(ALLSELECTED('FactOrders'[delay_reason]), NOT ISBLANK('FactOrders'[delay_reason])), [Delay Incidents by Reason])
+		formatString: #,##0
+		lineageTag: 6ea46cb6-63f9-45d2-9686-06d07fcf1eaa
+
+	measure 'Avg Delay Incidents per Hub (Line)' = AVERAGEX(ALLSELECTED('DimHub'[hub_name]), [Delay Incidents by Reason])
+		formatString: #,##0
+		lineageTag: 1ba33ffd-7f45-4b89-a129-1079a6219f05
+
+	measure 'Avg Delay Incidents per Month (Line)' = AVERAGEX(ALLSELECTED('DimDate'[month_name]), [Delay Incidents by Reason])
+		formatString: #,##0
+		lineageTag: 73ea6197-e89f-4ec3-9126-d5cad108dfaf
+
+	measure 'Network Delay Rate (Line)' = CALCULATE([Delay Rate %], ALLSELECTED('DimVehicle'[vehicle_type]))
+		formatString: 0.00%
+		lineageTag: b1003387-7ab3-485d-9ba2-aaea70b767b7
+
+	measure 'Avg Breakdowns per Vehicle (Line)' = AVERAGEX(ALLSELECTED('DimVehicle'[vehicle_code]), [Lifetime Breakdowns])
+		formatString: #,##0.0
+		lineageTag: 9bce428a-62d8-4451-b315-b1970d5cf7a5
+
+	measure 'Avg Expense per Service (Line)' = AVERAGEX(ALLSELECTED('FactMaintenance'[service_type]), [Total Maintenance Expense ($)])
+		formatString: $#,##0
+		lineageTag: 3f07a5f9-86f1-42a5-a187-c4ec2a5bb004
+
+	measure 'Avg Expense per Vehicle Type (Line)' = AVERAGEX(ALLSELECTED('DimVehicle'[vehicle_type]), [Total Maintenance Expense ($)])
+		formatString: $#,##0
+		lineageTag: 2d2a0383-bda2-44c0-8a03-e5f429a8e78b
+
+	measure 'Avg Orders per Status (Line)' = AVERAGEX(ALLSELECTED('FactOrders'[order_status]), [Total Orders])
+		formatString: #,##0
+		lineageTag: 2fa07d25-9856-41b3-a158-b1375fade871
+
+	measure 'Delay Rate Font Color' = ```
+			
+			VAR CurrentDelay =
+			    [Delay Rate %]
+			
+			VAR MaxDelay =
+			    MAXX(
+			        ALLSELECTED('DimHub'),
+			        CALCULATE([Delay Rate %])
+			    )
+			
+			RETURN
+			    IF(
+			        CurrentDelay = MaxDelay,
+			        "#FB7185",
+			        "#FFFFFF"
+			    )
+			
+			```
+		lineageTag: 09ad9667-353b-4e8e-8de5-ad4e64082d97
+
+	measure 'On-Time Rate Font Color' = ```
+			
+			VAR CurrentRate =
+			    [On-Time Delivery Rate %]
+			
+			VAR MaxRate =
+			    MAXX(
+			        ALLSELECTED ('DimHub'),
+			        CALCULATE([On-Time Delivery Rate %])
+			    )
+			
+			RETURN
+			    IF(
+			        CurrentRate = MaxRate,
+			        " #34D399",
+			        "#FFFFFF"
+			    )
+			
+			```
+		lineageTag: 567444e7-2804-4f56-934d-f30a14b055c0
+
+	measure 'On-Time Delivery Rate Font Color' =
+			
+			VAR DriverRates =
+			    ADDCOLUMNS(
+			        ALLSELECTED('DimDriver'),
+			        "@Rate",
+			            CALCULATE([On-Time Delivery Rate %])
+			    )
+			
+			VAR MaxRate =
+			    MAXX(
+			        DriverRates,
+			        [@Rate]
+			    )
+			
+			VAR WinningDriver =
+			    MINX(
+			        FILTER(
+			            DriverRates,
+			            [@Rate] = MaxRate
+			        ),
+			        'DimDriver'[driver_name]
+			    )
+			
+			VAR CurrentDriver =
+			    SELECTEDVALUE('DimDriver'[driver_name])
+			
+			RETURN
+			    IF(
+			        NOT ISBLANK(CurrentDriver)
+			            && CurrentDriver = WinningDriver,
+			        "#34D399",
+			        "#FFFFFF"
+			    )
+		lineageTag: 989787da-cc30-43a9-9a35-efbd62840c9d
+
+	measure 'Delivered Orders Font Color' =
+			
+			VAR DriverOrders =
+			    ADDCOLUMNS(
+			        ALLSELECTED('DimDriver'),
+			        "@Orders",
+			            CALCULATE([Delivered Orders])
+			    )
+			
+			VAR MaxOrders =
+			    MAXX(
+			        DriverOrders,
+			        [@Orders]
+			    )
+			
+			VAR WinningDriver =
+			    MINX(
+			        FILTER(
+			            DriverOrders,
+			            [@Orders] = MaxOrders
+			        ),
+			        'DimDriver'[driver_name]
+			    )
+			
+			VAR CurrentDriver =
+			    SELECTEDVALUE('DimDriver'[driver_name])
+			
+			RETURN
+			    IF(
+			        NOT ISBLANK(CurrentDriver)
+			            && CurrentDriver = WinningDriver,
+			        "#FBBF24",
+			        "#FFFFFF"
+			    )
+		lineageTag: 5ffc164c-5e9e-49e4-81bb-37e3f2179ee7
+
+	measure 'Performance Rating Font Color' =
+			
+			VAR CurrentRating =
+			    SELECTEDVALUE(
+			        'DimDriver'[performance_rating]
+			    )
+			
+			VAR MaxRating =
+			    MAXX(
+			        ALLSELECTED('DimDriver'),
+			        CALCULATE(
+			            MAX('DimDriver'[performance_rating])
+			        )
+			    )
+			
+			RETURN
+			    IF(
+			        NOT ISBLANK(CurrentRating)
+			            && CurrentRating = MaxRating,
+			        "#38BDF8",
+			        "#FFFFFF"
+			    )
+		lineageTag: d25257a2-d591-46ce-b7b0-2976290a55d3
+
+	measure 'Order ID Font Color' =
+			
+			VAR DelayedValue =
+			    [Delay Incidents by Reason]
+			
+			RETURN
+			    IF(
+			        NOT ISBLANK(DelayedValue)
+			            && DelayedValue > 0,
+			        "#EF4444",
+			        "#FFFFFF"
+			    )
+		lineageTag: fe42deff-0357-4a5f-9c7e-a587854d9330
+
+	measure 'ML Order ID Font Color' =
+			
+			VAR CurrentLabel =
+			    SELECTEDVALUE(
+			        FactMLPredictions[predicted_label]
+			    )
+			
+			RETURN
+			    SWITCH(
+			        CurrentLabel,
+			        "DELAY_RISK", "#EF4444",
+			        "ON_TIME", "#34D399",
+			        "#FFFFFF"
+			    )
+		lineageTag: 940cc01b-2ffa-482f-bed1-faa0c972f208
+
+	column _Dummy
+		dataType: string
+		isHidden
+		lineageTag: b8512b22-b1f7-47bc-a2bd-708bf985d3ff
+		sourceColumn: _Dummy
+
+	partition _Measures-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [_Dummy = _t])
+				in
+				    Source
+

@@ -1,0 +1,32 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["_Measures","DimDate","DimHub","DimDriver","DimVehicle","FactOrders","FactHubHourly","FactMaintenance","FactMLPredictions"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table _Measures
+ref table DimDate
+ref table DimHub
+ref table DimDriver
+ref table DimVehicle
+ref table FactOrders
+ref table FactHubHourly
+ref table FactMaintenance
+ref table FactMLPredictions
+ref table DateTableTemplate_2eb015d2-8bf6-4879-baee-fe0f7e34996f
+ref table LocalDateTable_b5fa155c-b498-43ad-a6f9-dd70c37d1735
+ref table LocalDateTable_6a3e4086-d4fb-42b9-8df4-26cb948f1f9c
+ref table LocalDateTable_b17fbe4e-5fa6-48da-837f-00dc78cf78e1
+ref table LocalDateTable_d3da700b-4278-4e64-8077-5a7edee564d7
+ref table LocalDateTable_a146488a-420f-447f-b314-db6a7ee7f1a1
+
+ref cultureInfo en-US
+

@@ -1,0 +1,66 @@
+table DimHub
+	lineageTag: afe7c7c7-fdaf-4ee2-a44d-4ec6d4854692
+
+	column hub_key
+		dataType: int64
+		isHidden
+		lineageTag: 039cf038-8fe6-4d84-a5a5-b7f693cbc50d
+		sourceColumn: hub_key
+
+	column hub_id
+		dataType: int64
+		isHidden
+		lineageTag: 561d4f5f-aa8f-44f1-806c-3b2ecde92c38
+		sourceColumn: hub_id
+
+	column hub_name
+		dataType: string
+		lineageTag: e40491f3-fe41-4957-b239-fa204dfec606
+		sourceColumn: hub_name
+
+	column city
+		dataType: string
+		lineageTag: 363675af-249a-4c78-9c2e-5718c3a9ea95
+		dataCategory: City
+		sourceColumn: city
+
+	column state
+		dataType: string
+		lineageTag: bc98bb0d-2015-47b4-86d9-2a9c8eda0f02
+		dataCategory: StateOrProvince
+		sourceColumn: state
+
+	column daily_capacity
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 6e69cdfe-4b0e-48e5-a6f9-38b1d1bc62e9
+		sourceColumn: daily_capacity
+
+	column latitude
+		dataType: double
+		lineageTag: 33829660-75d4-4225-b19c-49fce886a154
+		dataCategory: Latitude
+		sourceColumn: latitude
+
+	column longitude
+		dataType: double
+		lineageTag: 752d5011-624a-42f4-bdcb-a7e86242c5df
+		dataCategory: Longitude
+		sourceColumn: longitude
+
+	column data_origin
+		dataType: string
+		isHidden
+		lineageTag: 0415fd12-5c4c-4bfd-b713-090a640b3dd7
+		sourceColumn: data_origin
+
+	partition DimHub-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/DimHub.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"hub_key", Int64.Type}, {"hub_id", Int64.Type}, {"hub_name", type text}, {"city", type text}, {"state", type text}, {"daily_capacity", Int64.Type}, {"latitude", type number}, {"longitude", type number}, {"data_origin", type text}}, "en-US")
+				in
+				    #"Changed Type"
+

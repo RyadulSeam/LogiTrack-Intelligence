@@ -1,0 +1,189 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU10",
+      "reportVersionAtImport": {
+        "visual": "2.14.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "LogiTrack_Midnight_Premium_Theme.json",
+      "reportVersionAtImport": {
+        "visual": "2.14.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "bg_d01_hub.png",
+          "path": "bg_d01_hub.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_d02_delay.png",
+          "path": "bg_d02_delay.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_d03_vehicle.png",
+          "path": "bg_d03_vehicle.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_d04_driver.png",
+          "path": "bg_d04_driver.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_d05_service.png",
+          "path": "bg_d05_service.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_d06_month.png",
+          "path": "bg_d06_month.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_d07_status.png",
+          "path": "bg_d07_status.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_d08_vtype.png",
+          "path": "bg_d08_vtype.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_p01_exec.png",
+          "path": "bg_p01_exec.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_p02_hubs.png",
+          "path": "bg_p02_hubs.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_p03_delay.png",
+          "path": "bg_p03_delay.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_p04_fleet.png",
+          "path": "bg_p04_fleet.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_t01_month.png",
+          "path": "bg_t01_month.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_t02_hub.png",
+          "path": "bg_t02_hub.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_t03_status.png",
+          "path": "bg_t03_status.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_t04_delay.png",
+          "path": "bg_t04_delay.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_t05_vehicle.png",
+          "path": "bg_t05_vehicle.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_t06_service.png",
+          "path": "bg_t06_service.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_t07_kpi.png",
+          "path": "bg_t07_kpi.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_t08_fleet.png",
+          "path": "bg_t08_fleet.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_t09_vtype.png",
+          "path": "bg_t09_vtype.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_t10_driver.png",
+          "path": "bg_t10_driver.png",
+          "type": "Image"
+        },
+        {
+          "name": "filter_(1)6194329241849174.png",
+          "path": "filter_(1)6194329241849174.png",
+          "type": "Image"
+        },
+        {
+          "name": "LogiTrack_Midnight_Premium_Theme.json",
+          "path": "LogiTrack_Midnight_Premium_Theme.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "logo5296601230565501.png",
+          "path": "logo5296601230565501.png",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU10",
+          "path": "BaseThemes/CY24SU10.json",
+          "type": "BaseTheme"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true
+  }
+}

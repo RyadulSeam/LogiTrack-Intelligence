@@ -1,0 +1,139 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 29,
+        "y": 103
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1097.1200673992842,
+            "y": 588.698873766356
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "4011a591-1e64-4e69-bd27-45b16a45b722",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 863.12006739928427,
+            "y": 298.08912906879186
+          },
+          "nodeIndex": "DimDate",
+          "nodeLineageTag": "5747b187-8b3d-4fbd-9038-889363445490",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 579.44476607120339,
+            "y": 1155.3977475327124
+          },
+          "nodeIndex": "DimDriver",
+          "nodeLineageTag": "e66f7dd7-28e5-46b3-8aa4-776c9232ad68",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 292.10773290933548,
+            "y": 413.92187469872761
+          },
+          "nodeIndex": "DimHub",
+          "nodeLineageTag": "afe7c7c7-fdaf-4ee2-a44d-4ec6d4854692",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 763.74913882745182
+          },
+          "nodeIndex": "DimVehicle",
+          "nodeLineageTag": "0294e694-04bd-4d27-854a-cdf39c1faa6e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 834.51887506834532,
+            "y": -50
+          },
+          "nodeIndex": "FactHubHourly",
+          "nodeLineageTag": "3fe8f586-3f93-4d0c-b51d-db35c057d727",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 578.487320114028,
+            "y": 450.37583417857354
+          },
+          "nodeIndex": "FactMaintenance",
+          "nodeLineageTag": "9606b418-42c0-4c39-b126-4681e7da15a9",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 822.46483322950644,
+            "y": 803.399917817578
+          },
+          "nodeIndex": "FactMLPredictions",
+          "nodeLineageTag": "8fbfc94e-1746-47c8-9440-a57a415c9f2a",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 384.23539617813958,
+            "y": 803.53893881257193
+          },
+          "nodeIndex": "FactOrders",
+          "nodeLineageTag": "7e3946f3-d1b3-4798-8377-6f0542c623ad",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

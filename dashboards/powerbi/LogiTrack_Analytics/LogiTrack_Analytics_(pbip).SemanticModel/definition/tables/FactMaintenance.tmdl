@@ -1,0 +1,109 @@
+table FactMaintenance
+	lineageTag: 9606b418-42c0-4c39-b126-4681e7da15a9
+
+	column maintenance_id
+		dataType: string
+		lineageTag: 9c570e1f-f2e0-42c6-8724-31f6daccda75
+		summarizeBy: none
+		sourceColumn: maintenance_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_key
+		dataType: int64
+		isHidden
+		lineageTag: c6b20918-04e0-424d-a579-0b579b3876f5
+		summarizeBy: none
+		sourceColumn: vehicle_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_code
+		dataType: string
+		lineageTag: b6ab44fe-2b47-49cb-9f85-681b57b6b58d
+		summarizeBy: none
+		sourceColumn: vehicle_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_type
+		dataType: string
+		lineageTag: 8840e1d9-d2b8-4dc7-8d95-226263fa2130
+		summarizeBy: none
+		sourceColumn: service_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column maintenance_status
+		dataType: string
+		lineageTag: 8b1df2e3-9ab1-45d0-87d1-b079f9de330f
+		summarizeBy: none
+		sourceColumn: maintenance_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column scheduled_date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 8d089714-1df2-4fab-955b-bf9eec66f5fc
+		summarizeBy: none
+		sourceColumn: scheduled_date
+
+		variation Variation
+			isDefault
+			relationship: e0320757-660a-48ae-807b-67c3b90f0083
+			defaultHierarchy: LocalDateTable_b17fbe4e-5fa6-48da-837f-00dc78cf78e1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column completed_date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 01e40f51-80b1-4930-a245-f489e7b68c0e
+		summarizeBy: none
+		sourceColumn: completed_date
+
+		variation Variation
+			isDefault
+			relationship: 8875f6eb-96b7-4464-9acd-a3eac7d4904f
+			defaultHierarchy: LocalDateTable_d3da700b-4278-4e64-8077-5a7edee564d7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column downtime_hours
+		dataType: double
+		formatString: 0.0
+		lineageTag: 0f94a547-09c7-46f6-9c55-a3b7e5e75f39
+		summarizeBy: sum
+		sourceColumn: downtime_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_usd
+		dataType: double
+		formatString: $#,##0.00
+		lineageTag: 88cbe6ee-a11f-42e2-ac80-ecb5afbc45c9
+		summarizeBy: sum
+		sourceColumn: cost_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_origin
+		dataType: string
+		isHidden
+		lineageTag: fea46315-2843-4aa8-96cf-ebe88345adc8
+		summarizeBy: none
+		sourceColumn: data_origin
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactMaintenance-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/FactMaintenance.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"maintenance_id", type text}, {"vehicle_key", Int64.Type}, {"vehicle_code", type text}, {"service_type", type text}, {"maintenance_status", type text}, {"scheduled_date", type datetime}, {"completed_date", type datetime}, {"downtime_hours", type number}, {"cost_usd", type number}, {"data_origin", type text}}, "en-US")
+				in
+				    #"Changed Type"
+

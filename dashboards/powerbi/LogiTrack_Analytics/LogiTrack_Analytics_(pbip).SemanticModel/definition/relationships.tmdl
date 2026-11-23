@@ -1,0 +1,62 @@
+relationship DimDate_FactOrders_OrderDate
+	fromColumn: FactOrders.order_date_key
+	toColumn: DimDate.date_key
+
+relationship DimDate_FactOrders_DeliveryDate
+	isActive: false
+	fromColumn: FactOrders.delivery_date_key
+	toColumn: DimDate.date_key
+
+relationship DimHub_FactOrders
+	fromColumn: FactOrders.hub_key
+	toColumn: DimHub.hub_key
+
+relationship DimDriver_FactOrders
+	fromColumn: FactOrders.driver_key
+	toColumn: DimDriver.driver_key
+
+relationship DimVehicle_FactOrders
+	fromColumn: FactOrders.vehicle_key
+	toColumn: DimVehicle.vehicle_key
+
+relationship DimDate_FactHubHourly
+	fromColumn: FactHubHourly.date_key
+	toColumn: DimDate.date_key
+
+relationship DimHub_FactHubHourly
+	fromColumn: FactHubHourly.hub_key
+	toColumn: DimHub.hub_key
+
+relationship DimVehicle_FactMaintenance
+	fromColumn: FactMaintenance.vehicle_key
+	toColumn: DimVehicle.vehicle_key
+
+relationship FactOrders_FactMLPredictions
+	fromColumn: FactMLPredictions.order_id
+	toColumn: FactOrders.order_id
+
+relationship 07386c71-4615-47d2-a021-bf433f1bf05d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDriver.hire_date
+	toColumn: LocalDateTable_b5fa155c-b498-43ad-a6f9-dd70c37d1735.Date
+
+relationship df3ff092-8b7c-43e1-9d8a-8683c10e77d5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimVehicle.purchase_date
+	toColumn: LocalDateTable_6a3e4086-d4fb-42b9-8df4-26cb948f1f9c.Date
+
+relationship e0320757-660a-48ae-807b-67c3b90f0083
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactMaintenance.scheduled_date
+	toColumn: LocalDateTable_b17fbe4e-5fa6-48da-837f-00dc78cf78e1.Date
+
+relationship 8875f6eb-96b7-4464-9acd-a3eac7d4904f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactMaintenance.completed_date
+	toColumn: LocalDateTable_d3da700b-4278-4e64-8077-5a7edee564d7.Date
+
+relationship defd30bf-17e5-4500-9529-f85b329b78ea
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FactMLPredictions.prediction_timestamp
+	toColumn: LocalDateTable_a146488a-420f-447f-b314-db6a7ee7f1a1.Date
+

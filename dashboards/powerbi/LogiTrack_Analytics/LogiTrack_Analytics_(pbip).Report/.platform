@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "LogiTrack_Analytics_(pbip)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "45b77403-ea2a-4ecf-9c03-af4bbec3d532"
+  }
+}

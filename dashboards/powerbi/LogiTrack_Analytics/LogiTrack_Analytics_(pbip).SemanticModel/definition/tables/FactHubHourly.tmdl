@@ -1,0 +1,67 @@
+table FactHubHourly
+	lineageTag: 3fe8f586-3f93-4d0c-b51d-db35c057d727
+
+	column hub_hourly_id
+		dataType: string
+		isHidden
+		lineageTag: 18fada3b-1294-42f3-b6d0-04da4164e35e
+		sourceColumn: hub_hourly_id
+
+	column hub_key
+		dataType: int64
+		isHidden
+		lineageTag: dd6fc781-7a6e-4ed7-84be-7545433a09e2
+		sourceColumn: hub_key
+
+	column date_key
+		dataType: int64
+		isHidden
+		lineageTag: 8f0201c4-9089-4666-97f8-af72e13384b1
+		sourceColumn: date_key
+
+	column hour_of_day
+		dataType: int64
+		formatString: 0
+		lineageTag: b6245095-aa76-4927-bfc0-506b60a00eae
+		sourceColumn: hour_of_day
+
+	column orders_received
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 1b514207-634f-4051-9ca9-5056eaa81b92
+		sourceColumn: orders_received
+
+	column orders_dispatched
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 95b806b5-ffaf-44fb-99d8-b95a1578dc9a
+		sourceColumn: orders_dispatched
+
+	column avg_processing_time_hours
+		dataType: double
+		formatString: 0.00
+		lineageTag: a0fa177d-e1c2-4ed9-bc92-c2bfb81ca57e
+		sourceColumn: avg_processing_time_hours
+
+	column backlog_volume
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 58d1f55c-4a36-46a7-8eb7-88e3a2742ef2
+		sourceColumn: backlog_volume
+
+	column capacity_utilization_pct
+		dataType: double
+		formatString: 0.00
+		lineageTag: d52db384-dd16-4b4e-b363-42a67b225dc0
+		sourceColumn: capacity_utilization_pct
+
+	partition FactHubHourly-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/FactHubHourly.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"hub_hourly_id", type text}, {"hub_key", Int64.Type}, {"date_key", Int64.Type}, {"hour_of_day", Int64.Type}, {"orders_received", Int64.Type}, {"orders_dispatched", Int64.Type}, {"avg_processing_time_hours", type number}, {"backlog_volume", Int64.Type}, {"capacity_utilization_pct", type number}}, "en-US")
+				in
+				    #"Changed Type"
+

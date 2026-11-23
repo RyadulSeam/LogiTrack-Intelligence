@@ -1,0 +1,93 @@
+table FactOrders
+	lineageTag: 7e3946f3-d1b3-4798-8377-6f0542c623ad
+
+	column order_id
+		dataType: int64
+		lineageTag: a73ba13d-c7b5-4e07-9757-3ea02842bc80
+		sourceColumn: order_id
+
+	column order_date_key
+		dataType: int64
+		isHidden
+		lineageTag: 6a0d830a-f973-4b82-b5c8-b90bed6aea9c
+		sourceColumn: order_date_key
+
+	column delivery_date_key
+		dataType: int64
+		isHidden
+		lineageTag: 9545ec30-a572-4b13-963a-13b59fe1ad8b
+		sourceColumn: delivery_date_key
+
+	column hub_key
+		dataType: int64
+		isHidden
+		lineageTag: b0d5684e-339f-4ee7-8e90-f60d665e6a5a
+		sourceColumn: hub_key
+
+	column driver_key
+		dataType: int64
+		isHidden
+		lineageTag: 3556b787-c74f-4c94-8766-499d979a6c00
+		sourceColumn: driver_key
+
+	column vehicle_key
+		dataType: int64
+		isHidden
+		lineageTag: 8890282d-6a93-4152-a872-e23c72879db9
+		sourceColumn: vehicle_key
+
+	column order_status
+		dataType: string
+		lineageTag: 29307c36-a0f0-480d-8b78-e28487753399
+		sourceColumn: order_status
+
+	column is_delayed
+		dataType: boolean
+		lineageTag: a28b23a7-5604-4809-8c13-e79f52cad060
+		sourceColumn: is_delayed
+
+	column is_on_time
+		dataType: boolean
+		lineageTag: 1e017c17-a027-4023-af05-aff9582c4e72
+		sourceColumn: is_on_time
+
+	column delay_reason
+		dataType: string
+		lineageTag: e72260ca-7c78-4b3f-9ee4-a8db1567ab25
+		sourceColumn: delay_reason
+
+	column csat_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 314b0fb7-4425-44ad-b2b3-75eeed2d6858
+		sourceColumn: csat_score
+
+	column delivery_time_hours
+		dataType: double
+		formatString: 0.00
+		lineageTag: ba284e85-c52c-4663-b214-a5e7f354f98d
+		sourceColumn: delivery_time_hours
+
+	column hub_processing_time_hours
+		dataType: double
+		formatString: 0.00
+		lineageTag: 9d3db556-cbd6-4840-abbe-bc8efe6dd1e6
+		sourceColumn: hub_processing_time_hours
+
+	column data_origin
+		dataType: string
+		isHidden
+		lineageTag: af0d7970-fcda-4a9b-a082-fef7b19a1e27
+		sourceColumn: data_origin
+
+	partition FactOrders-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/FactOrders.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"order_id", Int64.Type}, {"order_date_key", Int64.Type}, {"delivery_date_key", Int64.Type}, {"hub_key", Int64.Type}, {"driver_key", Int64.Type}, {"vehicle_key", Int64.Type}, {"order_status", type text}, {"is_delayed", type logical}, {"is_on_time", type logical}, {"delay_reason", type text}, {"csat_score", Int64.Type}, {"delivery_time_hours", type number}, {"hub_processing_time_hours", type number}, {"data_origin", type text}}, "en-US"),
+				    #"Blank to Null" = Table.ReplaceValue(#"Changed Type", "", null, Replacer.ReplaceValue, {"delay_reason"})
+				in
+				    #"Blank to Null"
+

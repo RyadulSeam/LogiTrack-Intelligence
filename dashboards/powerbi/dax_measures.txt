@@ -1,61 +1,649 @@
 /*
-============================================================
-LogiTrack Intelligence — Official Power BI DAX Measures
-Phase 7: BI & Operational Dashboards
-============================================================
+========================================================================================
+LogiTrack Intelligence — Enterprise Power BI Production DAX Measures Library
+Project: LogiTrack Analytics (v1.0.0 Enterprise Release)
+Target Environment: Microsoft Power BI Desktop (PBIP / TMDL Model)
+Total Production Measures: 37 Measures + 8 Dynamic Formatting / Slicer Helper Measures
+Model Grain: 27,979 Orders | 6 Regional Hubs | 45 Fleet Vehicles | 55 Drivers
+========================================================================================
 */
 
-// 1. Total Orders
-Total Orders = COUNTROWS('fact_orders')
+// ========================================================================================
+// DISPLAY FOLDER: 01 - Executive KPIs
+// ========================================================================================
 
-// 2. Delivered Orders
-Delivered Orders = 
+/// 1. Total distinct operational orders placed across network
+[Total Orders] = 
+DISTINCTCOUNT('FactOrders'[order_id])
+// Format: #,##0
+// Description: Unfiltered distinct count of all operational orders placed across the network.
+
+/// 2. Count of successfully fulfilled and delivered orders
+[Delivered Orders] = 
 CALCULATE(
-    COUNTROWS('fact_orders'),
-    'fact_orders'[order_status] = "Delivered"
+    [Total Orders],
+    KEEPFILTERS('FactOrders'[order_status] = "Delivered")
 )
+// Format: #,##0
+// Description: Total volume of orders with completed delivery status (27,727 baseline).
 
-// 3. Cancelled Orders
-Cancelled Orders = 
+/// 3. Count of cancelled orders prior to delivery completion
+[Cancelled Orders] = 
 CALCULATE(
-    COUNTROWS('fact_orders'),
-    'fact_orders'[order_status] = "Cancelled"
+    [Total Orders],
+    KEEPFILTERS('FactOrders'[order_status] = "Cancelled")
 )
+// Format: #,##0
+// Description: Total volume of orders cancelled across network (252 baseline).
 
-// 4. On-Time Delivery Rate (OTD %)
-On-Time Delivery Rate % = 
+/// 4. Percentage of total orders cancelled
+[Cancellation Rate %] = 
 DIVIDE(
-    CALCULATE(COUNTROWS('fact_orders'), 'fact_orders'[is_on_time] = TRUE() && 'fact_orders'[order_status] = "Delivered"),
+    [Cancelled Orders],
+    [Total Orders],
+    0
+)
+// Format: 0.00%
+// Description: Proportion of network orders cancelled relative to total intake.
+
+/// 5. On-Time Delivery Rate (OTD %) — Executive SLA Standard
+[On-Time Delivery Rate %] = 
+DIVIDE(
+    [On-Time Deliveries],
     [Delivered Orders],
     0
-) * 100
+)
+// Format: 0.00%
+// Description: Primary customer SLA metric. Denominator strictly uses Delivered Orders (excludes cancelled).
 
-// 5. Delay Rate %
-Delay Rate % = 
+/// 6. Delivery Delay Rate %
+[Delay Rate %] = 
 DIVIDE(
-    CALCULATE(COUNTROWS('fact_orders'), 'fact_orders'[is_delayed] = TRUE() && 'fact_orders'[order_status] = "Delivered"),
+    [Delayed Deliveries],
     [Delivered Orders],
     0
-) * 100
-
-// 6. Average Delivery Duration (Hours)
-Avg Delivery Time (Hours) = 
-CALCULATE(
-    AVERAGE('fact_orders'[delivery_time_hours]),
-    'fact_orders'[order_status] = "Delivered"
 )
+// Format: 0.00%
+// Description: Proportion of delivered orders that breached scheduled delivery window (20.4% baseline).
 
-// 7. Average CSAT Score
-Avg CSAT Score = 
+/// 7. Average delivery transit duration in hours
+[Avg Delivery Duration (Hours)] = 
 CALCULATE(
-    AVERAGE('fact_orders'[csat_score]),
-    'fact_orders'[order_status] = "Delivered"
+    AVERAGE('FactOrders'[delivery_time_hours]),
+    KEEPFILTERS('FactOrders'[order_status] = "Delivered")
 )
+// Format: 0.00
+// Description: Average hours elapsed from order dispatch to final customer drop-off.
 
-// 8. Fleet Active Utilization %
-Fleet Utilization % = 
+/// 8. Average Customer Satisfaction (CSAT) score (1.00 - 5.00 scale)
+[Avg CSAT Score] = 
+CALCULATE(
+    AVERAGE('FactOrders'[csat_score]),
+    KEEPFILTERS('FactOrders'[order_status] = "Delivered")
+)
+// Format: 0.00
+// Description: Average customer rating recorded upon delivery confirmation.
+
+/// 9. Order volume in prior calendar month (Time Intelligence)
+[Total Orders (Prior Month)] = 
+CALCULATE(
+    [Total Orders],
+    DATEADD('DimDate'[full_date], -1, MONTH)
+)
+// Format: #,##0
+// Description: Evaluates total orders shifted back by one calendar month.
+
+/// 10. Month-over-Month percentage order volume growth
+[Order Volume MoM Growth %] = 
+VAR _Current = [Total Orders]
+VAR _Prior   = [Total Orders (Prior Month)]
+RETURN
+    DIVIDE(_Current - _Prior, _Prior, 0)
+// Format: +0.00%;-0.00%;0.00%
+// Description: Period-over-period order intake growth percentage.
+
+
+// ========================================================================================
+// DISPLAY FOLDER: 02 - Delivery & SLAs
+// ========================================================================================
+
+/// 11. Count of successfully delivered orders meeting SLA deadline
+[On-Time Deliveries] = 
+CALCULATE(
+    [Total Orders],
+    KEEPFILTERS('FactOrders'[order_status] = "Delivered"),
+    KEEPFILTERS('FactOrders'[is_on_time] = TRUE())
+)
+// Format: #,##0
+// Description: Orders successfully delivered on or before the committed delivery window.
+
+/// 12. Count of successfully delivered orders breaching SLA deadline
+[Delayed Deliveries] = 
+CALCULATE(
+    [Total Orders],
+    KEEPFILTERS('FactOrders'[order_status] = "Delivered"),
+    KEEPFILTERS('FactOrders'[is_delayed] = TRUE())
+)
+// Format: #,##0
+// Description: Orders delivered past scheduled commitment window (5,653 baseline).
+
+/// 13. Average transit duration for delayed orders
+[Avg Delayed Duration (Hours)] = 
+CALCULATE(
+    AVERAGE('FactOrders'[delivery_time_hours]),
+    KEEPFILTERS('FactOrders'[order_status] = "Delivered"),
+    KEEPFILTERS('FactOrders'[is_delayed] = TRUE())
+)
+// Format: 0.00
+// Description: Mean delivery duration for orders experiencing operational delays.
+
+/// 14. Average transit duration for on-time orders
+[Avg On-Time Duration (Hours)] = 
+CALCULATE(
+    AVERAGE('FactOrders'[delivery_time_hours]),
+    KEEPFILTERS('FactOrders'[order_status] = "Delivered"),
+    KEEPFILTERS('FactOrders'[is_on_time] = TRUE())
+)
+// Format: 0.00
+// Description: Mean delivery duration for orders completed on schedule.
+
+/// 15. Operational delivery duration variance between delayed and on-time shipments
+[Delivery SLA Variance (Hours)] = 
+[Avg Delayed Duration (Hours)] - [Avg On-Time Duration (Hours)]
+// Format: +0.00;-0.00;0.00
+// Description: Net time penalty incurred by delayed shipments.
+
+/// 16. Total delay incidents categorized by root-cause reason
+[Delay Incidents by Reason] = 
+CALCULATE(
+    COUNTROWS('FactOrders'),
+    KEEPFILTERS(NOT ISBLANK('FactOrders'[delay_reason])),
+    KEEPFILTERS('FactOrders'[order_status] = "Delivered")
+)
+// Format: #,##0
+// Description: Count of order delay occurrences attributed to specific root-cause categories.
+
+/// 17. Pareto cumulative percentage across ranked delay reasons
+[Cumulative Delay Reason %] = 
+VAR _CurrentCount = [Delay Incidents by Reason]
+VAR _TotalIncidents = CALCULATE([Delay Incidents by Reason], ALLSELECTED('FactOrders'[delay_reason]))
+VAR _TableRanked = 
+    ADDCOLUMNS(
+        ALLSELECTED('FactOrders'[delay_reason]),
+        "@Incidents", [Delay Incidents by Reason]
+    )
+VAR _CumulativeSum = 
+    SUMX(
+        FILTER(_TableRanked, [@Incidents] >= _CurrentCount),
+        [@Incidents]
+    )
+RETURN
+    DIVIDE(_CumulativeSum, _TotalIncidents, 0)
+// Format: 0.0%
+// Description: Pareto 80/20 cumulative percentage line for delay root-cause analysis.
+
+/// 18. Percentage share of total delay incidents for current category
+[Delay Share %] = 
 DIVIDE(
-    CALCULATE(COUNTROWS('dim_vehicle'), 'dim_vehicle'[current_status] = "Active"),
-    COUNTROWS('dim_vehicle'),
+    [Delay Incidents by Reason],
+    CALCULATE([Delay Incidents by Reason], ALL('FactOrders'[delay_reason])),
     0
-) * 100
+)
+// Format: 0.0%
+// Description: Percentage share of delay incidents contributed by the selected category.
+
+
+// ========================================================================================
+// DISPLAY FOLDER: 03 - Hub Operations
+// ========================================================================================
+
+/// 19. Total active regional distribution hubs in Texas network
+[Total Hubs] = 
+DISTINCTCOUNT('DimHub'[hub_key])
+// Format: #,##0
+// Description: Count of active regional logistics hub facilities (6 Texas hubs).
+
+/// 20. Total designed daily processing capacity across entire hub network
+[Network Daily Capacity] = 
+SUM('DimHub'[daily_capacity])
+// Format: #,##0
+// Description: Aggregate maximum truckload/order capacity rating across all hubs.
+
+/// 21. Average dwell time spent in internal hub sortation and cross-docking
+[Avg Hub Processing Time (Hours)] = 
+AVERAGE('FactOrders'[hub_processing_time_hours])
+// Format: 0.00
+// Description: Mean duration orders spend being sorted and staged at origin hubs.
+
+/// 22. Total hourly inbound order volume received at hubs
+[Total Orders Received (Hub)] = 
+SUM('FactHubHourly'[orders_received])
+// Format: #,##0
+// Description: Aggregated package count received across hourly operational shifts.
+
+/// 23. Total hourly outbound order volume dispatched from hubs
+[Total Orders Dispatched (Hub)] = 
+SUM('FactHubHourly'[orders_dispatched])
+// Format: #,##0
+// Description: Aggregated package count loaded and dispatched across hourly shifts.
+
+/// 24. Active orders pending in staging queue (Backlog)
+[Total Backlog Volume] = 
+SUM('FactHubHourly'[backlog_volume])
+// Format: #,##0
+// Description: Unprocessed order volume accumulating in cross-dock staging queues.
+
+/// 25. Facility capacity utilization rate %
+[Hub Capacity Utilization %] = 
+AVERAGE('FactHubHourly'[capacity_utilization_pct]) / 100
+// Format: 0.00%
+// Description: Hourly facility throughput expressed as percentage of designed throughput capacity.
+
+/// 26. Average daily orders processed within active filter scope
+[Avg Daily Orders] = 
+DIVIDE(
+    [Total Orders],
+    DISTINCTCOUNT('FactOrders'[order_date_key]),
+    0
+)
+// Format: #,##0.0
+// Description: Average order throughput per active calendar day.
+
+
+// ========================================================================================
+// DISPLAY FOLDER: 04 - Fleet & Maintenance
+// ========================================================================================
+
+/// 27. Total commercial fleet vehicles registered in operational directory
+[Total Fleet Vehicles] = 
+DISTINCTCOUNT('DimVehicle'[vehicle_key])
+// Format: #,##0
+// Description: Distinct count of all commercial vehicles in fleet (45 vehicles).
+
+/// 28. Vehicles currently active and available for route dispatch
+[Active Vehicles] = 
+CALCULATE(
+    [Total Fleet Vehicles],
+    KEEPFILTERS('DimVehicle'[current_status] = "Active")
+)
+// Format: #,##0
+// Description: Total on-road vehicles ready for active transit assignments.
+
+/// 29. Vehicles currently out-of-service in maintenance bays
+[Vehicles In Maintenance] = 
+CALCULATE(
+    [Total Fleet Vehicles],
+    KEEPFILTERS('DimVehicle'[current_status] = "Maintenance")
+)
+// Format: #,##0
+// Description: Fleet units undergoing scheduled repair, preventative care, or overhaul.
+
+/// 30. Proportion of total fleet operational and road-ready
+[Fleet Availability Rate %] = 
+DIVIDE(
+    [Active Vehicles],
+    [Total Fleet Vehicles],
+    0
+)
+// Format: 0.00%
+// Description: Key fleet readiness metric benchmarked against target operating availability.
+
+/// 31. Vehicles triggering predictive failure or high-risk telemetry alerts
+[Maintenance Alert Vehicles] = 
+CALCULATE(
+    [Total Fleet Vehicles],
+    KEEPFILTERS('DimVehicle'[is_maintenance_alert] = TRUE())
+)
+// Format: #,##0
+// Description: Fleet assets flagged for immediate inspection based on telemetry thresholds.
+
+/// 32. Mean asset service age in days since purchase date
+[Avg Fleet Age (Days)] = 
+AVERAGEX(
+    'DimVehicle',
+    DATEDIFF('DimVehicle'[purchase_date], DATE(2026, 11, 18), DAY)
+)
+// Format: #,##0
+// Description: Average fleet service longevity measured from acquisition timestamp.
+
+/// 33. Total recorded maintenance and repair events
+[Total Maintenance Events] = 
+COUNTROWS('FactMaintenance')
+// Format: #,##0
+// Description: Count of maintenance work orders logged across fleet history.
+
+/// 34. Cumulative financial expenditure on fleet repairs and servicing
+[Total Maintenance Expense ($)] = 
+SUM('FactMaintenance'[cost_usd])
+// Format: $#,##0.00
+// Description: Sum of parts, labor, and shop fees across all completed service tickets.
+
+/// 35. Total cumulative equipment downtime hours incurred during maintenance
+[Total Downtime Hours] = 
+SUM('FactMaintenance'[downtime_hours])
+// Format: #,##0.0
+// Description: Cumulative out-of-service hours lost to vehicle maintenance.
+
+/// 36. Cumulative lifetime road breakdown incidents logged by vehicle
+[Lifetime Breakdowns] = 
+SUM('DimVehicle'[lifetime_breakdowns])
+// Format: #,##0
+// Description: Historical roadside failures recorded for fleet units.
+
+/// 37. Average repair expense per maintenance service ticket
+[Avg Cost per Maintenance Event] = 
+DIVIDE(
+    [Total Maintenance Expense ($)],
+    [Total Maintenance Events],
+    0
+)
+// Format: $#,##0.00
+// Description: Mean cost per maintenance work order.
+
+/// 38. Distinct count of unique vehicles receiving maintenance servicing
+[Vehicles Serviced] = 
+DISTINCTCOUNT('FactMaintenance'[vehicle_key])
+// Format: #,##0
+// Description: Unique commercial vehicles that have undergone servicing.
+
+
+// ========================================================================================
+// DISPLAY FOLDER: 05 - Driver Metrics
+// ========================================================================================
+
+/// 39. Total active certified delivery drivers in workforce
+[Total Drivers] = 
+DISTINCTCOUNT('DimDriver'[driver_key])
+// Format: #,##0
+// Description: Total driver headcount active across regional Texas hubs (55 drivers).
+
+/// 40. Mean commercial driving experience in years
+[Avg Driver Experience (Years)] = 
+AVERAGE('DimDriver'[experience_years])
+// Format: 0.0
+// Description: Average driver industry tenure and operational seniority.
+
+/// 41. Average composite driver performance rating (1.00 - 5.00 scale)
+[Avg Driver Rating] = 
+AVERAGE('DimDriver'[performance_rating])
+// Format: 0.00
+// Description: Composite quality score based on safety, efficiency, and customer reviews.
+
+/// 42. Total deliveries completed by specific driver
+[Driver Completed Deliveries] = 
+CALCULATE(
+    [Delivered Orders],
+    ALLEXCEPT('DimDriver', 'DimDriver'[driver_name], 'DimDriver'[driver_id])
+)
+// Format: #,##0
+// Description: Completed shipment drop-offs attributed to driver profile.
+
+
+// ========================================================================================
+// DISPLAY FOLDER: 06 - Analytics & Benchmarks / Reference Lines
+// ========================================================================================
+
+/// 43. Benchmark: Average monthly order volume across selected calendar range
+[Avg Orders per Month (Line)] = 
+AVERAGEX(
+    ALLSELECTED('DimDate'[month_name]),
+    [Total Orders]
+)
+// Format: #,##0
+// Description: Horizontal reference line for order volume seasonality charts.
+
+/// 44. Benchmark: Average order volume per regional hub
+[Avg Orders per Hub (Line)] = 
+AVERAGEX(
+    ALLSELECTED('DimHub'[hub_name]),
+    [Total Orders]
+)
+// Format: #,##0
+// Description: Network-wide mean volume reference line across regional Texas hubs.
+
+/// 45. Benchmark: Average hourly intake per hub
+[Avg Received per Hub (Line)] = 
+AVERAGEX(
+    ALLSELECTED('DimHub'[hub_name]),
+    [Total Orders Received (Hub)]
+)
+// Format: #,##0
+// Description: Reference line benchmarking inbound intake velocity.
+
+/// 46. Benchmark: Average network capacity utilization rate %
+[Avg Utilization (Line)] = 
+AVERAGEX(
+    ALLSELECTED('DimHub'[hub_name]),
+    [Hub Capacity Utilization %]
+)
+// Format: 0.00%
+// Description: Network average capacity threshold reference line.
+
+/// 47. Benchmark: Average delay incidents per root-cause reason
+[Avg Delay Incidents (Line)] = 
+AVERAGEX(
+    FILTER(
+        ALLSELECTED('FactOrders'[delay_reason]),
+        NOT ISBLANK('FactOrders'[delay_reason])
+    ),
+    [Delay Incidents by Reason]
+)
+// Format: #,##0
+// Description: Mean delay incidence across categorized root causes.
+
+/// 48. Benchmark: Average delay incidents per regional hub
+[Avg Delay Incidents per Hub (Line)] = 
+AVERAGEX(
+    ALLSELECTED('DimHub'[hub_name]),
+    [Delay Incidents by Reason]
+)
+// Format: #,##0
+// Description: Hub-level delay incidence baseline.
+
+/// 49. Benchmark: Average delay incidents per calendar month
+[Avg Delay Incidents per Month (Line)] = 
+AVERAGEX(
+    ALLSELECTED('DimDate'[month_name]),
+    [Delay Incidents by Reason]
+)
+// Format: #,##0
+// Description: Monthly delay incidence trend baseline.
+
+/// 50. Benchmark: Network overall delay rate % across vehicle types
+[Network Delay Rate (Line)] = 
+CALCULATE(
+    [Delay Rate %],
+    ALLSELECTED('DimVehicle'[vehicle_type])
+)
+// Format: 0.00%
+// Description: Network delay benchmark across Van, Box Truck, Semi, and Flatbed classes.
+
+/// 51. Benchmark: Average lifetime mechanical breakdowns per vehicle
+[Avg Breakdowns per Vehicle (Line)] = 
+AVERAGEX(
+    ALLSELECTED('DimVehicle'[vehicle_code]),
+    [Lifetime Breakdowns]
+)
+// Format: #,##0.0
+// Description: Mean mechanical failure frequency across commercial fleet units.
+
+/// 52. Benchmark: Average maintenance expense per service category
+[Avg Expense per Service (Line)] = 
+AVERAGEX(
+    ALLSELECTED('FactMaintenance'[service_type]),
+    [Total Maintenance Expense ($)]
+)
+// Format: $#,##0
+// Description: Cost threshold across Transmission, Brakes, Tires, Oil, and Electrical repairs.
+
+/// 53. Benchmark: Average maintenance expense per vehicle classification
+[Avg Expense per Vehicle Type (Line)] = 
+AVERAGEX(
+    ALLSELECTED('DimVehicle'[vehicle_type]),
+    [Total Maintenance Expense ($)]
+)
+// Format: $#,##0
+// Description: Cost threshold across Van, Box Truck, Semi-Trailer, and Flatbed assets.
+
+/// 54. Benchmark: Average orders per order status lifecycle stage
+[Avg Orders per Status (Line)] = 
+AVERAGEX(
+    ALLSELECTED('FactOrders'[order_status]),
+    [Total Orders]
+)
+// Format: #,##0
+// Description: Mean volume across Delivered, Cancelled, In-Transit, and Dispatched statuses.
+
+
+// ========================================================================================
+// DISPLAY FOLDER: 07 - Dynamic Visual Formatting & Heatmap Colors
+// ========================================================================================
+
+/// 55. Dynamic font color highlighting hub with highest delay rate
+[Delay Rate Font Color] = 
+VAR CurrentDelay = [Delay Rate %]
+VAR MaxDelay = 
+    MAXX(
+        ALLSELECTED('DimHub'),
+        CALCULATE([Delay Rate %])
+    )
+RETURN
+    IF(
+        CurrentDelay = MaxDelay,
+        "#FB7185", // High-risk highlight (Rose/Red)
+        "#FFFFFF"  // Standard white
+    )
+
+/// 56. Dynamic font color highlighting hub with highest on-time delivery rate
+[On-Time Rate Font Color] = 
+VAR CurrentRate = [On-Time Delivery Rate %]
+VAR MaxRate = 
+    MAXX(
+        ALLSELECTED('DimHub'),
+        CALCULATE([On-Time Delivery Rate %])
+    )
+RETURN
+    IF(
+        CurrentRate = MaxRate,
+        "#34D399", // Peak performance highlight (Emerald Green)
+        "#FFFFFF"
+    )
+
+/// 57. Dynamic driver leaderboard color: Top on-time performer
+[On-Time Delivery Rate Font Color] = 
+VAR DriverRates = 
+    ADDCOLUMNS(
+        ALLSELECTED('DimDriver'),
+        "@Rate", CALCULATE([On-Time Delivery Rate %])
+    )
+VAR MaxRate = MAXX(DriverRates, [@Rate])
+VAR WinningDriver = 
+    MINX(
+        FILTER(DriverRates, [@Rate] = MaxRate),
+        'DimDriver'[driver_name]
+    )
+VAR CurrentDriver = SELECTEDVALUE('DimDriver'[driver_name])
+RETURN
+    IF(
+        NOT ISBLANK(CurrentDriver) && CurrentDriver = WinningDriver,
+        "#34D399", // Emerald Green for top performer
+        "#FFFFFF"
+    )
+
+/// 58. Dynamic driver leaderboard color: Volume leader
+[Delivered Orders Font Color] = 
+VAR DriverOrders = 
+    ADDCOLUMNS(
+        ALLSELECTED('DimDriver'),
+        "@Orders", CALCULATE([Delivered Orders])
+    )
+VAR MaxOrders = MAXX(DriverOrders, [@Orders])
+VAR WinningDriver = 
+    MINX(
+        FILTER(DriverOrders, [@Orders] = MaxOrders),
+        'DimDriver'[driver_name]
+    )
+VAR CurrentDriver = SELECTEDVALUE('DimDriver'[driver_name])
+RETURN
+    IF(
+        NOT ISBLANK(CurrentDriver) && CurrentDriver = WinningDriver,
+        "#FBBF24", // Amber Gold for volume leader
+        "#FFFFFF"
+    )
+
+/// 59. Dynamic driver leaderboard color: Top quality rating
+[Performance Rating Font Color] = 
+VAR CurrentRating = SELECTEDVALUE('DimDriver'[performance_rating])
+VAR MaxRating = 
+    MAXX(
+        ALLSELECTED('DimDriver'),
+        CALCULATE(MAX('DimDriver'[performance_rating]))
+    )
+RETURN
+    IF(
+        NOT ISBLANK(CurrentRating) && CurrentRating = MaxRating,
+        "#38BDF8", // Cyan Blue for rating leader
+        "#FFFFFF"
+    )
+
+/// 60. Dynamic alert color for incident feed delayed records
+[Order ID Font Color] = 
+VAR DelayedValue = [Delay Incidents by Reason]
+RETURN
+    IF(
+        NOT ISBLANK(DelayedValue) && DelayedValue > 0,
+        "#EF4444", // Red warning for delayed record
+        "#FFFFFF"
+    )
+
+/// 61. Dynamic ML prediction label color
+[ML Order ID Font Color] = 
+VAR CurrentLabel = SELECTEDVALUE('FactMLPredictions'[predicted_label])
+RETURN
+    SWITCH(
+        CurrentLabel,
+        "DELAY_RISK", "#EF4444", // High-risk red
+        "ON_TIME",    "#34D399", // Low-risk emerald
+        "#FFFFFF"
+    )
+
+
+// ========================================================================================
+// DISPLAY FOLDER: 08 - Dynamic Slicer Selection Labels (Drill & Tooltip Context)
+// ========================================================================================
+
+/// 62. Dynamic card label displaying active month filter
+[Sel Month] = 
+SELECTEDVALUE('DimDate'[month_name], "All Months")
+
+/// 63. Dynamic card label displaying active hub filter
+[Sel Hub] = 
+SELECTEDVALUE('DimHub'[hub_name], "All Hubs")
+
+/// 64. Dynamic card label displaying active order status filter
+[Sel Status] = 
+SELECTEDVALUE('FactOrders'[order_status], "All Statuses")
+
+/// 65. Dynamic card label displaying active delay reason filter
+[Sel Delay Reason] = 
+SELECTEDVALUE('FactOrders'[delay_reason], "All Delay Reasons")
+
+/// 66. Dynamic card label displaying active vehicle filter
+[Sel Vehicle] = 
+SELECTEDVALUE('DimVehicle'[vehicle_code], "All Vehicles")
+
+/// 67. Dynamic card label displaying active vehicle type filter
+[Sel Vehicle Type] = 
+SELECTEDVALUE('DimVehicle'[vehicle_type], "All Vehicle Types")
+
+/// 68. Dynamic card label displaying active maintenance service filter
+[Sel Service] = 
+SELECTEDVALUE('FactMaintenance'[service_type], "All Services")
+
+/// 69. Dynamic card label displaying active driver filter
+[Sel Driver] = 
+SELECTEDVALUE('DimDriver'[driver_name], "All Drivers")
+
+// ========================================================================================
+// End of LogiTrack Intelligence Enterprise DAX Measures Library
+// ========================================================================================

@@ -1,0 +1,85 @@
+table FactMLPredictions
+	lineageTag: 8fbfc94e-1746-47c8-9440-a57a415c9f2a
+
+	column prediction_id
+		dataType: string
+		lineageTag: ddb1cce2-064d-4434-b8db-8c67b806f9a2
+		summarizeBy: none
+		sourceColumn: prediction_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_id
+		dataType: string
+		isHidden
+		lineageTag: 07d8522a-3e2c-49aa-945d-43efc626cb51
+		summarizeBy: none
+		sourceColumn: model_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_name
+		dataType: string
+		lineageTag: 567803f5-109b-4e59-aa45-fcf3b5e2c02b
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column entity_type
+		dataType: string
+		lineageTag: 17dbfe7d-65b8-482f-8c44-302fbc3369f7
+		summarizeBy: none
+		sourceColumn: entity_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: int64
+		lineageTag: 2a6740ce-1cd9-4e45-aab9-9f1ec1a2da9f
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_label
+		dataType: string
+		lineageTag: 5d8c775d-4aa0-49ea-b97f-546d280d49dc
+		summarizeBy: none
+		sourceColumn: predicted_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_score
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 183d9882-78ef-4e3d-8305-5112c66094fc
+		summarizeBy: sum
+		sourceColumn: predicted_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column prediction_timestamp
+		dataType: dateTime
+		formatString: yyyy-MM-dd HH:mm:ss
+		lineageTag: 2ab721fe-d140-407b-9a60-9580ca4ef755
+		summarizeBy: none
+		sourceColumn: prediction_timestamp
+
+		variation Variation
+			isDefault
+			relationship: defd30bf-17e5-4500-9529-f85b329b78ea
+			defaultHierarchy: LocalDateTable_a146488a-420f-447f-b314-db6a7ee7f1a1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactMLPredictions-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/FactMLPredictions.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"prediction_id", type text}, {"model_id", type text}, {"model_name", type text}, {"entity_type", type text}, {"order_id", Int64.Type}, {"predicted_label", type text}, {"predicted_score", type number}, {"prediction_timestamp", type datetime}}, "en-US")
+				in
+				    #"Changed Type"
+

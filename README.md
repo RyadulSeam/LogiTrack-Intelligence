@@ -6,6 +6,7 @@
 **Transforming Disconnected Fleet & Supply Chain Signals into Automated Power BI Dashboards, Real-Time IoT Telematics, and Predictive Delivery Risk Intelligence.**
 
 [![Release Version](https://img.shields.io/badge/Release-v1.0.0-blueviolet?style=for-the-badge&logo=git&logoColor=white)](https://github.com/RyadulSeam/LogiTrack-Intelligence/releases/tag/v1.0.0)
+[![CI/CD Pipeline](https://github.com/RyadulSeam/LogiTrack-Intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/RyadulSeam/LogiTrack-Intelligence/actions/workflows/ci.yml)
 [![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Automated Tests](https://img.shields.io/badge/Tests-107%20Passed%20(100%25)-success?style=for-the-badge&logo=pytest&logoColor=white)](tests/)
 [![Test Coverage](https://img.shields.io/badge/Coverage-62%25%20Verified-brightgreen?style=for-the-badge&logo=codecov&logoColor=white)](htmlcov/)
@@ -272,7 +273,7 @@ LogiTrack Intelligence incorporates a dedicated time-series forecasting engine (
 
 ## 📊 Power BI Executive Dashboard Suite
 
-The flagship business intelligence deliverable is a **fully implemented, 4-page enterprise Power BI project (`LogiTrack_Analytics_Final.pbip`)**. Built on a high-performance tabular data model with 9 tables, 37 DAX measures, and an exclusive Corporate Theme, it delivers comprehensive reporting to executive stakeholders:
+The flagship business intelligence deliverable is a **fully implemented, 4-page enterprise Power BI project (`LogiTrack_Analytics_(pbip).pbip` / `LogiTrack_Analytics_Final.pbix`)**, supported by **8 dedicated drill-through deep-dive pages** and **10 interactive tooltip pages**. Built on a high-performance **Tabular Model Definition Language (TMDL)** Star Schema with 9 tables, 37 production DAX measures (and 69 measures in total), and the custom **LogiTrack Midnight Premium** dark theme, it delivers end-to-end operational transparency:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
@@ -283,59 +284,79 @@ The flagship business intelligence deliverable is a **fully implemented, 4-page 
 │  • Total Volume Trends (27,979 Orders)   • Hourly Sortation Flow & Bottlenecks         │
 │                                                                                        │
 │  Page 3: Delay & Root-Cause Analytics    Page 4: Fleet & Predictive Maintenance        │
-│  • Delay Attribution (Weather/Traffic)   • 45 Vehicles Telematics & Downtime           │
-│  • Driver Scorecards & Incident Feed     • Maintenance Spend by Service Category       │
+│  • 10 Pareto Delay Categories & SLA Var. • 45 Vehicles Telematics & Downtime           │
+│  • Driver Scorecards & ML Risk Feed      • Maintenance Spend by Service Category       │
+│                                                                                        │
+│  + 8 Dedicated Drill-Through Pages       + 10 Rich Interactive Tooltip Pages           │
+│  • Hub, Driver, Vehicle, Type, Month,    • KPI Pulse, Hub Gauge, Driver Card,          │
+│    Status, Delay Reason & Service Drills   Fleet Status, Delay Share & Service Tooltips│
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Page 1: Executive Control Tower
 *Designed for Chief Operating Officers, VP of Logistics, and Supply Chain Directors.*
-- **Top-Line KPI Ribbon**: Total Orders (27,979), Delivered Orders (27,727), Network On-Time Delivery Rate (79.6%), Delay Rate (20.4%), Average Transit Duration (35.2 hrs), and Active Fleet Availability (66.7%).
-- **Monthly Fulfillment Velocity**: Dual-axis line and column visual tracking monthly order volume growth versus SLA delivery success rate.
-- **Order Disposition Breakdown**: Visual tracking completed deliveries versus exceptions and cancellations (252 orders).
-- **Regional SLA Performance Scorecard**: Side-by-side benchmarking of Texas hub delivery performance against the corporate 80% OTD benchmark.
+- **Top-Line KPI Ribbon**: Total Orders (27,979), Delivered Orders (27,727), Network On-Time Delivery Rate (79.60%), Delay Rate (20.40%), Average Transit Duration (35.2 hrs), and Active Fleet Availability (66.7%).
+- **Monthly Fulfillment Velocity & OTD Trend (Combo Chart)**: Dual-axis visual tracking monthly volume growth against SLA delivery compliance.
+- **Order Disposition Breakdown (Donut Chart)**: Delivered vs. Cancelled ratio (252 cancellations, 0.90% cancellation rate).
+- **Regional Hub Volume Distribution (Horizontal Clustered Bar Chart)**: Order throughput ranked across all six Texas logistics nodes.
+- **Regional Hub SLA Performance Scorecard (Interactive Table)**: Side-by-side benchmarking of volume, OTD%, and delay rates with conditional alert highlights.
 
 <div align="center">
-  <img src="docs/diagrams/pbi_page1_control_tower_placeholder.png" alt="Power BI Page 1 — Executive Control Tower" width="90%" onerror="this.src='https://via.placeholder.com/1000x560/0f172a/ffffff?text=Power+BI+Page+1%3A+Executive+Control+Tower+(LogiTrack_Analytics_Final.pbip)'"/>
-  <p><em>Figure 1: Executive Control Tower — Network KPIs, SLA Compliance, and Monthly Order Trends.</em></p>
+  <img src="dashboards/powerbi/LogiTrack_Analytics/Dashboard_Images/Executive_control_tower.png" alt="Power BI Page 1 — Executive Control Tower" width="95%"/>
+  <p><em>Figure 1: Executive Control Tower — Network KPIs, SLA Compliance, Monthly Pacing, and Hub Compliance.</em></p>
 </div>
 
 ### Page 2: Regional Hub Operations
-*Designed for Regional Distribution Managers and Facility Directors.*
-- **Facility Health Overview**: Total Active Hubs (6), Network Daily Processing Capacity, Average Processing Dwell Time, and Total Dispatched Volume.
-- **Capacity Utilization Matrix**: Real-time visual comparison of active package throughput against maximum facility capacity limits.
-- **Hourly Flow Dynamics**: Hourly intake and dispatch velocity tracking to pinpoint sortation bottlenecks before backlogs compound.
-- **Hub Performance Scorecard**: Tabular breakdown of dwell times, dispatch cycle lengths, and volume throughput by hub.
+*Designed for Regional Distribution Managers, Terminal Directors, and Shift Dispatchers.*
+- **Facility Health Overview**: Total Active Hubs (6), Network Daily Processing Capacity, Average Processing Dwell Time, Total Inbound Received, Outbound Dispatches, and Active Staging Backlog.
+- **Texas Regional Hub Spatial Distribution & Volume Map**: Geographic visualization displaying hub nodes sized by volume throughput.
+- **Designed Capacity vs. Processed Volume (Clustered Column Chart)**: Real-time visual comparison of active package throughput against maximum facility capacity limits.
+- **24-Hour Network Intake vs. Dispatch Rhythm (Dual-series Line Chart)**: Hourly sortation wave tracking to pinpoint operational bottlenecks before backlogs compound.
+- **Hub Performance & Bottleneck Scorecard**: Tabular breakdown of dwell times, dispatch cycle lengths, volume throughput, and capacity utilization by hub.
 
 <div align="center">
-  <img src="docs/diagrams/pbi_page2_hub_operations_placeholder.png" alt="Power BI Page 2 — Regional Hub Operations" width="90%" onerror="this.src='https://via.placeholder.com/1000x560/0f172a/ffffff?text=Power+BI+Page+2%3A+Regional+Hub+Operations+(LogiTrack_Analytics_Final.pbip)'"/>
-  <p><em>Figure 2: Regional Hub Operations — Texas Distribution Grid Capacity & Hourly Throughput.</em></p>
+  <img src="dashboards/powerbi/LogiTrack_Analytics/Dashboard_Images/Regional_Hub_Operations.png" alt="Power BI Page 2 — Regional Hub Operations" width="95%"/>
+  <p><em>Figure 2: Regional Hub Operations — Texas Distribution Grid Capacity, Spatial Volume, and 24-Hour Rhythm.</em></p>
 </div>
 
 ### Page 3: Delay & Root-Cause Analytics
-*Designed for Continuous Improvement Leads and Customer Delivery Experience Managers.*
-- **Delay Exception Overview**: Total Delayed Orders (5,653), Average Delay Duration, and Network Delay Rate.
-- **Root-Cause Attribution Donut**: Percentage allocation of delays across major failure modes (Traffic, Weather, Mechanical, Warehouse).
-- **Delay Distribution by Vehicle Class**: Cross-filtering delay incidence across Vans, Box Trucks, Semi-Trailers, and Flatbeds.
-- **Driver Performance Scorecard**: Granular evaluation of 55 commercial drivers, benchmarking OTD rate, safety incident counts, and total deliveries.
-- **Delay Incident Feed**: Tabular audit trail detailing order IDs, origin/destination hubs, delay reasons, and delivery variance.
+*Designed for Continuous Improvement Leads, Customer Experience Directors, and Route Analysts.*
+- **Delay Exception Overview**: Total Delayed Deliveries (5,653), Network Delay Rate (20.40%), Average Delayed Duration, and Delivery SLA Variance.
+- **Pareto Delay Reason Distribution (Pareto Bar + Cumulative Line Chart)**: Ranks delay categories against an 80% threshold line (Traffic Congestion, Severe Weather, Mechanical Breakdown, Warehouse Sortation Delay, Route Detour, Dispatch Lag, Inspection Dwell, Staging Queue, Border Check, Documentation Hold).
+- **Delay Rate by Vehicle Classification (Horizontal Bar Chart)**: Cross-filtering delay incidence across Cargo Vans, Box Trucks, Semi-Trailers, and Flatbeds.
+- **Driver Performance Scorecard (Scatter Plot & Leaderboard)**: Granular evaluation of 55 commercial drivers, benchmarking driver seniority vs. on-time delivery rate.
+- **Delay Incident Feed & ML Risk Predictions (Table)**: Detailed audit trail displaying order IDs, origin/destination hubs, delay root causes, and real-time XGBoost delay risk probabilities.
 
 <div align="center">
-  <img src="docs/diagrams/pbi_page3_delay_analytics_placeholder.png" alt="Power BI Page 3 — Delay & Root-Cause Analytics" width="90%" onerror="this.src='https://via.placeholder.com/1000x560/0f172a/ffffff?text=Power+BI+Page+3%3A+Delay+%26+Root-Cause+Analytics+(LogiTrack_Analytics_Final.pbip)'"/>
-  <p><em>Figure 3: Delay & Root-Cause Analytics — Delay Attribution, Vehicle Class Variance, and Driver Scorecards.</em></p>
+  <img src="dashboards/powerbi/LogiTrack_Analytics/Dashboard_Images/Delay_&_Root_Cause_Analytics.png" alt="Power BI Page 3 — Delay & Root-Cause Analytics" width="95%"/>
+  <p><em>Figure 3: Delay & Root-Cause Analytics — Pareto Root-Cause Breakdown, Vehicle Risk Spreads, and Driver Matrix.</em></p>
 </div>
 
 ### Page 4: Fleet Telematics & Predictive Maintenance
-*Designed for Fleet Operations Directors and Asset Maintenance Supervisors.*
-- **Fleet Asset Ribbon**: Total Fleet (45 Units), Active On-Road Fleet, In-Shop Maintenance Units, and Fleet Readiness Percentage.
-- **Maintenance Financials**: Total cumulative maintenance expenditure ($247,000+) segmented by service type (Transmission, Brakes, Tires, Oil, Electrical).
-- **Vehicle Type Distribution**: Asset allocation across Semi-Trailers (12), Box Trucks (15), Cargo Vans (10), and Flatbeds (8).
-- **High-Risk Vehicle Watchlist**: Automated table identifying vehicles exceeding odometer maintenance thresholds and displaying predictive failure warnings.
+*Designed for Fleet Operations Directors, Asset Managers, and Maintenance Supervisors.*
+- **Fleet Asset Ribbon**: Total Fleet Inventory (45 Units), Active Road-Ready Fleet, In-Shop Maintenance Units, Critical Risk Alerts, Total Maintenance Spend ($247,000+), and Total Downtime Hours.
+- **Fleet Operational Availability (Donut Chart)**: Visual breakdown of active road-ready vs. in-maintenance availability ratios.
+- **Asset Longevity vs. Lifetime Breakdowns (Scatter Plot)**: Vehicle Age (Days) vs. Lifetime Mechanical Breakdown Count.
+- **Maintenance Financials by Service Category (Horizontal Bar Chart)**: Financial spend segmented across Transmission, Brakes, Tires, Oil Change, and Electrical repairs.
+- **High-Risk Vehicle Fleet Action Watchlist (Table)**: Actionable vehicle table displaying odometer risk alerts, breakdown histories, and maintenance status flags.
 
 <div align="center">
-  <img src="docs/diagrams/pbi_page4_fleet_telematics_placeholder.png" alt="Power BI Page 4 — Fleet Telematics & Predictive Maintenance" width="90%" onerror="this.src='https://via.placeholder.com/1000x560/0f172a/ffffff?text=Power+BI+Page+4%3A+Fleet+Telematics+%26+Predictive+Maintenance'"/>
+  <img src="dashboards/powerbi/LogiTrack_Analytics/Dashboard_Images/Fleet_Telematrics_&_Maintenance.png" alt="Power BI Page 4 — Fleet Telematics & Predictive Maintenance" width="95%"/>
   <p><em>Figure 4: Fleet Telematics & Predictive Maintenance — Vehicle Status, Spend Breakdown, and Risk Watchlist.</em></p>
 </div>
+
+### 🔍 Dedicated Drill-Through Analysis Pages & Rich Tooltips
+In addition to the 4 main dashboard canvases, the project incorporates deep analytical interactivity:
+- **8 Drill-Through Deep-Dive Pages**: Users can right-click any chart element to navigate into dedicated investigation views:
+  - `Drill Hub`: Hub throughput, local driver roster, vehicle allocations, and hourly bottlenecks.
+  - `Drill Driver`: Driver delivery history, lifetime OTD%, CSAT ratings, and assigned vehicles.
+  - `Drill Vehicle`: Odometer history, lifetime breakdown log, maintenance work orders, and fuel efficiency.
+  - `Drill Vehicle Type`: Class-level delay rates, operating cost per mile, and maintenance spend across fleet classes.
+  - `Drill Month`: Monthly order volume pacing, seasonal surge dynamics, and month-over-month variance.
+  - `Drill Order Status`: Deep-dive into Delivered vs. Cancelled orders, transit duration spreads, and lost revenue.
+  - `Drill Delay Reason`: Root-cause weather, traffic, and mechanical failure incidence, affected hubs, and SLA impact.
+  - `Drill Service`: Transmission, brake, tire, and electrical repair costs, vendor performance, and downtime.
+- **10 Rich Interactive Tooltips**: Hovering over visual elements reveals contextual micro-dashboards (`Tooltip KPI Pulse`, `ToolTip Hub`, `Tooltip Driver`, `Tooltip Fleet`, `Tooltip Delay Reason`, `Tooltip Service`, `Tooltip Status`, `Tooltip Month`, `Tooltip Vehicle`, `Tooltip Vehicle Type`). All screenshots are documented in the [`dashboards/powerbi/LogiTrack_Analytics/Dashboard_Images/`](dashboards/powerbi/LogiTrack_Analytics/Dashboard_Images/) directory.
 
 ---
 

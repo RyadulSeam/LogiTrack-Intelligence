@@ -1,0 +1,105 @@
+table DimVehicle
+	lineageTag: 0294e694-04bd-4d27-854a-cdf39c1faa6e
+
+	column vehicle_key
+		dataType: int64
+		isHidden
+		lineageTag: 51064698-a89f-4c9c-a7d2-22777d74a77a
+		summarizeBy: none
+		sourceColumn: vehicle_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_id
+		dataType: int64
+		isHidden
+		lineageTag: a1cfd05d-58b7-4091-945b-ad0461da2a93
+		summarizeBy: sum
+		sourceColumn: vehicle_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_code
+		dataType: string
+		lineageTag: 8dad9126-bb1d-4d24-bdd3-1877145ac880
+		summarizeBy: none
+		sourceColumn: vehicle_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_model
+		dataType: string
+		lineageTag: c97eda3a-68eb-48b0-b32f-b39c5936e664
+		summarizeBy: none
+		sourceColumn: vehicle_model
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_type
+		dataType: string
+		lineageTag: 212f2413-8b71-40b3-a624-8799c2d16ad7
+		summarizeBy: none
+		sourceColumn: vehicle_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_status
+		dataType: string
+		lineageTag: a76e0d71-4cd4-494b-bf62-f5ad80e838e7
+		summarizeBy: none
+		sourceColumn: current_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column lifetime_breakdowns
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 99dfe077-5ea4-4f0e-9972-2b6061039b56
+		summarizeBy: sum
+		sourceColumn: lifetime_breakdowns
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_maintenance_alert
+		dataType: boolean
+		lineageTag: 0303a747-a07a-47cd-afa8-cdc937d49f76
+		summarizeBy: none
+		sourceColumn: is_maintenance_alert
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 161a16f9-a10e-4b83-96c9-4b76a691d218
+		summarizeBy: none
+		sourceColumn: purchase_date
+
+		variation Variation
+			isDefault
+			relationship: df3ff092-8b7c-43e1-9d8a-8683c10e77d5
+			defaultHierarchy: LocalDateTable_6a3e4086-d4fb-42b9-8df4-26cb948f1f9c.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_origin
+		dataType: string
+		isHidden
+		lineageTag: 52ed9b25-9633-4a10-a2b5-43b3a155e143
+		summarizeBy: none
+		sourceColumn: data_origin
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimVehicle-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/DimVehicle.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"vehicle_key", Int64.Type}, {"vehicle_id", Int64.Type}, {"vehicle_code", type text}, {"vehicle_model", type text}, {"vehicle_type", type text}, {"current_status", type text}, {"lifetime_breakdowns", Int64.Type}, {"is_maintenance_alert", type logical}, {"purchase_date", type date}, {"data_origin", type text}}, "en-US")
+				in
+				    #"Changed Type"
+

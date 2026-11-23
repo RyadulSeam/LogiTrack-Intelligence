@@ -1,0 +1,90 @@
+table DimDriver
+	lineageTag: e66f7dd7-28e5-46b3-8aa4-776c9232ad68
+
+	column driver_key
+		dataType: int64
+		isHidden
+		lineageTag: fa5e64a5-7736-4cbf-a1e3-10cca7f8b58d
+		summarizeBy: none
+		sourceColumn: driver_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_id
+		dataType: int64
+		isHidden
+		lineageTag: 2321910e-a560-4498-9847-892c774c90b7
+		summarizeBy: sum
+		sourceColumn: driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_name
+		dataType: string
+		lineageTag: 27dc3162-c6d8-47c4-a1e3-daaab4cbec7a
+		summarizeBy: none
+		sourceColumn: driver_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column employment_type
+		dataType: string
+		lineageTag: 2a32cb32-fbf7-4bc5-889d-631de94da85c
+		summarizeBy: none
+		sourceColumn: employment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column hire_date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 0817774b-3898-42ee-9c0e-a44d93e17e26
+		summarizeBy: none
+		sourceColumn: hire_date
+
+		variation Variation
+			isDefault
+			relationship: 07386c71-4615-47d2-a021-bf433f1bf05d
+			defaultHierarchy: LocalDateTable_b5fa155c-b498-43ad-a6f9-dd70c37d1735.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column experience_years
+		dataType: int64
+		formatString: 0
+		lineageTag: a009bf4f-6010-46db-a9be-ff1db8ff29f3
+		summarizeBy: sum
+		sourceColumn: experience_years
+
+		annotation SummarizationSetBy = Automatic
+
+	column performance_rating
+		dataType: int64
+		formatString: 0
+		lineageTag: 490581c2-ea1b-4ec6-ac1e-ecdbc1ba7d16
+		summarizeBy: sum
+		sourceColumn: performance_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_origin
+		dataType: string
+		isHidden
+		lineageTag: 38dfa557-018b-4709-9301-57b452df9f63
+		summarizeBy: none
+		sourceColumn: data_origin
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimDriver-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("F:/LogiTrack-Intelligence/dashboards/powerbi/data_export/DimDriver.csv"),[Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"driver_key", Int64.Type}, {"driver_id", Int64.Type}, {"driver_name", type text}, {"employment_type", type text}, {"hire_date", type date}, {"experience_years", Int64.Type}, {"performance_rating", Int64.Type}, {"data_origin", type text}}, "en-US")
+				in
+				    #"Changed Type"
+
