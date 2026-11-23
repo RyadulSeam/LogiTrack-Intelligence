@@ -81,27 +81,32 @@ jobs:
           sys.path.insert(0, 'src')
           sys.path.insert(0, '.')
 
-          print('Step 1/5: Running DuckDB migrations...')
+          print('Step 1/6: Running DuckDB migrations...')
           from scripts.run_migrations import run_duckdb_migrations
           run_duckdb_migrations()
           print('  -> Migrations complete.')
 
-          print('Step 2/5: Running batch ingestion pipeline...')
+          print('Step 2/6: Running batch ingestion pipeline...')
           from logitrack.ingestion.pipeline import run_batch_pipeline
           run_batch_pipeline()
           print('  -> Batch pipeline complete.')
 
-          print('Step 3/5: Building warehouse tables...')
+          print('Step 3/6: Simulating real-time streaming events...')
+          from logitrack.streaming.stream_runner import run_streaming_simulation
+          run_streaming_simulation()
+          print('  -> Streaming simulation complete.')
+
+          print('Step 4/6: Building warehouse tables...')
           from logitrack.transformation.warehouse_builder import build_warehouse_tables
           build_warehouse_tables()
           print('  -> Warehouse built.')
 
-          print('Step 4/5: Training ML models...')
+          print('Step 5/6: Training ML models...')
           from logitrack.ml.train_all import run_training_pipeline
           run_training_pipeline()
           print('  -> ML training complete.')
 
-          print('Step 5/5: Running forecasting pipeline...')
+          print('Step 6/6: Running forecasting pipeline...')
           from logitrack.forecasting.train_all import run_forecasting_pipeline
           run_forecasting_pipeline()
           print('  -> Forecasting complete.')
@@ -201,12 +206,14 @@ jobs:
 
           from scripts.run_migrations import run_duckdb_migrations
           from logitrack.ingestion.pipeline import run_batch_pipeline
+          from logitrack.streaming.stream_runner import run_streaming_simulation
           from logitrack.transformation.warehouse_builder import build_warehouse_tables
           from logitrack.ml.train_all import run_training_pipeline
           from logitrack.forecasting.train_all import run_forecasting_pipeline
 
           run_duckdb_migrations()
           run_batch_pipeline()
+          run_streaming_simulation()
           build_warehouse_tables()
           run_training_pipeline()
           run_forecasting_pipeline()
@@ -254,12 +261,14 @@ jobs:
 
           from scripts.run_migrations import run_duckdb_migrations
           from logitrack.ingestion.pipeline import run_batch_pipeline
+          from logitrack.streaming.stream_runner import run_streaming_simulation
           from logitrack.transformation.warehouse_builder import build_warehouse_tables
           from logitrack.ml.train_all import run_training_pipeline
           from logitrack.forecasting.train_all import run_forecasting_pipeline
 
           run_duckdb_migrations()
           run_batch_pipeline()
+          run_streaming_simulation()
           build_warehouse_tables()
           run_training_pipeline()
           run_forecasting_pipeline()
