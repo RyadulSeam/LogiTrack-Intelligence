@@ -71,7 +71,7 @@ jobs:
       - name: Install project & test dependencies
         run: |
           pip install --upgrade pip
-          pip install -e ".[database,ml,api,testing]"
+          pip install -e ".[simulation,streaming,database,ml,api,testing]"
           pip install pytest-cov coverage
 
       - name: Initialize DuckDB lakehouse (full 5-step pipeline)
@@ -190,7 +190,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -e ".[database,ml,api,testing]"
+          pip install -e ".[simulation,streaming,database,ml,api,testing]"
 
       - name: Initialize DuckDB lakehouse for health check
         run: |
@@ -243,7 +243,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -e ".[database,ml,api,testing]"
+          pip install -e ".[simulation,streaming,database,ml,api,testing]"
 
       - name: Initialize DuckDB lakehouse for API tests
         run: |
