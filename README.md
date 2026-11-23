@@ -561,15 +561,55 @@ To maintain technical credibility and clear business expectations with enterpris
 
 ---
 
-## 👨‍💼 16. Author & Engineering Consultation
-
-**Ryadul Islam Seam**
-*Logistics & Supply Chain Analytics Engineer | Data Architect*
-*Specializing in Transportation Analytics, Lakehouse Architecture, Power BI TMDL Modeling, and Predictive Operations.*
-
-* **LinkedIn:** [linkedin.com/in/ryadulseam-data](https://www.linkedin.com/in/ryadulseam-data)
-* **GitHub Repository:** [github.com/RyadulSeam/LogiTrack-Intelligence](https://github.com/RyadulSeam/LogiTrack-Intelligence)
-* **Engagement Opportunities:** Available for consulting engagements, enterprise analytics architecture reviews, and full-time technical leadership roles within logistics, transportation, and supply chain technology organizations.
+\## 👨‍💼 About the Consultant\
+\
+\<div align="center">\
+\
+\### \*\*Ryadul Islam Seam\*\*\
+\*\*Logistics & Operations Analytics Consultant\*\*  \
+\*Predictive Delivery Risk & Automated Power BI Dashboards for E-Commerce, Retail & Distribution\*\
+\
+[![LinkedIn Profile]\(https\://img.shields.io/badge/LinkedIn-Connect%20with%20Ryadul-0A66C2?style=for-the-badge&logo=linkedin)]\(https\://www\.linkedin.com/in/ryadulseam-data)\
+[![GitHub Profile]\(https\://img.shields.io/badge/GitHub-Follow%20on%20GitHub-181717?style=for-the-badge&logo=github)]\(https\://github.com/RyadulSeam)\
+\
+\</div>\
+\
+\### Core Consulting Capabilities:\
+\- \*\*Logistics & Supply Chain Analytics\*\*: SLA delivery compliance, root-cause delay attribution, warehouse dwell analysis, and fleet utilization benchmarking.\
+\- \*\*Executive Business Intelligence\*\*: Enterprise Power BI dashboard architecture, advanced DAX calculations, Star-Schema tabular data modeling, and corporate UI/UX styling.\
+\- \*\*Data Engineering & Lakehousing\*\*: Python ETL pipelines, dbt Core dimensional modeling, DuckDB OLAP lakehouse design, and PostgreSQL transactional architecture.\
+\- \*\*Predictive Machine Learning\*\*: Applied classification and regression (XGBoost, Scikit-learn), multi-horizon time-series forecasting (Prophet, Statsmodels), and model drift monitoring.\
+\- \*\*Production Architecture\*\*: FastAPI REST API development, Docker multi-container orchestration, and automated CI/CD quality engineering.\
+\
+\---\
+\
+\## 📬 Contact & Consulting Engagement\
+\
+Are delivery delays, fragmented spreadsheets, or opaque operational data impacting your supply chain performance?\
+\
+I partner with logistics carriers, 3PL providers, retail distributors, and e-commerce brands to build automated reporting infrastructure and predictive operational intelligence:\
+\
+\- \*\*Automated Power BI Operations Dashboards\*\* tailored to your WMS, OMS, and fleet systems.\
+\- \*\*Predictive Delivery Risk Systems\*\* that identify SLA breaches before departure.\
+\- \*\*Modern Data Lakehouse Infrastructure\*\* replacing brittle manual spreadsheets with reliable reporting.\
+\
+\*\*Let's discuss how data-driven intelligence can optimize your distribution operations:\*\*\
+\
+\- \*\*LinkedIn\*\*: [linkedin.com/in/ryadulseam-data]\(https\://www\.linkedin.com/in/ryadulseam-data)\
+\- \*\*GitHub\*\*: [github.com/RyadulSeam]\(https\://github.com/RyadulSeam)\
+\- \*\*Project Repository\*\*: [github.com/RyadulSeam/LogiTrack-Intelligence]\(https\://github.com/RyadulSeam/LogiTrack-Intelligence)\
+\
+\---\
+\
+\## 📄 License\
+\
+This project is open-source and distributed under the \*\*MIT License\*\*. See the [LICENSE]\(LICENSE) file for complete details.\
+\
+\---\
+\
+\<div align="center">\
+&#x20; \<sub>LogiTrack Intelligence v1.0.0 • Designed, Engineered, and Documented by Ryadul Islam Seam • © 2026\</sub>\
+\</div>
 
 ---
 
