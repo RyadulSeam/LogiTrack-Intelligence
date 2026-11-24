@@ -16,7 +16,7 @@
 <br/>
 
 **Developed by [Ryadul Islam Seam](https://www.linkedin.com/in/ryadulseam-data)**
-*Logistics & Operations Analytics Engineer | Business Intelligence & Data Architect*
+*Logistics & Operations Analytics Consultant | Predictive Delivery Risk & Automated Power BI Dashboards for E-Commerce, Retail & Distribution*
 [LinkedIn Profile](https://www.linkedin.com/in/ryadulseam-data) • [GitHub Repository](https://github.com/RyadulSeam/LogiTrack-Intelligence)
 
 ---
